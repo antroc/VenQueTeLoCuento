@@ -1,4 +1,6 @@
 ---
+import { url, sinBase } from '../lib/url';
+
 interface Props {
   title: string;
   description?: string;
@@ -6,7 +8,7 @@ interface Props {
 }
 
 const { title, description = '¡Ven que te lo cuento! — Patrimonio cultural de la Región de Murcia en reels de Instagram', fullWidth = false } = Astro.props;
-const currentPath = Astro.url.pathname;
+const currentPath = sinBase(Astro.url.pathname);
 ---
 
 <!DOCTYPE html>
@@ -18,22 +20,22 @@ const currentPath = Astro.url.pathname;
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:type" content="website" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/svg+xml" href={url('/favicon.svg')} />
   <title>{title}</title>
 </head>
 <body class:list={[{ 'full-width': fullWidth }]}>
   <nav class="nav">
     <div class="nav-inner">
-      <a href="/" class="nav-brand">¡Ven que te lo cuento!</a>
+      <a href={url('/')} class="nav-brand">¡Ven que te lo cuento!</a>
       <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
         <span></span>
         <span></span>
         <span></span>
       </button>
       <ul class="nav-links">
-        <li><a href="/" class:list={[{ active: currentPath === '/' }]}>Mapa</a></li>
-        <li><a href="/blog" class:list={[{ active: currentPath.startsWith('/blog') }]}>Blog</a></li>
-        <li><a href="/sobre-mi" class:list={[{ active: currentPath === '/sobre-mi/' || currentPath === '/sobre-mi' }]}>Sobre mí</a></li>
+        <li><a href={url('/')} class:list={[{ active: currentPath === '/' }]}>Mapa</a></li>
+        <li><a href={url('/blog')} class:list={[{ active: currentPath.startsWith('/blog') }]}>Blog</a></li>
+        <li><a href={url('/sobre-mi')} class:list={[{ active: currentPath === '/sobre-mi/' || currentPath === '/sobre-mi' }]}>Sobre mí</a></li>
       </ul>
     </div>
   </nav>
@@ -45,7 +47,7 @@ const currentPath = Astro.url.pathname;
   <footer class="footer">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <a href="/" class="footer-logo">¡Ven que te lo cuento!</a>
+        <a href={url('/')} class="footer-logo">¡Ven que te lo cuento!</a>
         <p>Patrimonio cultural de la Región de Murcia</p>
       </div>
 
@@ -63,7 +65,7 @@ const currentPath = Astro.url.pathname;
 
       <div class="footer-legal">
         <p>© {new Date().getFullYear()} ¡Ven que te lo cuento! — Todos los derechos reservados</p>
-        <a href="/politica-privacidad">Política de privacidad</a>
+        <a href={url('/politica-privacidad')}>Política de privacidad</a>
       </div>
     </div>
   </footer>

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
+import { url } from '../../lib/url';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -16,7 +17,7 @@ const { Content } = await post.render();
 
 <BaseLayout title={`${post.data.title} — ¡Ven que te lo cuento!`} description={post.data.description}>
   <article class="container article">
-    <a href="/blog" class="back-link">← Volver al blog</a>
+    <a href={url('/blog')} class="back-link">← Volver al blog</a>
 
     <header>
       <time datetime={post.data.date.toISOString()}>
@@ -33,7 +34,7 @@ const { Content } = await post.render();
     {post.data.images && post.data.images.length > 0 && (
       <div class="article-images">
         {post.data.images.map(img => (
-          <img src={img} alt={post.data.title} loading="lazy" />
+          <img src={url(img)} alt={post.data.title} loading="lazy" />
         ))}
       </div>
     )}

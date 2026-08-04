@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import reels from '../data/reels.json';
 import categorias from '../data/categorias.json';
+import { url } from '../lib/url';
 
 // Herramienta de uso local. En el build de producción se sirve una página vacía
 // para no publicarla en venquetelocuento.es.
@@ -14,7 +15,7 @@ const isDev = import.meta.env.DEV;
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex, nofollow" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="icon" type="image/svg+xml" href={url('/favicon.svg')} />
   <title>Añadir reels — herramienta local</title>
   {isDev && (
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
@@ -28,7 +29,7 @@ const isDev = import.meta.env.DEV;
         El editor de reels solo funciona en tu ordenador. Arranca el proyecto con
         <code>npm run dev</code> y abre <code>localhost:4321/admin</code>.
       </p>
-      <p><a href="/">Volver al mapa</a></p>
+      <p><a href={url('/')}>Volver al mapa</a></p>
     </div>
   ) : (
     <div class="admin">

@@ -1,11 +1,12 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { url } from '../lib/url';
 ---
 
 <BaseLayout title="Sobre mí — ¡Ven que te lo cuento!">
   <section class="about container">
     <div class="about-photo">
-      <img src="/img/perfil.jpg" alt="Foto de perfil" />
+      <img src={url('/img/perfil.jpg')} alt="Foto de perfil" />
     </div>
 
     <div class="about-content">
