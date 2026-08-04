@@ -1,52 +1,112 @@
 [
   {
     "id": "001",
-    "titulo": "Catedral de Murcia",
-    "descripcion": "La impresionante fachada barroca de la Catedral de Santa María",
-    "categoria": "iglesias",
-    "lat": 37.9838,
-    "lng": -1.1285,
-    "miniatura": "/img/reels/catedral-murcia.jpg",
-    "urlReel": "https://www.instagram.com/reel/EJEMPLO1"
+    "titulo": "Nitrato de Chile",
+    "descripcion": "",
+    "categoria": "murales",
+    "lat": 37.72394,
+    "lng": -1.168846,
+    "miniatura": "/img/reels/001-nitrato-de-chile.jpg",
+    "urlReel": "https://www.instagram.com/p/DbfWbuhM_Bs/"
   },
   {
     "id": "002",
-    "titulo": "Castillo de Lorca",
-    "descripcion": "Fortaleza medieval con vistas espectaculares",
-    "categoria": "castillos",
-    "lat": 37.6714,
-    "lng": -1.7011,
-    "miniatura": "/img/reels/castillo-lorca.jpg",
-    "urlReel": "https://www.instagram.com/reel/EJEMPLO2"
+    "titulo": "El Castellar",
+    "descripcion": "",
+    "categoria": "abandonado",
+    "lat": 38.009244,
+    "lng": -1.13338,
+    "miniatura": "/img/reels/002-el-castellar.jpg",
+    "urlReel": "https://www.instagram.com/p/DbNRNMLsdYu/"
   },
   {
     "id": "003",
-    "titulo": "Teatro Romano de Cartagena",
-    "descripcion": "Uno de los teatros romanos mejor conservados de España",
-    "categoria": "yacimientos",
-    "lat": 37.5985,
-    "lng": -0.9863,
-    "miniatura": "/img/reels/teatro-romano-cartagena.jpg",
-    "urlReel": "https://www.instagram.com/reel/EJEMPLO3"
+    "titulo": "Casa de Postas",
+    "descripcion": "",
+    "categoria": "abandonado",
+    "lat": 37.89053,
+    "lng": -1.347947,
+    "miniatura": "/img/reels/003-casa-de-postas.jpg",
+    "urlReel": "https://www.instagram.com/p/DapnS8vMOEG/"
   },
   {
     "id": "004",
-    "titulo": "Real Casino de Murcia",
-    "descripcion": "Joya del eclecticismo murciano del siglo XIX",
-    "categoria": "edificios",
-    "lat": 37.9867,
-    "lng": -1.1303,
-    "miniatura": "/img/reels/casino-murcia.jpg",
-    "urlReel": "https://www.instagram.com/reel/EJEMPLO4"
+    "titulo": "Casa Méndez (Villa Rosalía)",
+    "descripcion": "",
+    "categoria": "abandonado",
+    "lat": 37.891634,
+    "lng": -1.347847,
+    "miniatura": "/img/reels/004-casa-mendez.jpg",
+    "urlReel": "https://www.instagram.com/p/DZh3A7csA2w/"
   },
   {
     "id": "005",
-    "titulo": "Sierra Espuña",
-    "descripcion": "Parque regional con paisajes naturales impresionantes",
-    "categoria": "paisajes",
-    "lat": 37.8667,
-    "lng": -1.5667,
-    "miniatura": "/img/reels/sierra-espuna.jpg",
-    "urlReel": "https://www.instagram.com/reel/EJEMPLO5"
+    "titulo": "Trampantojos",
+    "descripcion": "",
+    "categoria": "murales",
+    "lat": 37.9838,
+    "lng": -1.129428,
+    "miniatura": "/img/reels/005-trampantojos.jpg",
+    "urlReel": "https://www.instagram.com/p/DaXZL5qMK2W/"
+  },
+  {
+    "id": "006",
+    "titulo": "Casa Antonete Gálvez",
+    "descripcion": "",
+    "categoria": "abandonado",
+    "lat": 37.978527,
+    "lng": -1.061142,
+    "miniatura": "/img/reels/006-casa-antonete-galvez.jpg",
+    "urlReel": "https://www.instagram.com/p/DaFQOs6Ms_g/"
+  },
+  {
+    "id": "007",
+    "titulo": "Palacete Hernández Amores",
+    "descripcion": "",
+    "categoria": "abandonado",
+    "lat": 37.9846,
+    "lng": -1.128637,
+    "miniatura": "/img/reels/007-palacete-hernandez-amores.jpg",
+    "urlReel": "https://www.instagram.com/p/DZzcjVuszII/"
+  },
+  {
+    "id": "008",
+    "titulo": "Jerónimo de Ayanz",
+    "descripcion": "",
+    "categoria": "personajes",
+    "lat": 37.984233,
+    "lng": -1.128586,
+    "miniatura": "/img/reels/008-jeronimo-de-ayanz.jpg",
+    "urlReel": "https://www.instagram.com/p/DXQ_vmmjAYG/"
+  },
+  {
+    "id": "009",
+    "titulo": "Palacio Montemar",
+    "descripcion": "",
+    "categoria": "palacios",
+    "lat": 37.984656,
+    "lng": -1.129262,
+    "miniatura": "/img/reels/009-palacio-montemar.jpg",
+    "urlReel": "https://www.instagram.com/p/DYH83nXsMa9/"
+  },
+  {
+    "id": "010",
+    "titulo": "Obdulio Miralles",
+    "descripcion": "",
+    "categoria": "personajes",
+    "lat": 37.985627,
+    "lng": -1.129011,
+    "miniatura": "/img/reels/010-obdulio-miralles.jpg",
+    "urlReel": "https://www.instagram.com/p/DY_xny9MqG6/"
+  },
+  {
+    "id": "011",
+    "titulo": "Caras de agua",
+    "descripcion": "",
+    "categoria": "curiosidades",
+    "lat": 37.9837,
+    "lng": -1.12887,
+    "miniatura": "/img/reels/011-caras-de-agua.jpg",
+    "urlReel": "https://www.instagram.com/p/DYrERkrMmfJ/"
   }
 ]

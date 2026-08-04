@@ -313,7 +313,7 @@ import { url } from '../lib/url';
         <img src="${base}${reel.miniatura}" alt="${reel.titulo}" loading="lazy"
              onerror="this.style.display='none'" />
         <h3>${reel.titulo}</h3>
-        <p>${reel.descripcion}</p>
+        ${reel.descripcion ? `<p>${reel.descripcion}</p>` : ''}
         <a href="${reel.urlReel}" target="_blank" rel="noopener">Ver en Instagram</a>
       </div>
     `);
