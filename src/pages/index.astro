@@ -1,0 +1,339 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import reels from '../data/reels.json';
+import categorias from '../data/categorias.json';
+---
+
+<BaseLayout title="¡Ven que te lo cuento! — Mapa del patrimonio">
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>¡Ven que te lo cuento!</h1>
+      <p>Descubre el patrimonio de la Región de Murcia, reel a reel</p>
+      <a href="#mapa" class="hero-btn">Explorar el mapa ↓</a>
+    </div>
+  </section>
+
+  <section class="map-intro">
+    <div class="container">
+      <h2>Explora el patrimonio</h2>
+      <p>Pulsa sobre los marcadores para ver el reel de cada lugar</p>
+    </div>
+  </section>
+
+  <section id="mapa" class="map-section">
+    <div id="map"></div>
+    <div class="map-legend">
+      <h3>Categorías</h3>
+      {categorias.map((cat) => (
+        <label class="legend-item">
+          <input type="checkbox" checked data-category={cat.id} />
+          <span class="legend-dot" style={`background: ${cat.color}`}></span>
+          {cat.nombre}
+        </label>
+      ))}
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero {
+    position: relative;
+    height: 80vh;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url('/img/hero.jpg');
+    background-size: cover;
+    background-position: center;
+    background-color: var(--color-dark);
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      to bottom,
+      rgba(20, 20, 19, 0.6) 0%,
+      rgba(20, 20, 19, 0.4) 60%,
+      rgba(20, 20, 19, 0.7) 100%
+    );
+  }
+
+  .hero-content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: #fff;
+    padding: 0 1.5rem;
+  }
+
+  .hero-content h1 {
+    font-family: var(--font-serif);
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  }
+
+  .hero-content p {
+    font-size: clamp(1rem, 2.5vw, 1.3rem);
+    opacity: 0.9;
+    margin-bottom: 2rem;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-btn {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background: var(--color-accent);
+    color: #fff;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background 0.2s;
+    text-decoration: none;
+  }
+
+  .hero-btn:hover {
+    background: #c4654a;
+    opacity: 1;
+  }
+
+  .map-intro {
+    padding: 2.5rem 0;
+    text-align: center;
+    background: var(--color-bg);
+  }
+
+  .map-intro h2 {
+    font-size: 1.6rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .map-intro p {
+    color: var(--color-text-muted);
+    font-size: 0.95rem;
+  }
+
+  .map-section {
+    position: relative;
+    height: 80vh;
+    min-height: 500px;
+  }
+
+  #map {
+    width: 100%;
+    height: 100%;
+  }
+
+  .map-legend {
+    position: absolute;
+    bottom: 2rem;
+    right: 1rem;
+    background: var(--color-bg);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    z-index: 500;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
+    font-size: 0.85rem;
+    max-width: 240px;
+  }
+
+  .map-legend h3 {
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    padding: 0.2rem 0;
+  }
+
+  .legend-item input {
+    accent-color: var(--color-accent);
+  }
+
+  .legend-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  @media (max-width: 640px) {
+    .map-legend {
+      bottom: 1rem;
+      right: 0.5rem;
+      left: 0.5rem;
+      max-width: none;
+    }
+  }
+</style>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+
+<style is:global>
+  .custom-marker {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+    line-height: 0;
+  }
+
+  .custom-marker svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .marker-cluster {
+    background: rgba(232, 230, 220, 0.8) !important;
+  }
+
+  .marker-cluster div {
+    background: var(--color-accent) !important;
+    color: #fff !important;
+    font-family: var(--font-sans) !important;
+    font-weight: 600 !important;
+  }
+
+  .reel-popup {
+    text-align: center;
+    min-width: 200px;
+  }
+
+  .reel-popup img {
+    width: 100%;
+    max-width: 200px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+    background: var(--color-border);
+  }
+
+  .reel-popup h3 {
+    font-family: var(--font-serif);
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+    color: var(--color-text);
+  }
+
+  .reel-popup p {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    margin-bottom: 0.5rem;
+  }
+
+  .reel-popup a {
+    display: inline-block;
+    background: var(--color-accent);
+    color: #fff;
+    padding: 0.35rem 1rem;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  .reel-popup a:hover {
+    opacity: 0.9;
+  }
+
+  .leaflet-popup-content-wrapper {
+    border-radius: 12px !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15) !important;
+  }
+</style>
+
+<script define:vars={{ reels, categorias }}>
+  window.__reelsData = reels;
+  window.__categoriasData = categorias;
+</script>
+
+<script>
+  import L from 'leaflet';
+  import 'leaflet.markercluster';
+
+  const reels = (window as any).__reelsData;
+  const categorias = (window as any).__categoriasData;
+
+  const map = L.map('map').setView([37.98, -1.13], 9);
+
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
+    maxZoom: 20,
+    subdomains: 'abcd',
+  }).addTo(map);
+
+  const catMap: Record<string, any> = {};
+  categorias.forEach((c: any) => { catMap[c.id] = c; });
+
+  const clusterGroup = (L as any).markerClusterGroup({
+    maxClusterRadius: 50,
+    spiderfyOnMaxZoom: true,
+    showCoverageOnHover: false,
+  });
+
+  const markers: any[] = [];
+
+  reels.forEach((reel: any) => {
+    const cat = catMap[reel.categoria] || { color: '#D97757', icono: '📍' };
+
+    const icon = L.divIcon({
+      className: '',
+      html: `<div class="custom-marker" style="background:${cat.color}">${cat.icono || '<svg viewBox="0 0 24 24" fill="white" width="16" height="16"><circle cx="12" cy="10" r="3"/><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/></svg>'}</div>`,
+      iconSize: [32, 32],
+      iconAnchor: [16, 16],
+      popupAnchor: [0, -18],
+    });
+
+    const marker = L.marker([reel.lat, reel.lng], { icon });
+
+    marker.bindPopup(`
+      <div class="reel-popup">
+        <img src="${reel.miniatura}" alt="${reel.titulo}" loading="lazy"
+             onerror="this.style.display='none'" />
+        <h3>${reel.titulo}</h3>
+        <p>${reel.descripcion}</p>
+        <a href="${reel.urlReel}" target="_blank" rel="noopener">Ver en Instagram</a>
+      </div>
+    `);
+
+    (marker as any)._reelCategory = reel.categoria;
+    markers.push(marker);
+    clusterGroup.addLayer(marker);
+  });
+
+  map.addLayer(clusterGroup);
+
+  document.querySelectorAll<HTMLInputElement>('.map-legend input[data-category]').forEach(checkbox => {
+    checkbox.addEventListener('change', () => {
+      const cat = checkbox.dataset.category;
+      const checked = checkbox.checked;
+      markers.forEach(m => {
+        if ((m as any)._reelCategory === cat) {
+          if (checked) {
+            clusterGroup.addLayer(m);
+          } else {
+            clusterGroup.removeLayer(m);
+          }
+        }
+      });
+    });
+  });
+
+</script>

@@ -1,0 +1,52 @@
+[
+  {
+    "id": "001",
+    "titulo": "Catedral de Murcia",
+    "descripcion": "La impresionante fachada barroca de la Catedral de Santa María",
+    "categoria": "iglesias",
+    "lat": 37.9838,
+    "lng": -1.1285,
+    "miniatura": "/img/reels/catedral-murcia.jpg",
+    "urlReel": "https://www.instagram.com/reel/EJEMPLO1"
+  },
+  {
+    "id": "002",
+    "titulo": "Castillo de Lorca",
+    "descripcion": "Fortaleza medieval con vistas espectaculares",
+    "categoria": "castillos",
+    "lat": 37.6714,
+    "lng": -1.7011,
+    "miniatura": "/img/reels/castillo-lorca.jpg",
+    "urlReel": "https://www.instagram.com/reel/EJEMPLO2"
+  },
+  {
+    "id": "003",
+    "titulo": "Teatro Romano de Cartagena",
+    "descripcion": "Uno de los teatros romanos mejor conservados de España",
+    "categoria": "yacimientos",
+    "lat": 37.5985,
+    "lng": -0.9863,
+    "miniatura": "/img/reels/teatro-romano-cartagena.jpg",
+    "urlReel": "https://www.instagram.com/reel/EJEMPLO3"
+  },
+  {
+    "id": "004",
+    "titulo": "Real Casino de Murcia",
+    "descripcion": "Joya del eclecticismo murciano del siglo XIX",
+    "categoria": "edificios",
+    "lat": 37.9867,
+    "lng": -1.1303,
+    "miniatura": "/img/reels/casino-murcia.jpg",
+    "urlReel": "https://www.instagram.com/reel/EJEMPLO4"
+  },
+  {
+    "id": "005",
+    "titulo": "Sierra Espuña",
+    "descripcion": "Parque regional con paisajes naturales impresionantes",
+    "categoria": "paisajes",
+    "lat": 37.8667,
+    "lng": -1.5667,
+    "miniatura": "/img/reels/sierra-espuna.jpg",
+    "urlReel": "https://www.instagram.com/reel/EJEMPLO5"
+  }
+]

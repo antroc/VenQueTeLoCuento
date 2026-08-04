@@ -1,0 +1,81 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Política de privacidad — ¡Ven que te lo cuento!">
+  <section class="container legal">
+    <h1>Política de privacidad</h1>
+    <p class="updated">Última actualización: marzo de 2026</p>
+
+    <h2>Responsable del tratamiento</h2>
+    <p>
+      El responsable del tratamiento de los datos personales es el titular de la web
+      <strong>¡Ven que te lo cuento!</strong>. Puedes contactar a través de las redes sociales
+      indicadas en esta página o mediante el correo electrónico que se facilitará a quien lo solicite.
+    </p>
+
+    <h2>Datos recopilados</h2>
+    <p>
+      Esta web es un sitio estático alojado en GitHub Pages. <strong>No recopila datos personales
+      de los visitantes</strong>. No se utilizan formularios de contacto, cuentas de usuario,
+      cookies propias ni herramientas de analítica que identifiquen a los usuarios.
+    </p>
+
+    <h2>Cookies</h2>
+    <p>
+      Esta web no utiliza cookies propias. Sin embargo, el servicio de alojamiento (GitHub Pages)
+      y los servicios de terceros integrados (como los mapas de OpenStreetMap o contenido embebido
+      de Instagram) pueden establecer cookies técnicas necesarias para su funcionamiento.
+    </p>
+
+    <h2>Enlaces a terceros</h2>
+    <p>
+      Esta web contiene enlaces a plataformas de terceros como Instagram. Al hacer clic en estos
+      enlaces, accederás a sitios web con sus propias políticas de privacidad, sobre las que
+      <strong>¡Ven que te lo cuento!</strong> no tiene responsabilidad.
+    </p>
+
+    <h2>Derechos del usuario</h2>
+    <p>
+      De acuerdo con el Reglamento General de Protección de Datos (RGPD) y la Ley Orgánica 3/2018
+      de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD), cualquier
+      usuario tiene derecho a ejercer sus derechos de acceso, rectificación, supresión, limitación
+      del tratamiento, portabilidad y oposición contactando al responsable del sitio web.
+    </p>
+
+    <h2>Modificaciones</h2>
+    <p>
+      Esta política de privacidad puede actualizarse para adaptarse a cambios normativos o a nuevas
+      funcionalidades del sitio web. Se recomienda revisarla periódicamente.
+    </p>
+  </section>
+</BaseLayout>
+
+<style>
+  .legal {
+    padding: 3rem 1.5rem 4rem;
+    max-width: 720px;
+  }
+
+  .legal h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .legal .updated {
+    color: var(--color-text-muted);
+    font-size: 0.85rem;
+    margin-bottom: 2rem;
+  }
+
+  .legal h2 {
+    font-size: 1.3rem;
+    margin: 2rem 0 0.5rem;
+  }
+
+  .legal p {
+    line-height: 1.75;
+    margin-bottom: 1rem;
+    color: var(--color-text-secondary);
+  }
+</style>

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "iglesias",
+    "nombre": "Iglesias y catedrales",
+    "icono": "<svg viewBox='0 0 24 24' fill='white' width='16' height='16'><path d='M12 2L8 6v2H6v2H4v10h16V10h-2V8h-2V6l-4-4zm0 3.41L14 7.41V10h2v2h2v6H6v-6h2v-2h2V7.41l2-2z'/><rect x='11' y='6' width='2' height='4' fill='white'/><rect x='10' y='8' width='4' height='2' fill='white'/></svg>",
+    "color": "#D97757"
+  },
+  {
+    "id": "castillos",
+    "nombre": "Castillos y fortalezas",
+    "icono": "<svg viewBox='0 0 24 24' fill='white' width='16' height='16'><path d='M2 20h20v-2H2v2zm2-4h2v-3h2v3h4v-3h2v3h2v-3h2v3h2V8h-4V4h-2v4h-4V4H8v4H4v8z'/></svg>",
+    "color": "#EDA100"
+  },
+  {
+    "id": "yacimientos",
+    "nombre": "Yacimientos arqueológicos",
+    "icono": "<svg viewBox='0 0 24 24' fill='white' width='16' height='16'><path d='M6 2v6H4v2h2v10h2V10h2V8H8V4h3v4h2V4h3v4h-2v2h2v10h2V10h2V8h-2V2h-5v4h-2V2H6z'/></svg>",
+    "color": "#7B8F3C"
+  },
+  {
+    "id": "edificios",
+    "nombre": "Edificios singulares",
+    "icono": "<svg viewBox='0 0 24 24' fill='white' width='16' height='16'><path d='M12 3L2 12h3v8h14v-8h3L12 3zm0 3.19L18 12v6H6v-6l6-5.81z'/></svg>",
+    "color": "#5B7FA5"
+  },
+  {
+    "id": "paisajes",
+    "nombre": "Paisajes naturales",
+    "icono": "<svg viewBox='0 0 24 24' fill='white' width='16' height='16'><path d='M14 6l-4.22 5.63L7 8.5 2 16h20L14 6zm-4.22 8.37L7 10.83 4.26 15h5.48l.04.01v-.01l.01.01L12 11.74l5.74 7.63-7.96-5z'/></svg>",
+    "color": "#4A9E6D"
+  }
+]
