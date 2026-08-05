@@ -108,5 +108,205 @@
     "lng": -1.12887,
     "miniatura": "/img/reels/011-caras-de-agua.jpg",
     "urlReel": "https://www.instagram.com/p/DYrERkrMmfJ/"
+  },
+  {
+    "id": "012",
+    "titulo": "Ramón Gaya",
+    "descripcion": "",
+    "categoria": "personajes",
+    "lat": 37.985666,
+    "lng": -1.132597,
+    "miniatura": "/img/reels/012-ramon-gaya.jpg",
+    "urlReel": "https://www.instagram.com/p/DYZRtoYscGI/"
+  },
+  {
+    "id": "013",
+    "titulo": "Los gigantes de piedra",
+    "descripcion": "",
+    "categoria": "curiosidades",
+    "lat": 37.987047,
+    "lng": -1.129512,
+    "miniatura": "/img/reels/013-gigantes-de-piedra.jpg",
+    "urlReel": "https://www.instagram.com/p/DX1H4rkMaj6/"
+  },
+  {
+    "id": "014",
+    "titulo": "Vestimenta del nazareno huertano",
+    "descripcion": "",
+    "categoria": "semana-santa",
+    "lat": 37.979686,
+    "lng": -1.129867,
+    "miniatura": "/img/reels/014-vestimenta-nazareno-huertano.jpg",
+    "urlReel": "https://www.instagram.com/p/DWs7wlTDMSL/"
+  },
+  {
+    "id": "015",
+    "titulo": "Cristo de las Claras",
+    "descripcion": "",
+    "categoria": "semana-santa",
+    "lat": 37.988652,
+    "lng": -1.129948,
+    "miniatura": "/img/reels/015-cristo-de-las-claras.jpg",
+    "urlReel": "https://www.instagram.com/p/DWnu12bjJ2C/"
+  },
+  {
+    "id": "016",
+    "titulo": "Los secretos de la Dolorosa de Salzillo",
+    "descripcion": "",
+    "categoria": "semana-santa",
+    "lat": 37.987055,
+    "lng": -1.13829,
+    "miniatura": "/img/reels/016-dolorosa-de-salzillo.jpg",
+    "urlReel": "https://www.instagram.com/p/DWa9lzSDKXy/"
+  },
+  {
+    "id": "017",
+    "titulo": "El Berrugo de los Coloraos",
+    "descripcion": "",
+    "categoria": "semana-santa",
+    "lat": 37.979616,
+    "lng": -1.129707,
+    "miniatura": "/img/reels/017-berrugo-de-los-coloraos.jpg",
+    "urlReel": "https://www.instagram.com/p/DWLhauwDLf5/"
+  },
+  {
+    "id": "018",
+    "titulo": "La fachada de los Apóstoles",
+    "descripcion": "",
+    "categoria": "curiosidades",
+    "lat": 37.983794,
+    "lng": -1.128728,
+    "miniatura": "/img/reels/018-fachada-de-los-apostoles.jpg",
+    "urlReel": "https://www.instagram.com/p/DV3NnMQDPmh/"
+  },
+  {
+    "id": "019",
+    "titulo": "Semana Santa de Murcia",
+    "descripcion": "",
+    "categoria": "semana-santa",
+    "lat": 37.984419,
+    "lng": -1.12857,
+    "miniatura": "/img/reels/019-semana-santa-murcia.jpg",
+    "urlReel": "https://www.instagram.com/p/DV52XenDPmM/"
+  },
+  {
+    "id": "020",
+    "titulo": "Fiestas de Primavera",
+    "descripcion": "",
+    "categoria": "fiestas",
+    "lat": 37.987153,
+    "lng": -1.13065,
+    "miniatura": "/img/reels/020-fiestas-de-primavera.jpg",
+    "urlReel": "https://www.instagram.com/p/DVnd3cuDLLx/"
+  },
+  {
+    "id": "021",
+    "titulo": "Paco Rabal",
+    "descripcion": "",
+    "categoria": "personajes",
+    "lat": 37.986894,
+    "lng": -1.131568,
+    "miniatura": "/img/reels/021-paco-rabal.jpg",
+    "urlReel": "https://www.instagram.com/p/DVk53h9jGxM/"
+  },
+  {
+    "id": "022",
+    "titulo": "425 aniversario de la Cofradía de Nuestro Padre Jesús",
+    "descripcion": "",
+    "categoria": "semana-santa",
+    "lat": 37.986739,
+    "lng": -1.138157,
+    "miniatura": "/img/reels/022-425-aniversario-cofradia-jesus.jpg",
+    "urlReel": "https://www.instagram.com/p/DVVkVkajKUC/"
+  },
+  {
+    "id": "023",
+    "titulo": "Arco de Santo Domingo",
+    "descripcion": "",
+    "categoria": "palacios",
+    "lat": 37.987,
+    "lng": -1.129655,
+    "miniatura": "/img/reels/023-arco-de-santo-domingo.jpg",
+    "urlReel": "https://www.instagram.com/p/DVS7KhGDG7q/"
+  },
+  {
+    "id": "024",
+    "titulo": "Edificio de los Nueve Pisos",
+    "descripcion": "",
+    "categoria": "curiosidades",
+    "lat": 37.987898,
+    "lng": -1.13452,
+    "miniatura": "/img/reels/024-edificio-nueve-pisos.jpg",
+    "urlReel": "https://www.instagram.com/p/DVBAUHADE1s/"
+  },
+  {
+    "id": "025",
+    "titulo": "La jarra de la novia",
+    "descripcion": "",
+    "categoria": "tradiciones",
+    "lat": 37.992466,
+    "lng": -1.130578,
+    "miniatura": "/img/reels/025-jarra-de-la-novia.jpg",
+    "urlReel": "https://www.instagram.com/p/DUu4Yy7jNsy/"
+  },
+  {
+    "id": "026",
+    "titulo": "El pastel de carne",
+    "descripcion": "",
+    "categoria": "gastronomia",
+    "lat": 37.985441,
+    "lng": -1.129045,
+    "miniatura": "/img/reels/026-pastel-de-carne.jpg",
+    "urlReel": "https://www.instagram.com/p/DUc7H25DLru/"
+  },
+  {
+    "id": "027",
+    "titulo": "Cartel de Semana Santa 2026",
+    "descripcion": "",
+    "categoria": "artistas",
+    "lat": 37.985501,
+    "lng": -1.130995,
+    "miniatura": "/img/reels/027-cartel-semana-santa-2026.jpg",
+    "urlReel": "https://www.instagram.com/p/DTnZxRGDCqB/"
+  },
+  {
+    "id": "028",
+    "titulo": "Viktoria Filionkina",
+    "descripcion": "",
+    "categoria": "artistas",
+    "lat": 37.985441,
+    "lng": -1.129045,
+    "miniatura": "/img/reels/028-viktoria-filionkina.jpg",
+    "urlReel": "https://www.instagram.com/p/DTXVjBojFxm/"
+  },
+  {
+    "id": "029",
+    "titulo": "El Roscón de Reyes",
+    "descripcion": "",
+    "categoria": "tradiciones",
+    "lat": 37.992466,
+    "lng": -1.130578,
+    "miniatura": "/img/reels/029-roscon-de-reyes.jpg",
+    "urlReel": "https://www.instagram.com/p/DTIq-1ZjNpn/"
+  },
+  {
+    "id": "030",
+    "titulo": "Adrián Luis Viudes Romero",
+    "descripcion": "",
+    "categoria": "personajes",
+    "lat": 37.975805,
+    "lng": -1.132731,
+    "miniatura": "/img/reels/030-adrian-luis-viudes.jpg",
+    "urlReel": "https://www.instagram.com/p/DTFUyGRjGK3/"
+  },
+  {
+    "id": "031",
+    "titulo": "Las 12 uvas de Nochevieja",
+    "descripcion": "",
+    "categoria": "tradiciones",
+    "lat": 37.983295,
+    "lng": -1.130326,
+    "miniatura": "/img/reels/031-12-uvas-nochevieja.jpg",
+    "urlReel": "https://www.instagram.com/p/DS7HG7JjCPs/"
   }
 ]
