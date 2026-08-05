@@ -34,6 +34,7 @@ const currentPath = sinBase(Astro.url.pathname);
       </button>
       <ul class="nav-links">
         <li><a href={url('/')} class:list={[{ active: currentPath === '/' }]}>Mapa</a></li>
+        <li><a href={url('/videos')} class:list={[{ active: currentPath.startsWith('/videos') }]}>Videos</a></li>
         <li><a href={url('/blog')} class:list={[{ active: currentPath.startsWith('/blog') }]}>Blog</a></li>
         <li><a href={url('/sobre-mi')} class:list={[{ active: currentPath === '/sobre-mi/' || currentPath === '/sobre-mi' }]}>Sobre mí</a></li>
       </ul>

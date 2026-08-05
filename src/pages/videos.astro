@@ -1,0 +1,273 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import reels from '../data/reels.json';
+import categorias from '../data/categorias.json';
+import { url } from '../lib/url';
+
+// Secciones en el mismo orden que la leyenda del mapa, sin categorías vacías.
+// Dentro de cada una se respeta el orden de reels.json.
+const secciones = categorias
+  .map((cat) => ({ cat, videos: reels.filter((r) => r.categoria === cat.id) }))
+  .filter((s) => s.videos.length > 0);
+
+const total = reels.length;
+---
+
+<BaseLayout
+  title="Videos — ¡Ven que te lo cuento!"
+  description="Todos los reels de patrimonio de la Región de Murcia, agrupados por categoría."
+>
+  <section class="videos-header">
+    <div class="container">
+      <h1>Videos</h1>
+      <p>{total} lugares e historias de la Región de Murcia, agrupados por categoría</p>
+    </div>
+  </section>
+
+  <section class="container videos-content">
+    <div class="cats-filter">
+      <span class="cats-label">Filtrar:</span>
+      <button class="cat-btn active" data-cat="all">Todas</button>
+      {secciones.map(({ cat, videos }) => (
+        <button class="cat-btn" data-cat={cat.id}>
+          <span class="cat-dot" style={`background: ${cat.color}`}></span>
+          {cat.nombre} ({videos.length})
+        </button>
+      ))}
+    </div>
+
+    {secciones.map(({ cat, videos }) => (
+      <section class="cat-section" data-cat={cat.id}>
+        <h2 class="cat-title">
+          <span class="cat-badge" style={`background: ${cat.color}`} set:html={cat.icono} />
+          {cat.nombre}
+          <span class="cat-count">{videos.length}</span>
+        </h2>
+
+        <div class="videos-grid">
+          {videos.map((reel) => (
+            <article class="video-card">
+              <a
+                href={reel.urlReel}
+                target="_blank"
+                rel="noopener"
+                class="video-thumb"
+                style={`background: ${cat.color}`}
+                aria-label={`Ver «${reel.titulo}» en Instagram`}
+              >
+                <span class="thumb-icon" set:html={cat.icono} />
+                <img
+                  src={url(reel.miniatura)}
+                  alt={reel.titulo}
+                  loading="lazy"
+                  onerror="this.remove()"
+                />
+                <span class="thumb-play" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" width="34" height="34" fill="white"><path d="M8 5v14l11-7z"/></svg>
+                </span>
+              </a>
+              <h3><a href={reel.urlReel} target="_blank" rel="noopener">{reel.titulo}</a></h3>
+              <a class="map-link" href={url(`/?reel=${reel.id}#mapa`)}>Ver en el mapa</a>
+            </article>
+          ))}
+        </div>
+      </section>
+    ))}
+  </section>
+</BaseLayout>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>('.cat-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.cat-btn').forEach((b) => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const cat = btn.dataset.cat;
+      document.querySelectorAll<HTMLElement>('.cat-section').forEach((sec) => {
+        sec.style.display = cat === 'all' || sec.dataset.cat === cat ? '' : 'none';
+      });
+    });
+  });
+</script>
+
+<style>
+  .videos-header {
+    padding: 3rem 0 2rem;
+    border-bottom: 1px solid var(--color-border);
+    margin-bottom: 2rem;
+  }
+
+  .videos-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .videos-header p {
+    color: var(--color-text-muted);
+  }
+
+  .videos-content {
+    padding-bottom: 4rem;
+  }
+
+  .cats-filter {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    align-items: center;
+    margin-bottom: 2.5rem;
+  }
+
+  .cats-label {
+    font-weight: 500;
+    font-size: 0.9rem;
+    color: var(--color-text-secondary);
+  }
+
+  .cat-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: transparent;
+    border: 1px solid var(--color-border);
+    padding: 0.3rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    font-family: var(--font-sans);
+    color: var(--color-text-secondary);
+    transition: all 0.2s;
+  }
+
+  .cat-btn:hover,
+  .cat-btn.active {
+    background: var(--color-accent);
+    color: #fff;
+    border-color: var(--color-accent);
+  }
+
+  .cat-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .cat-section {
+    margin-bottom: 3rem;
+  }
+
+  .cat-title {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 1.4rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .cat-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .cat-count {
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    background: rgba(20, 20, 19, 0.06);
+    padding: 0.15rem 0.6rem;
+    border-radius: 12px;
+  }
+
+  .videos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1.25rem;
+  }
+
+  .video-card h3 {
+    font-family: var(--font-sans);
+    font-size: 0.9rem;
+    font-weight: 600;
+    line-height: 1.35;
+    margin: 0.6rem 0 0.15rem;
+  }
+
+  .video-card h3 a {
+    color: var(--color-text);
+  }
+
+  .video-card h3 a:hover {
+    color: var(--color-accent);
+    opacity: 1;
+  }
+
+  .video-thumb {
+    position: relative;
+    display: block;
+    aspect-ratio: 4 / 5;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
+  /* Icono de la categoría como fondo mientras no hay miniatura */
+  .thumb-icon {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.45;
+  }
+
+  .thumb-icon :global(svg) {
+    width: 42px;
+    height: 42px;
+  }
+
+  .video-thumb img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .thumb-play {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(20, 20, 19, 0.25);
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .video-thumb:hover .thumb-play {
+    opacity: 1;
+  }
+
+  .map-link {
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+  }
+
+  .map-link:hover {
+    color: var(--color-accent);
+    opacity: 1;
+  }
+
+  @media (max-width: 640px) {
+    .videos-grid {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+  }
+</style>

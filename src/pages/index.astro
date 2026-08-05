@@ -319,11 +319,22 @@ import { url } from '../lib/url';
     `);
 
     (marker as any)._reelCategory = reel.categoria;
+    (marker as any)._reelId = reel.id;
     markers.push(marker);
     clusterGroup.addLayer(marker);
   });
 
   map.addLayer(clusterGroup);
+
+  // Enlaces "ver en el mapa" de la página de videos: /?reel=012#mapa
+  // centra el mapa en ese reel y abre su popup.
+  const reelPedido = new URLSearchParams(window.location.search).get('reel');
+  if (reelPedido) {
+    const marker = markers.find(m => (m as any)._reelId === reelPedido);
+    if (marker) {
+      clusterGroup.zoomToShowLayer(marker, () => marker.openPopup());
+    }
+  }
 
   document.querySelectorAll<HTMLInputElement>('.map-legend input[data-category]').forEach(checkbox => {
     checkbox.addEventListener('change', () => {
