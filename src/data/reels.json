@@ -308,5 +308,165 @@
     "lng": -1.130326,
     "miniatura": "/img/reels/031-12-uvas-nochevieja.jpg",
     "urlReel": "https://www.instagram.com/p/DS7HG7JjCPs/"
+  },
+  {
+    "id": "032",
+    "titulo": "Paseo por Archena",
+    "descripcion": "",
+    "categoria": "palacios",
+    "lat": 38.11515,
+    "lng": -1.294238,
+    "miniatura": "/img/reels/032-paseo-por-archena.jpg",
+    "urlReel": "https://www.instagram.com/p/DSwsx1qDJ7W/"
+  },
+  {
+    "id": "033",
+    "titulo": "Belén San Esteban",
+    "descripcion": "",
+    "categoria": "tradiciones",
+    "lat": 37.988414,
+    "lng": -1.133898,
+    "miniatura": "/img/reels/033-belen-san-esteban.jpg",
+    "urlReel": "https://www.instagram.com/p/DShSkTBDIE0/"
+  },
+  {
+    "id": "034",
+    "titulo": "Curiosidades del Belén de la Pava",
+    "descripcion": "",
+    "categoria": "tradiciones",
+    "lat": 37.983208,
+    "lng": -1.128111,
+    "miniatura": "/img/reels/034-belen-de-la-pava.jpg",
+    "urlReel": "https://www.instagram.com/p/DSPMcH2DATF/"
+  },
+  {
+    "id": "035",
+    "titulo": "Receta Cordiales",
+    "descripcion": "",
+    "categoria": "gastronomia",
+    "lat": 37.990555,
+    "lng": -1.1194,
+    "miniatura": "/img/reels/035-receta-cordiales.jpg",
+    "urlReel": "https://www.instagram.com/p/DR-DxhvDOml/"
+  },
+  {
+    "id": "036",
+    "titulo": "Conde de Floridablanca",
+    "descripcion": "",
+    "categoria": "personajes",
+    "lat": 37.983268,
+    "lng": -1.126667,
+    "miniatura": "/img/reels/036-conde-de-floridablanca.jpg",
+    "urlReel": "https://www.instagram.com/p/DRrHMXrjFoG/"
+  },
+  {
+    "id": "037",
+    "titulo": "Procesión Magna Jubilar 2025",
+    "descripcion": "",
+    "categoria": "semana-santa",
+    "lat": 37.98507,
+    "lng": -1.13329,
+    "miniatura": "/img/reels/037-procesion-magna-jubilar-2025.jpg",
+    "urlReel": "https://www.instagram.com/p/DRE4CaADJIh/"
+  },
+  {
+    "id": "038",
+    "titulo": "Fundación Pedro Cano",
+    "descripcion": "",
+    "categoria": "artistas",
+    "lat": 38.17827,
+    "lng": -1.376413,
+    "miniatura": "/img/reels/038-fundacion-pedro-cano.jpg",
+    "urlReel": "https://www.instagram.com/p/DQzx4CuCL2u/"
+  },
+  {
+    "id": "039",
+    "titulo": "La Contraparada",
+    "descripcion": "",
+    "categoria": "curiosidades",
+    "lat": 37.995706,
+    "lng": -1.217885,
+    "miniatura": "/img/reels/039-la-contraparada.jpg",
+    "urlReel": "https://www.instagram.com/p/DQwo45TjMoA/"
+  },
+  {
+    "id": "040",
+    "titulo": "Plaza Santa Catalina",
+    "descripcion": "",
+    "categoria": "curiosidades",
+    "lat": 37.985112,
+    "lng": -1.132774,
+    "miniatura": "/img/reels/040-plaza-santa-catalina.jpg",
+    "urlReel": "https://www.instagram.com/p/DQi_G7djPtc/"
+  },
+  {
+    "id": "041",
+    "titulo": "Truco o Trato",
+    "descripcion": "",
+    "categoria": "tradiciones",
+    "lat": 37.989208,
+    "lng": -1.153353,
+    "miniatura": "/img/reels/041-truco-o-trato.jpg",
+    "urlReel": "https://www.instagram.com/p/DQToJ-3DOSl/"
+  },
+  {
+    "id": "042",
+    "titulo": "Elisa Séiquer",
+    "descripcion": "",
+    "categoria": "personajes",
+    "lat": 37.992205,
+    "lng": -1.120087,
+    "miniatura": "/img/reels/042-elisa-seiquer.jpg",
+    "urlReel": "https://www.instagram.com/p/DQOG-hujB_l/"
+  },
+  {
+    "id": "043",
+    "titulo": "Escudos nobiliarios",
+    "descripcion": "",
+    "categoria": "curiosidades",
+    "lat": 37.987847,
+    "lng": -1.131287,
+    "miniatura": "/img/reels/043-escudos-nobiliarios.jpg",
+    "urlReel": "https://www.instagram.com/p/DP8vJGTDJDx/"
+  },
+  {
+    "id": "044",
+    "titulo": "Molino del Batán",
+    "descripcion": "",
+    "categoria": "abandonado",
+    "lat": 38.000297,
+    "lng": -1.118708,
+    "miniatura": "/img/reels/044-molino-del-batan.jpg",
+    "urlReel": "https://www.instagram.com/p/DPqLzfhjBkF/"
+  },
+  {
+    "id": "045",
+    "titulo": "La matrona de Murcia",
+    "descripcion": "",
+    "categoria": "curiosidades",
+    "lat": 37.983742,
+    "lng": -1.133202,
+    "miniatura": "/img/reels/045-matrona-de-murcia.jpg",
+    "urlReel": "https://www.instagram.com/p/DPYRbH1DGHs/"
+  },
+  {
+    "id": "046",
+    "titulo": "José Antonio Rodríguez",
+    "descripcion": "",
+    "categoria": "personajes",
+    "lat": 37.987041,
+    "lng": -1.135155,
+    "miniatura": "/img/reels/046-jose-antonio-rodriguez.jpg",
+    "urlReel": "https://www.instagram.com/p/DPGRHbUjAvW/"
+  },
+  {
+    "id": "047",
+    "titulo": "Puerta de los Apóstoles",
+    "descripcion": "",
+    "categoria": "curiosidades",
+    "lat": 37.983685,
+    "lng": -1.128875,
+    "miniatura": "/img/reels/047-puerta-de-los-apostoles.jpg",
+    "urlReel": "https://www.instagram.com/p/DO0SWzRjBPY/"
   }
 ]
