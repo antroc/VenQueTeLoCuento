@@ -46,5 +46,11 @@
     "nombre": "Artistas contemporáneos",
     "icono": "<svg viewBox='0 0 24 24' fill='white' width='16' height='16'><path d='M12 3a9 9 0 000 18c.83 0 1.5-.67 1.5-1.5 0-.39-.15-.74-.39-1.01a1.5 1.5 0 011.13-2.49H16a5 5 0 005-5c0-4.42-4.03-8-9-8zM6.5 12a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm3-4a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm5 0a1.5 1.5 0 110-3 1.5 1.5 0 010 3zm3 4a1.5 1.5 0 110-3 1.5 1.5 0 010 3z'/></svg>",
     "color": "#3A8E8C"
+  },
+  {
+    "id": "leyendas",
+    "nombre": "Historia y leyendas",
+    "icono": "<svg viewBox='0 0 24 24' fill='white' width='16' height='16'><path d='M18 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V4a2 2 0 00-2-2zm-5 2h2v5l-1-.75L13 9V4z'/></svg>",
+    "color": "#8C5A32"
   }
 ]

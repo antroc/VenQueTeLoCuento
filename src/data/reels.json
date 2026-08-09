@@ -468,5 +468,245 @@
     "lng": -1.128875,
     "miniatura": "/img/reels/047-puerta-de-los-apostoles.jpg",
     "urlReel": "https://www.instagram.com/p/DO0SWzRjBPY/"
+  },
+  {
+    "id": "048",
+    "titulo": "La Iluminada de la Algaida",
+    "descripcion": "",
+    "categoria": "personajes",
+    "lat": 38.108538,
+    "lng": -1.280136,
+    "miniatura": "/img/reels/048-la-iluminada-de-la-algaida.jpg",
+    "urlReel": "https://www.instagram.com/p/DbxmoI8M6CW/"
+  },
+  {
+    "id": "049",
+    "titulo": "La Reina de las Lavanderas",
+    "descripcion": "",
+    "categoria": "personajes",
+    "lat": 37.988596,
+    "lng": -1.137308,
+    "miniatura": "/img/reels/049-reina-de-las-lavanderas.jpg",
+    "urlReel": "https://www.instagram.com/p/DOjAORWDIH1/"
+  },
+  {
+    "id": "050",
+    "titulo": "Fundición Peña",
+    "descripcion": "",
+    "categoria": "curiosidades",
+    "lat": 37.97538,
+    "lng": -1.129051,
+    "miniatura": "/img/reels/050-fundicion-pena.jpg",
+    "urlReel": "https://www.instagram.com/p/DOQH7QJjB5R/"
+  },
+  {
+    "id": "051",
+    "titulo": "Gran Feria de Murcia",
+    "descripcion": "",
+    "categoria": "tradiciones",
+    "lat": 37.991656,
+    "lng": -1.130422,
+    "miniatura": "/img/reels/051-gran-feria-de-murcia.jpg",
+    "urlReel": "https://www.instagram.com/p/DN-E-FKDE-v/"
+  },
+  {
+    "id": "052",
+    "titulo": "Casas Torres",
+    "descripcion": "",
+    "categoria": "abandonado",
+    "lat": 38.002241,
+    "lng": -1.160964,
+    "miniatura": "/img/reels/052-casas-torres.jpg",
+    "urlReel": "https://www.instagram.com/p/DNsUMI92Odr/"
+  },
+  {
+    "id": "053",
+    "titulo": "Leyenda de Ali y Cantara",
+    "descripcion": "",
+    "categoria": "leyendas",
+    "lat": 38.349262,
+    "lng": -0.477667,
+    "miniatura": "/img/reels/053-leyenda-de-ali-y-cantara.jpg",
+    "urlReel": "https://www.instagram.com/p/DNYRMpNsl4f/"
+  },
+  {
+    "id": "054",
+    "titulo": "Escudo de Murcia",
+    "descripcion": "",
+    "categoria": "curiosidades",
+    "lat": 37.983634,
+    "lng": -1.13029,
+    "miniatura": "/img/reels/054-escudo-de-murcia.jpg",
+    "urlReel": "https://www.instagram.com/p/DNIBASRtDdi/"
+  },
+  {
+    "id": "055",
+    "titulo": "Naufragio del Sirio",
+    "descripcion": "",
+    "categoria": "leyendas",
+    "lat": 37.63535,
+    "lng": -0.690226,
+    "miniatura": "/img/reels/055-naufragio-del-sirio.jpg",
+    "urlReel": "https://www.instagram.com/p/DM161W9tFtv/"
+  },
+  {
+    "id": "056",
+    "titulo": "Patrimonio gráfico",
+    "descripcion": "",
+    "categoria": "curiosidades",
+    "lat": 37.991157,
+    "lng": -1.135114,
+    "miniatura": "/img/reels/056-patrimonio-grafico.jpg",
+    "urlReel": "https://www.instagram.com/p/DMkD5tntfQt/"
+  },
+  {
+    "id": "057",
+    "titulo": "Faro de Cabo de Palos",
+    "descripcion": "",
+    "categoria": "curiosidades",
+    "lat": 37.63535,
+    "lng": -0.690226,
+    "miniatura": "/img/reels/057-faro-de-cabo-de-palos.jpg",
+    "urlReel": "https://www.instagram.com/p/DMSIDXVN0zP/"
+  },
+  {
+    "id": "058",
+    "titulo": "Origen del Vitor",
+    "descripcion": "",
+    "categoria": "curiosidades",
+    "lat": 37.984318,
+    "lng": -1.128682,
+    "miniatura": "/img/reels/058-origen-del-vitor.jpg",
+    "urlReel": "https://www.instagram.com/p/DMKPQb1Ny9R/"
+  },
+  {
+    "id": "059",
+    "titulo": "Origen de la Tapa",
+    "descripcion": "",
+    "categoria": "gastronomia",
+    "lat": 37.984286,
+    "lng": -1.126362,
+    "miniatura": "/img/reels/059-origen-de-la-tapa.jpg",
+    "urlReel": "https://www.instagram.com/p/DMAm6ktNu5I/"
+  },
+  {
+    "id": "060",
+    "titulo": "Carmen Conde",
+    "descripcion": "",
+    "categoria": "personajes",
+    "lat": 37.603601,
+    "lng": -0.988613,
+    "miniatura": "/img/reels/060-carmen-conde.jpg",
+    "urlReel": "https://www.instagram.com/p/DLuneVDNR8H/"
+  },
+  {
+    "id": "061",
+    "titulo": "Origen del cajero automático",
+    "descripcion": "",
+    "categoria": "leyendas",
+    "lat": 37.988454,
+    "lng": -1.129609,
+    "miniatura": "/img/reels/061-origen-del-cajero-automatico.jpg",
+    "urlReel": "https://www.instagram.com/p/DLcConQNm2S/"
+  },
+  {
+    "id": "062",
+    "titulo": "El modernismo de la ciudad de Cartagena",
+    "descripcion": "",
+    "categoria": "curiosidades",
+    "lat": 37.602136,
+    "lng": -0.987399,
+    "miniatura": "/img/reels/062-modernismo-de-cartagena.jpg",
+    "urlReel": "https://www.instagram.com/p/DLMhgeUtOgp/"
+  },
+  {
+    "id": "063",
+    "titulo": "Castillo encantado de Mula",
+    "descripcion": "",
+    "categoria": "leyendas",
+    "lat": 38.044309,
+    "lng": -1.491824,
+    "miniatura": "/img/reels/063-castillo-encantado-de-mula.jpg",
+    "urlReel": "https://www.instagram.com/p/DK6g5vFN7bn/"
+  },
+  {
+    "id": "064",
+    "titulo": "Isaac Peral",
+    "descripcion": "",
+    "categoria": "personajes",
+    "lat": 37.607397,
+    "lng": -0.977834,
+    "miniatura": "/img/reels/064-isaac-peral.jpg",
+    "urlReel": "https://www.instagram.com/p/DKWWTLmtQiE/"
+  },
+  {
+    "id": "065",
+    "titulo": "Palacio Episcopal de Murcia",
+    "descripcion": "",
+    "categoria": "palacios",
+    "lat": 37.983891,
+    "lng": -1.129577,
+    "miniatura": "/img/reels/065-palacio-episcopal-de-murcia.jpg",
+    "urlReel": "https://www.instagram.com/p/DJ_-IJ_tBGy/"
+  },
+  {
+    "id": "066",
+    "titulo": "Marie Curie",
+    "descripcion": "",
+    "categoria": "leyendas",
+    "lat": 37.98367,
+    "lng": -1.131895,
+    "miniatura": "/img/reels/066-marie-curie.jpg",
+    "urlReel": "https://www.instagram.com/p/DJd8z8PNjBj/"
+  },
+  {
+    "id": "067",
+    "titulo": "Plaza Julián Romea",
+    "descripcion": "",
+    "categoria": "curiosidades",
+    "lat": 37.987013,
+    "lng": -1.130688,
+    "miniatura": "/img/reels/067-plaza-julian-romea.jpg",
+    "urlReel": "https://www.instagram.com/p/DJJJyhZt6lC/"
+  },
+  {
+    "id": "068",
+    "titulo": "Catafalco de Pepe Yagües",
+    "descripcion": "",
+    "categoria": "artistas",
+    "lat": 37.983099,
+    "lng": -1.131711,
+    "miniatura": "/img/reels/068-catafalco-de-pepe-yagues.jpg",
+    "urlReel": "https://www.instagram.com/p/DI3tASUtS2Q/"
+  },
+  {
+    "id": "069",
+    "titulo": "Virgen de las Angustias",
+    "descripcion": "",
+    "categoria": "semana-santa",
+    "lat": 37.985471,
+    "lng": -1.131054,
+    "miniatura": "/img/reels/069-virgen-de-las-angustias.jpg",
+    "urlReel": "https://www.instagram.com/p/DInmj04N8NC/"
+  },
+  {
+    "id": "070",
+    "titulo": "Leyenda del Ángel de la Oración en el Huerto",
+    "descripcion": "",
+    "categoria": "leyendas",
+    "lat": 37.987106,
+    "lng": -1.138038,
+    "miniatura": "/img/reels/070-leyenda-del-angel-de-la-oracion.jpg",
+    "urlReel": "https://www.instagram.com/p/DIk8JkLN8mT/"
+  },
+  {
+    "id": "071",
+    "titulo": "Encuentro del Cristo de las Claras con Nuestra Señora de la Soledad",
+    "descripcion": "",
+    "categoria": "semana-santa",
+    "lat": 37.987259,
+    "lng": -1.128763,
+    "miniatura": "/img/reels/071-encuentro-cristo-claras-soledad.jpg",
+    "urlReel": "https://www.instagram.com/p/DIjDYjItxbL/"
   }
 ]
