@@ -31,19 +31,40 @@ const { Content } = await post.render();
       </div>
     </header>
 
-    {post.data.images && post.data.images.length > 0 && (
-      <div class="article-images">
-        {post.data.images.map(img => (
-          <img src={url(img)} alt={post.data.title} loading="lazy" />
-        ))}
-      </div>
-    )}
-
     <div class="article-body">
       <Content />
     </div>
   </article>
+
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <img src="" alt="" />
+  </div>
 </BaseLayout>
+
+<script>
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = lightbox?.querySelector('img');
+
+  document.querySelectorAll<HTMLImageElement>('.article-body img').forEach(img => {
+    img.addEventListener('click', () => {
+      if (!lightbox || !lightboxImg) return;
+      lightboxImg.src = img.src;
+      lightboxImg.alt = img.alt;
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  const closeLightbox = () => {
+    lightbox?.classList.remove('open');
+    document.body.style.overflow = '';
+  };
+
+  lightbox?.addEventListener('click', closeLightbox);
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeLightbox();
+  });
+</script>
 
 <style>
   .article {
@@ -88,18 +109,6 @@ const { Content } = await post.render();
     color: var(--color-text-muted);
   }
 
-  .article-images {
-    display: grid;
-    gap: 1rem;
-    margin-bottom: 2rem;
-  }
-
-  .article-images img {
-    width: 100%;
-    border-radius: 12px;
-    background: var(--color-border);
-  }
-
   .article-body {
     font-size: 1.05rem;
     line-height: 1.75;
@@ -112,5 +121,61 @@ const { Content } = await post.render();
 
   .article-body :global(p) {
     margin-bottom: 1rem;
+  }
+
+  .article-body :global(blockquote) {
+    border-left: 3px solid var(--color-accent);
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+    color: var(--color-text-secondary);
+    font-style: italic;
+  }
+
+  .article-body :global(figure) {
+    margin: 2rem auto;
+    max-width: 400px;
+    text-align: center;
+  }
+
+  .article-body :global(figure img) {
+    width: 100%;
+    border-radius: 10px;
+    background: var(--color-border);
+    cursor: zoom-in;
+    transition: opacity 0.2s;
+  }
+
+  .article-body :global(figure img:hover) {
+    opacity: 0.9;
+  }
+
+  .article-body :global(figcaption) {
+    font-size: 0.8rem;
+    color: var(--color-text-muted);
+    margin-top: 0.5rem;
+    line-height: 1.4;
+  }
+
+  .lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.88);
+    cursor: zoom-out;
+    padding: 1rem;
+  }
+
+  .lightbox.open {
+    display: flex;
+  }
+
+  .lightbox img {
+    max-width: 95vw;
+    max-height: 92vh;
+    border-radius: 6px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
   }
 </style>
