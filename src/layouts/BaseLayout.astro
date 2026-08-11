@@ -9,6 +9,10 @@ interface Props {
 
 const { title, description = '¡Ven que te lo cuento! — Patrimonio cultural de la Región de Murcia en reels de Instagram', fullWidth = false } = Astro.props;
 const currentPath = sinBase(Astro.url.pathname);
+
+// Imagen para las tarjetas de WhatsApp, Instagram, etc. Debe ser una URL
+// absoluta; se monta con el dominio de astro.config.mjs y el prefijo base.
+const ogImage = new URL(url('/img/og.jpg'), Astro.site).href;
 ---
 
 <!DOCTYPE html>
@@ -20,6 +24,10 @@ const currentPath = sinBase(Astro.url.pathname);
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:type" content="website" />
+  <meta property="og:image" content={ogImage} />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
   <link rel="icon" type="image/svg+xml" href={url('/favicon.svg')} />
   <title>{title}</title>
 </head>

@@ -37,7 +37,7 @@ const total = reels.length;
     </div>
 
     {secciones.map(({ cat, videos }) => (
-      <section class="cat-section" data-cat={cat.id}>
+      <section class="cat-section" data-cat={cat.id} id={cat.id}>
         <h2 class="cat-title">
           <span class="cat-badge" style={`background: ${cat.color}`} set:html={cat.icono} />
           {cat.nombre}
@@ -155,6 +155,9 @@ const total = reels.length;
 
   .cat-section {
     margin-bottom: 3rem;
+    /* Para que al llegar desde el popup del mapa (/videos#categoria)
+       el título no quede oculto bajo la barra de navegación. */
+    scroll-margin-top: calc(var(--nav-height) + 1rem);
   }
 
   .cat-title {

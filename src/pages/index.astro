@@ -1,8 +1,19 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
 import reels from '../data/reels.json';
 import categorias from '../data/categorias.json';
 import { url } from '../lib/url';
+
+// Categorías con su nº de reels, sin las vacías (mismo criterio que la página de videos).
+const cats = categorias
+  .map((cat) => ({ ...cat, total: reels.filter((r) => r.categoria === cat.id).length }))
+  .filter((c) => c.total > 0);
+
+// Últimos artículos para el escaparate del blog.
+const posts = (await getCollection('blog'))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
+  .slice(0, 3);
 ---
 
 <BaseLayout title="¡Ven que te lo cuento! — Mapa del patrimonio">
@@ -18,23 +29,67 @@ import { url } from '../lib/url';
   <section class="map-intro">
     <div class="container">
       <h2>Explora el patrimonio</h2>
-      <p>Pulsa sobre los marcadores para ver el reel de cada lugar</p>
+      <p>
+        Cada marcador del mapa es un lugar con su historia, contada en un reel.
+        Filtra por categoría, busca qué tienes cerca o déjate sorprender.
+      </p>
+      <div class="stats">
+        <div class="stat">
+          <span class="stat-num">{reels.length}</span>
+          <span class="stat-label">lugares con historia</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">{cats.length}</span>
+          <span class="stat-label">categorías</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num">1</span>
+          <span class="stat-label">región por descubrir</span>
+        </div>
+      </div>
     </div>
   </section>
 
   <section id="mapa" class="map-section">
     <div id="map"></div>
-    <div class="map-legend">
-      <h3>Categorías</h3>
-      {categorias.map((cat) => (
-        <label class="legend-item">
-          <input type="checkbox" checked data-category={cat.id} />
-          <span class="legend-dot" style={`background: ${cat.color}`}></span>
+    <div class="map-chips" role="group" aria-label="Filtrar por categoría">
+      <button class="chip chip-all active" data-category="all">Todas</button>
+      {cats.map((cat) => (
+        <button class="chip active" data-category={cat.id} aria-pressed="true">
+          <span class="chip-dot" style={`background: ${cat.color}`}></span>
           {cat.nombre}
-        </label>
+          <span class="chip-count">{cat.total}</span>
+        </button>
       ))}
     </div>
   </section>
+
+  {posts.length > 0 && (
+    <section class="blog-teaser">
+      <div class="container">
+        <div class="teaser-head">
+          <h2>Del blog</h2>
+          <a href={url('/blog')} class="teaser-all">Todos los artículos →</a>
+        </div>
+        <div class="teaser-grid">
+          {posts.map((post) => (
+            <article class="teaser-card">
+              {post.data.images?.[0] && (
+                <a href={url(`/blog/${post.slug}`)}>
+                  <img src={url(post.data.images[0])} alt={post.data.title} loading="lazy" />
+                </a>
+              )}
+              <time datetime={post.data.date.toISOString()}>
+                {post.data.date.toLocaleDateString('es-ES', { year: 'numeric', month: 'long', day: 'numeric' })}
+              </time>
+              <h3><a href={url(`/blog/${post.slug}`)}>{post.data.title}</a></h3>
+              {post.data.description && <p>{post.data.description}</p>}
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
 </BaseLayout>
 
 <style>
@@ -106,19 +161,42 @@ import { url } from '../lib/url';
   }
 
   .map-intro {
-    padding: 2.5rem 0;
+    padding: 3rem 0 2.5rem;
     text-align: center;
     background: var(--color-bg);
   }
 
   .map-intro h2 {
-    font-size: 1.6rem;
-    margin-bottom: 0.25rem;
+    font-size: 1.8rem;
+    margin-bottom: 0.5rem;
   }
 
   .map-intro p {
     color: var(--color-text-muted);
     font-size: 0.95rem;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+
+  .stats {
+    display: flex;
+    justify-content: center;
+    gap: 3.5rem;
+    margin-top: 1.75rem;
+  }
+
+  .stat-num {
+    display: block;
+    font-family: var(--font-serif);
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.1;
+    color: var(--color-accent);
+  }
+
+  .stat-label {
+    font-size: 0.85rem;
+    color: var(--color-text-muted);
   }
 
   .map-section {
@@ -132,49 +210,138 @@ import { url } from '../lib/url';
     height: 100%;
   }
 
-  .map-legend {
+  /* Chips de categorías flotando sobre el mapa, estilo Google Maps.
+     En una sola fila con scroll horizontal (la barra se oculta). */
+  .map-chips {
     position: absolute;
-    bottom: 2rem;
-    right: 1rem;
-    background: var(--color-bg);
-    border-radius: 12px;
-    padding: 1rem 1.25rem;
-    z-index: 500;
-    box-shadow: 0 2px 12px rgba(0,0,0,0.15);
-    font-size: 0.85rem;
-    max-width: 240px;
-  }
-
-  .map-legend h3 {
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .legend-item {
+    top: 0.75rem;
+    left: 0;
+    right: 0;
     display: flex;
-    align-items: center;
     gap: 0.5rem;
+    padding: 0.25rem 1rem;
+    overflow-x: auto;
+    z-index: 500;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .map-chips::-webkit-scrollbar {
+    display: none;
+  }
+
+  .chip {
+    flex-shrink: 0;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    background: #fff;
+    border: 1px solid rgba(20, 20, 19, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    border-radius: 20px;
+    padding: 0.35rem 0.8rem;
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
     cursor: pointer;
-    padding: 0.2rem 0;
+    white-space: nowrap;
+    transition: opacity 0.15s, background 0.15s;
   }
 
-  .legend-item input {
-    accent-color: var(--color-accent);
+  .chip:not(.active) {
+    opacity: 0.55;
   }
 
-  .legend-dot {
-    width: 12px;
-    height: 12px;
+  .chip:not(.active) .chip-dot {
+    background: rgba(20, 20, 19, 0.25) !important;
+  }
+
+  .chip-all.active {
+    background: var(--color-dark);
+    color: #fff;
+    border-color: var(--color-dark);
+  }
+
+  .chip-dot {
+    width: 9px;
+    height: 9px;
     border-radius: 50%;
     flex-shrink: 0;
   }
 
+  .chip-count {
+    font-size: 0.7rem;
+    color: var(--color-text-muted);
+  }
+
+  .blog-teaser {
+    padding: 3.5rem 0 4rem;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .teaser-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+  }
+
+  .teaser-head h2 {
+    font-size: 1.8rem;
+  }
+
+  .teaser-all {
+    font-size: 0.85rem;
+    font-weight: 500;
+  }
+
+  .teaser-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .teaser-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    background: var(--color-border);
+    margin-bottom: 0.6rem;
+  }
+
+  .teaser-card time {
+    font-size: 0.78rem;
+    color: var(--color-text-muted);
+  }
+
+  .teaser-card h3 {
+    font-size: 1.1rem;
+    margin: 0.2rem 0 0.35rem;
+  }
+
+  .teaser-card h3 a {
+    color: var(--color-text);
+  }
+
+  .teaser-card h3 a:hover {
+    color: var(--color-accent);
+    opacity: 1;
+  }
+
+  .teaser-card p {
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+  }
+
   @media (max-width: 640px) {
-    .map-legend {
-      bottom: 1rem;
-      right: 0.5rem;
-      left: 0.5rem;
-      max-width: none;
+    .stats {
+      gap: 2rem;
+    }
+
+    .stat-num {
+      font-size: 1.9rem;
     }
   }
 </style>
@@ -212,6 +379,55 @@ import { url } from '../lib/url';
     font-weight: 600 !important;
   }
 
+  /* Los controles del mapa (zoom, cerca de mí, azar) bajan para no chocar
+     con la fila de chips. */
+  #mapa .leaflet-top {
+    top: 3.2rem;
+  }
+
+  /* Botones "Cerca de mí" y "Reel al azar" (se crean desde el script). */
+  .map-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    background: #fff;
+    border: 1px solid rgba(20, 20, 19, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    color: var(--color-text-secondary);
+    cursor: pointer;
+  }
+
+  .map-btn:hover {
+    color: var(--color-accent);
+  }
+
+  .map-toast {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--color-dark);
+    color: #fff;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    padding: 0.5rem 1.1rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+    z-index: 600;
+    opacity: 0;
+    transition: opacity 0.25s;
+    pointer-events: none;
+    max-width: 90%;
+    text-align: center;
+  }
+
+  .map-toast.visible {
+    opacity: 1;
+  }
+
   .reel-popup {
     text-align: center;
     min-width: 200px;
@@ -240,7 +456,7 @@ import { url } from '../lib/url';
     margin-bottom: 0.5rem;
   }
 
-  .reel-popup a {
+  .reel-popup a.popup-insta {
     display: inline-block;
     background: var(--color-accent);
     /* !important para ganar a .leaflet-container a de leaflet.css */
@@ -252,8 +468,19 @@ import { url } from '../lib/url';
     text-decoration: none;
   }
 
-  .reel-popup a:hover {
+  .reel-popup a.popup-insta:hover {
     opacity: 0.9;
+  }
+
+  .reel-popup a.popup-videos {
+    display: block;
+    margin-top: 0.45rem;
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+  }
+
+  .reel-popup a.popup-videos:hover {
+    color: var(--color-accent);
   }
 
   .leaflet-popup-content-wrapper {
@@ -315,7 +542,8 @@ import { url } from '../lib/url';
              onerror="this.style.display='none'" />
         <h3>${reel.titulo}</h3>
         ${reel.descripcion ? `<p>${reel.descripcion}</p>` : ''}
-        <a href="${reel.urlReel}" target="_blank" rel="noopener">Ver en Instagram</a>
+        <a class="popup-insta" href="${reel.urlReel}" target="_blank" rel="noopener">Ver en Instagram</a>
+        <a class="popup-videos" href="${base}/videos#${reel.categoria}">Más vídeos de esta categoría →</a>
       </div>
     `);
 
@@ -327,6 +555,75 @@ import { url } from '../lib/url';
 
   map.addLayer(clusterGroup);
 
+  // Avisos breves sobre el mapa (geolocalización denegada, etc.).
+  const toast = document.createElement('div');
+  toast.className = 'map-toast';
+  document.querySelector('.map-section')?.appendChild(toast);
+  let toastTimer: number | undefined;
+  function avisar(msg: string) {
+    toast.textContent = msg;
+    toast.classList.add('visible');
+    window.clearTimeout(toastTimer);
+    toastTimer = window.setTimeout(() => toast.classList.remove('visible'), 3500);
+  }
+
+  // Botones propios del mapa, colocados como controles de Leaflet
+  // (aparecen debajo del zoom).
+  function botonMapa(html: string, titulo: string, alPulsar: () => void) {
+    const Boton = (L as any).Control.extend({
+      onAdd() {
+        const btn = L.DomUtil.create('button', 'map-btn');
+        btn.innerHTML = html;
+        btn.title = titulo;
+        btn.setAttribute('aria-label', titulo);
+        L.DomEvent.disableClickPropagation(btn);
+        L.DomEvent.on(btn, 'click', (e: Event) => {
+          L.DomEvent.stop(e);
+          alPulsar();
+        });
+        return btn;
+      },
+    });
+    new Boton({ position: 'topleft' }).addTo(map);
+  }
+
+  // "Cerca de mí": centra el mapa en la ubicación del navegador.
+  let miPosicion: any = null;
+  map.on('locationfound', (e: any) => {
+    if (miPosicion) miPosicion.remove();
+    miPosicion = L.circleMarker(e.latlng, {
+      radius: 8,
+      color: '#fff',
+      weight: 2,
+      fillColor: '#5B7FA5',
+      fillOpacity: 1,
+    }).addTo(map).bindTooltip('Estás aquí');
+  });
+  map.on('locationerror', () => {
+    avisar('No se ha podido obtener tu ubicación. Revisa el permiso del navegador.');
+  });
+  botonMapa(
+    '<svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="7"/><circle cx="12" cy="12" r="2" fill="currentColor" stroke="none"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>',
+    'Cerca de mí',
+    () => map.locate({ setView: true, maxZoom: 16 }),
+  );
+
+  // "Reel al azar": abre el popup de un reel aleatorio entre las
+  // categorías activas.
+  botonMapa(
+    '<svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><rect x="3" y="3" width="18" height="18" rx="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="8.3" cy="8.3" r="1.6"/><circle cx="15.7" cy="8.3" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="8.3" cy="15.7" r="1.6"/><circle cx="15.7" cy="15.7" r="1.6"/></svg>',
+    'Reel al azar',
+    () => {
+      const candidatos = markers.filter(m => activas.has((m as any)._reelCategory));
+      if (!candidatos.length) {
+        avisar('Activa alguna categoría para descubrir un reel.');
+        return;
+      }
+      const elegido = candidatos[Math.floor(Math.random() * candidatos.length)];
+      clusterGroup.zoomToShowLayer(elegido, () => elegido.openPopup());
+    },
+  );
+
   // Enlaces "ver en el mapa" de la página de videos: /?reel=012#mapa
   // centra el mapa en ese reel y abre su popup.
   const reelPedido = new URLSearchParams(window.location.search).get('reel');
@@ -337,20 +634,39 @@ import { url } from '../lib/url';
     }
   }
 
-  document.querySelectorAll<HTMLInputElement>('.map-legend input[data-category]').forEach(checkbox => {
-    checkbox.addEventListener('change', () => {
-      const cat = checkbox.dataset.category;
-      const checked = checkbox.checked;
-      markers.forEach(m => {
-        if ((m as any)._reelCategory === cat) {
-          if (checked) {
-            clusterGroup.addLayer(m);
-          } else {
-            clusterGroup.removeLayer(m);
-          }
-        }
-      });
+  // Filtro por categorías con los chips que flotan sobre el mapa.
+  const activas = new Set<string>(categorias.map((c: any) => c.id));
+  const chipsCat = Array.from(document.querySelectorAll<HTMLButtonElement>('.map-chips .chip:not(.chip-all)'));
+  const chipTodas = document.querySelector<HTMLButtonElement>('.map-chips .chip-all');
+
+  function aplicarFiltro() {
+    markers.forEach(m => {
+      const activo = activas.has((m as any)._reelCategory);
+      const enMapa = clusterGroup.hasLayer(m);
+      if (activo && !enMapa) clusterGroup.addLayer(m);
+      if (!activo && enMapa) clusterGroup.removeLayer(m);
     });
+    chipTodas?.classList.toggle('active', chipsCat.every(c => c.classList.contains('active')));
+  }
+
+  chipsCat.forEach(chip => {
+    chip.addEventListener('click', () => {
+      const cat = chip.dataset.category!;
+      const activar = !chip.classList.contains('active');
+      chip.classList.toggle('active', activar);
+      chip.setAttribute('aria-pressed', String(activar));
+      if (activar) activas.add(cat); else activas.delete(cat);
+      aplicarFiltro();
+    });
+  });
+
+  chipTodas?.addEventListener('click', () => {
+    chipsCat.forEach(chip => {
+      chip.classList.add('active');
+      chip.setAttribute('aria-pressed', 'true');
+      activas.add(chip.dataset.category!);
+    });
+    aplicarFiltro();
   });
 
 </script>
