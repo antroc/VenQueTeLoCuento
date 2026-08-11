@@ -1,6 +1,6 @@
 ---
 title: "Mercado de Verónicas"
-date: 2024-06-01
+date: 2024-07-01
 tags: ["patrimonio", "arquitectura"]
 images:
   - "/img/blog/mercado-de-veronicas-1.jpg"
@@ -42,3 +42,7 @@ Se intentó rehabilitar la fachada en el año 2001 con los zócalos que se pusie
 Este año 2024 se cerrará el mercado el mes de agosto para realizar obras de mejora y con ello renovar el aislamiento térmico en fachada y cubiertas, además de intentar solucionar las humedades. Y en una segunda fase se abordará devolver la imagen del proyecto inicial de 1910, pues se contempla suprimir la planta superior.
 
 En definitiva, dadas las carencias que tiene, es necesaria una remodelación urgente.
+
+---
+
+*Este artículo se publicó en el [n.º 76 de RCMagazine](/pdf/mercado-de-veronicas.pdf) (julio de 2024), la revista cultural del Real Casino de Murcia.*

@@ -1,6 +1,6 @@
 ---
 title: "El primer Manicomio en Murcia"
-date: 2024-12-01
+date: 2025-07-01
 tags: ["historia", "patrimonio"]
 images:
   - "/img/blog/primer-manicomio-murcia-1.jpg"
@@ -32,3 +32,7 @@ Este imponente edificio, cuyo arco aún hoy nos recuerda su grandiosidad, fue la
 </figure>
 
 La presencia de este arco en la calle Acisclo Díaz representa una oportunidad única para recordar y honrar la evolución de la atención a la salud mental en Murcia. Por ello, el Ayuntamiento de Murcia debería considerar la inclusión de un punto de información o placa explicativa junto al arco, que detalle su pertenencia al primer Manicomio Provincial. Esta iniciativa no solo enriquecería el patrimonio histórico de la ciudad, sino que también contribuiría a sensibilizar sobre la importancia de la salud mental y la evolución de su tratamiento a lo largo del tiempo.
+
+---
+
+*Este artículo se publicó en el [n.º 82 de RCMagazine](/pdf/el-primer-manicomio-de-murcia.pdf) (julio de 2025), la revista cultural del Real Casino de Murcia.*

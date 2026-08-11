@@ -1,6 +1,6 @@
 ---
 title: "Mari Trini: la voz libre de Murcia"
-date: 2025-07-01
+date: 2026-01-01
 tags: ["personajes", "música"]
 images:
   - "/img/blog/mari-trini-1.jpg"
@@ -35,3 +35,7 @@ No solo rompió moldes musicales, también derribó estereotipos. En una época 
 Su legado sigue vivo en cada acorde, en cada verso y en cada mujer que, gracias a ella, entendió que ser libre también es una forma de arte.
 
 Mari Trini no fue "esa" que cantaba en su tema más emblemático. Fue una mujer adelantada a su tiempo, una artista irrepetible y la voz más libre que ha dado Murcia. Se merece que le den muchos más homenajes en su tierra.
+
+---
+
+*Este artículo se publicó en el [n.º 85 de RCMagazine](/pdf/mari-trini-la-voz-libre-de-murcia.pdf) (enero de 2026), la revista cultural del Real Casino de Murcia.*

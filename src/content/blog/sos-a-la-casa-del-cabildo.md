@@ -1,6 +1,6 @@
 ---
 title: "SOS a la Casa del Cabildo"
-date: 2025-06-01
+date: 2024-09-01
 tags: ["patrimonio"]
 images:
   - "/img/blog/sos-casa-del-cabildo-1.jpg"
@@ -28,3 +28,7 @@ Entiendo la falta de recursos del Cabildo, que ahora está más centrado en la r
 Y, aunque el Cabildo pidió el 15 de mayo de este año una ayuda a los feligreses y a las personas que se preocupan por nuestro patrimonio para arreglar el muro del Mirador Oeste, con el fin de abrirlo de nuevo al público para la bajada de la Virgen en septiembre, esta ayuda no incluye el resto del entorno de la Fuensanta como el Vía Crucis, ni la Casa del Cabildo. Por lo tanto, es necesaria una ampliación de la ayuda para dejar un entorno digno para nuestra patrona, la Virgen de la Fuensanta. Como defensora del patrimonio, hago un llamamiento para colaborar y ayudar al Cabildo, una vez más.
 
 La casa de la patrona de Murcia no merece, insisto, ese entorno de dejadez. Hace falta una puesta a punto. ¿Qué tipo de imagen estamos dando al turismo y a los murcianos?
+
+---
+
+*Este artículo se publicó en el [n.º 77 de RCMagazine](/pdf/sos-a-la-casa-del-cabildo.pdf) (septiembre de 2024), la revista cultural del Real Casino de Murcia.*

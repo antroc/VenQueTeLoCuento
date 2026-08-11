@@ -1,6 +1,6 @@
 ---
 title: "El Palacete de Saavedra Fajardo"
-date: 2025-09-01
+date: 2026-05-01
 tags: ["patrimonio", "arquitectura"]
 images:
   - "/img/blog/palacete-saavedra-fajardo-1.jpg"
@@ -31,3 +31,7 @@ Acceder a su interior es como detener el tiempo. Al subir las escaleras hasta el
 </figure>
 
 Descubrir este tipo de lugares es una forma de conocer una Murcia distinta, la que no siempre se suele ver, pero que sigue viva en sus edificios. Antes de que el inmueble cambie para siempre, merece la pena detenerse, mirar y escuchar. Porque hay historias que, si no se cuentan, corren el riesgo de desaparecer.
+
+---
+
+*Este artículo se publicó en el [n.º 87 de RCMagazine](/pdf/palacete-de-saavedra-fajardo.pdf) (mayo de 2026), la revista cultural del Real Casino de Murcia.*

@@ -1,6 +1,6 @@
 ---
 title: "El Palacio Episcopal desdibujado"
-date: 2025-03-01
+date: 2025-05-01
 tags: ["patrimonio", "arte"]
 images:
   - "/img/blog/palacio-episcopal-1.jpg"
@@ -31,3 +31,7 @@ El edificio sufrió su última gran intervención en el año 2000, cuando se con
 Estas pinturas murales, de tonos rosáceos, grises y marrones, son una auténtica rara avis y fueron realizadas en 1767 por Paolo Pedemonte. La tradición de decorar exteriores con frescos no es nueva: civilizaciones como la romana ya lo hacía, y en la actualidad podemos encontrar su eco en el arte urbano con murales de artistas como Carlos Callizo, Lula Goce, Kobra o Kraser que, al igual que aquellas obras históricas, requieren mantenimiento.
 
 Han pasado 25 años desde la última restauración y hoy la pintura mural del Palacio Episcopal comienza a desvanecerse. Su belleza se resquebraja en desconchones que, como heridas abiertas, amenazan con agrandarse hasta hacer irreconocible su esplendor original. No es lo mismo colocar una tirita que tener que intervenir al paciente en la UCI: urge una restauración antes de que el deterioro sea cada vez mayor.
+
+---
+
+*Este artículo se publicó en el [n.º 81 de RCMagazine](/pdf/palacio-episcopal-desdibujado.pdf) (mayo de 2025), la revista cultural del Real Casino de Murcia.*

@@ -1,6 +1,6 @@
 ---
 title: "1200 años de la fundación de Murcia"
-date: 2025-05-01
+date: 2025-01-01
 tags: ["historia", "patrimonio"]
 images:
   - "/img/blog/1200-anos-fundacion-murcia-1.jpg"
@@ -30,3 +30,7 @@ Aledaño a la muralla, en el 2009 salió a la luz el último de los grandes desc
 Según las últimas noticias, la intervención global para la recuperación íntegra del yacimiento de San Esteban en Murcia supondrá unos 33 millones de euros. Murcia se prepara para un hito histórico: la musealización y protección definitiva de sus valiosos restos arqueológicos. Este proyecto no solo recuperará una plaza emblemática, sino que también preservará un legado invaluable para futuras generaciones.
 
 Al convertir este yacimiento en un museo, la ciudad no solo enriquecerá su patrimonio cultural, sino que también fomentará el turismo y el orgullo ciudadano. Celebrar así el 1200 aniversario de Murcia sería un homenaje a su rica historia y un compromiso con su futuro.
+
+---
+
+*Este artículo se publicó en el [n.º 79 de RCMagazine](/pdf/1200-anos-fundacion-murcia.pdf) (enero de 2025), la revista cultural del Real Casino de Murcia.*

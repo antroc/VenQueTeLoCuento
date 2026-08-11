@@ -1,6 +1,6 @@
 ---
 title: "El Palacio Almodóvar y la rosa de Jericó"
-date: 2025-01-01
+date: 2024-03-01
 tags: ["patrimonio", "arquitectura"]
 images:
   - "/img/blog/palacio-almodovar-1.jpg"
@@ -35,3 +35,7 @@ Es hora de rescatar uno de los edificios más icónicos del patrimonio murciano 
 Y podremos visitar este edificio completamente renovado este 2025.
 
 ¡Nos vemos por los tejados!
+
+---
+
+*Este artículo se publicó en el [n.º 74 de RCMagazine](/pdf/palacio-almodovar-y-la-rosa-de-jerico.pdf) (marzo de 2024), la revista cultural del Real Casino de Murcia.*

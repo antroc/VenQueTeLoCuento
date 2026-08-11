@@ -1,6 +1,6 @@
 ---
 title: "La casa de postas de Librilla"
-date: 2025-11-01
+date: 2026-07-01
 tags: ["patrimonio", "arquitectura"]
 images:
   - "/img/blog/casa-de-postas-de-librilla-1.jpg"
@@ -51,3 +51,7 @@ Sin embargo, por el momento, el edificio sigue sin salvarse. Su estado continúa
 No hablamos sólo de muros antiguos ni de una fachada con escudo. Hablamos de memoria, de historia y de identidad. Hablamos de un edificio que fue testigo del tránsito de viajeros, comerciantes, correos, carruajes y caballerías. Hablamos de una arquitectura que explica una forma de vivir y de desplazarse que ya desapareció, pero que forma parte esencial de nuestra historia.
 
 La casa de postas de Librilla es una joya que se hace añicos. Y cada día que pasa sin actuar, perdemos un poco más de ella.
+
+---
+
+*Este artículo se publicó en el [n.º 88 de RCMagazine](/pdf/casa-de-postas-de-librilla.pdf) (julio de 2026), la revista cultural del Real Casino de Murcia.*

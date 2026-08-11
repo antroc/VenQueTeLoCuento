@@ -1,6 +1,6 @@
 ---
 title: "¿Qué tienen en común Carlos II, Quevedo y Murillo?"
-date: 2024-10-01
+date: 2024-05-01
 tags: ["gastronomía", "historia", "arte"]
 images:
   - "/img/blog/carlos-ii-quevedo-murillo-1.jpg"
@@ -32,3 +32,7 @@ No sabemos si lo que escribió Quevedo era un bulo. El caso es que el pastel de 
 La gastronomía murciana forma parte de nuestro patrimonio cultural y uno de nuestros platos prominentes es, sin duda, el pastel de carne o el de sesos.
 
 \**Los pasteles podían ser de real y de medio real, aunque los más pequeños, de cuatro y ocho maravedíes, podían tener el suelo de harina de segunda.*
+
+---
+
+*Este artículo se publicó en el [n.º 75 de RCMagazine](/pdf/carlos-ii-quevedo-y-murillo.pdf) (mayo de 2024), la revista cultural del Real Casino de Murcia.*

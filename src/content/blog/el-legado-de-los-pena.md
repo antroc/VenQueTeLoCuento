@@ -1,6 +1,6 @@
 ---
 title: "El legado de los Peña: hierro, camas, dragones y fútbol en Murcia"
-date: 2024-11-01
+date: 2025-09-01
 tags: ["historia", "arquitectura", "personajes"]
 images:
   - "/img/blog/legado-de-los-pena-1.jpg"
@@ -38,3 +38,7 @@ La huella de la fundición Peña se extiende por toda la ciudad. Las robustas co
 </figure>
 
 Por si todo esto fuera poco, la familia nos dejó también un último y perdurable testimonio de su oficio: su panteón en el cementerio de Nuestro Padre Jesús. Se trata de un singular y majestuoso monumento funerario de ocho metros de altura, forjado completamente en hierro. En él descansa Francisco Peña Vaquero, cuyo rostro, inmortalizado en un medallón, preside la estructura junto a los símbolos de su profesión: el yunque y el martillo. Un final monumental para una familia que moldeó, literalmente, parte de la historia de Murcia.
+
+---
+
+*Este artículo se publicó en el [n.º 83 de RCMagazine](/pdf/el-legado-de-los-pena.pdf) (septiembre de 2025), la revista cultural del Real Casino de Murcia.*

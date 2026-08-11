@@ -1,6 +1,6 @@
 ---
 title: "¿Sabes dónde se encuentra enterrado el Rey Alfonso X?"
-date: 2024-09-01
+date: 2025-11-01
 tags: ["historia"]
 images:
   - "/img/blog/alfonso-x-1.jpg"
@@ -30,3 +30,7 @@ Este último deseo no fue posible de ejecutar por las cruzadas, y es por eso que
 El Ayuntamiento de Murcia va a restaurar su urna funeraria de piedra caliza, que se encuentra en la Capilla Mayor (Capilla Real) de la Catedral y, además, se harán visitas guiadas. Este monumento se realizó en 1541 por el escultor Martín Florentín y fue completado con los maceros renacentistas por Ginés León. La intervención en la urna le devolverá el esplendor, donde se incluye limpieza y consolidación, con un valor de 43.000 euros.
 
 Si visitáis la Capilla Real de la Catedral, presentad vuestro respeto a un corazón que sigue palpitando por toda la ciudad, y no dejéis de leer su inscripción en la base de la urna que dice: "Aquí están las entrañas del Señor Rey Alfonso X. El Qual muriendo en Sevilla por la gran lealtad con que esta cibdat de Murcia le sirvió en sus adversidades las mando sepultar en ella".
+
+---
+
+*Este artículo se publicó en el [n.º 84 de RCMagazine](/pdf/donde-esta-enterrado-alfonso-x.pdf) (noviembre de 2025), la revista cultural del Real Casino de Murcia.*

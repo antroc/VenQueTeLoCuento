@@ -1,6 +1,6 @@
 ---
 title: "Salvemos el Palacio Saavedra Fajardo de los grafitis"
-date: 2025-02-01
+date: 2025-03-01
 tags: ["patrimonio", "leyendas"]
 images:
   - "/img/blog/salvemos-palacio-saavedra-1.jpg"
@@ -40,3 +40,7 @@ El Palacio Saavedra es uno de los pocos palacios que se salvó de la piqueta, pe
 El edificio también alberga la legendaria historia del torreón del duende: se cuenta que una joven dama que pertenecía al clan familiar Saavedra se enamoró de un pilluelo de la calle. A pesar de la fuerte oposición familiar, ellos se amaban profundamente y vivieron su amor en secreto dentro del palacio. La familia, que estaba cansada de advertir a la joven de que no se viera con el chico, decidió encarcelarlo, pero ella lo visitaba sobornando a los carceleros. Finalmente, exasperada por la persistencia de la joven, la familia optó por un castigo cruel y definitivo: la emparedaron en el tercer cuerpo de la torre, donde lamentablemente murió de inanición. Poco a poco se fraguó la leyenda de que en las noches se veía una figura danzando (un duende o una dama) mientras se oían gritos y carcajadas. Para librar al vecindario de la maldición del edificio, se realizó un exorcismo y después de la oración, una paloma salió volando desde una ventana. Y muchos lo interpretaron como el alma de la joven que por fin se había liberado.
 
 Así como aquella joven dama anhelaba su libertad, los edificios históricos también necesitan ser liberados de los grafitis que los cubren para recuperar su belleza original. A veces sueño con un mundo que valore el respeto y la educación.
+
+---
+
+*Este artículo se publicó en el [n.º 80 de RCMagazine](/pdf/salvemos-el-palacio-saavedra-fajardo.pdf) (marzo de 2025), la revista cultural del Real Casino de Murcia.*

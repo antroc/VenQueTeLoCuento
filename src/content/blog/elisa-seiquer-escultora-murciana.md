@@ -1,6 +1,6 @@
 ---
 title: "Elisa Séiquer, escultora murciana"
-date: 2025-04-01
+date: 2026-03-01
 tags: ["arte", "personajes"]
 images:
   - "/img/blog/elisa-seiquer-1.jpg"
@@ -43,3 +43,7 @@ Elisa falleció prematuramente a los 50 años.
 Fue una mujer que vivió intensamente, fiel a sus principios y a su visión del arte. Nunca se traicionó a sí misma y por eso su obra sigue siendo inmortal.
 
 Hoy quiero hacer una petición en su memoria: que se coloque una placa conmemorativa en su casa natal, en la plaza de Santa Catalina, para que su nombre y su legado artístico permanezcan vivos en el corazón de la ciudad que la vio nacer.
+
+---
+
+*Este artículo se publicó en el [n.º 86 de RCMagazine](/pdf/elisa-seiquer-escultora-murciana.pdf) (marzo de 2026), la revista cultural del Real Casino de Murcia.*

@@ -1,6 +1,6 @@
 ---
 title: "El Molino de Funes o de las cuatro piedras"
-date: 2025-10-01
+date: 2024-11-01
 tags: ["patrimonio", "huerta"]
 images:
   - "/img/blog/molino-de-funes-1.jpg"
@@ -28,3 +28,7 @@ También el molino de Funes y la Casa Roja fueron fuentes de inspiración de pin
 </figure>
 
 Desgraciadamente, una vez más olvidamos que no recuperar nuestro patrimonio es perder parte de nuestra huella e identidad, pues forma parte del catálogo histórico, etnográfico, paisajístico y cultural de Murcia. Esperemos no tener que lamentarnos con la frase "agua pasada no mueve molinos".
+
+---
+
+*Este artículo se publicó en el [n.º 78 de RCMagazine](/pdf/molino-de-funes.pdf) (noviembre de 2024), la revista cultural del Real Casino de Murcia.*
