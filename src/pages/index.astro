@@ -52,15 +52,26 @@ const posts = (await getCollection('blog'))
 
   <section id="mapa" class="map-section">
     <div id="map"></div>
-    <div class="map-chips" role="group" aria-label="Filtrar por categoría">
-      <button class="chip chip-all active" data-category="all">Todas</button>
-      {cats.map((cat) => (
-        <button class="chip active" data-category={cat.id} aria-pressed="true">
-          <span class="chip-dot" style={`background: ${cat.color}`}></span>
-          {cat.nombre}
-          <span class="chip-count">{cat.total}</span>
+    <div class="map-filter">
+      <button class="filter-toggle" aria-expanded="false" aria-controls="panel-categorias">
+        <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 3H2l8 9.46V19l4 2v-8.54L22 3z"/></svg>
+        Categorías
+        <span class="filter-badge">Todas</span>
+      </button>
+      <div class="filter-panel" id="panel-categorias" role="group" aria-label="Filtrar por categoría" hidden>
+        <button class="filter-row filter-all active" data-category="all">
+          <span class="row-name">Todas las categorías</span>
+          <svg class="row-check" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
         </button>
-      ))}
+        {cats.map((cat) => (
+          <button class="filter-row active" data-category={cat.id} aria-pressed="true">
+            <span class="row-dot" style={`background: ${cat.color}`}></span>
+            <span class="row-name">{cat.nombre}</span>
+            <span class="row-count">{cat.total}</span>
+            <svg class="row-check" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+          </button>
+        ))}
+      </div>
     </div>
   </section>
 
@@ -199,10 +210,18 @@ const posts = (await getCollection('blog'))
     color: var(--color-text-muted);
   }
 
+  /* El mapa no llega a los bordes de la pantalla: deja un margen lateral
+     para que en el móvil se pueda hacer scroll de página sin pelearse con él. */
   .map-section {
     position: relative;
     height: 80vh;
     min-height: 500px;
+    margin: 0 4%;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(20, 20, 19, 0.12);
+    /* Para que al llegar con el ancla #mapa el mapa no quede bajo la barra. */
+    scroll-margin-top: calc(var(--nav-height) + 0.75rem);
   }
 
   #map {
@@ -210,69 +229,122 @@ const posts = (await getCollection('blog'))
     height: 100%;
   }
 
-  /* Chips de categorías flotando sobre el mapa, estilo Google Maps.
-     En una sola fila con scroll horizontal (la barra se oculta). */
-  .map-chips {
+  /* Filtro de categorías: un solo botón sobre el mapa que despliega
+     un panel con la lista completa, estilo capas de Google Maps. */
+  .map-filter {
     position: absolute;
     top: 0.75rem;
-    left: 0;
-    right: 0;
-    display: flex;
-    gap: 0.5rem;
-    padding: 0.25rem 1rem;
-    overflow-x: auto;
+    right: 0.75rem;
     z-index: 500;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
+    font-family: var(--font-sans);
   }
 
-  .map-chips::-webkit-scrollbar {
-    display: none;
-  }
-
-  .chip {
-    flex-shrink: 0;
+  .filter-toggle {
     display: inline-flex;
     align-items: center;
-    gap: 0.4rem;
+    gap: 0.45rem;
     background: #fff;
     border: 1px solid rgba(20, 20, 19, 0.1);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     border-radius: 20px;
-    padding: 0.35rem 0.8rem;
+    padding: 0.45rem 0.9rem;
     font-family: var(--font-sans);
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     font-weight: 500;
     color: var(--color-text-secondary);
     cursor: pointer;
-    white-space: nowrap;
-    transition: opacity 0.15s, background 0.15s;
   }
 
-  .chip:not(.active) {
-    opacity: 0.55;
+  .filter-toggle[aria-expanded="true"],
+  .filter-toggle:hover {
+    color: var(--color-text);
   }
 
-  .chip:not(.active) .chip-dot {
-    background: rgba(20, 20, 19, 0.25) !important;
-  }
-
-  .chip-all.active {
-    background: var(--color-dark);
+  .filter-badge {
+    background: var(--color-accent);
     color: #fff;
-    border-color: var(--color-dark);
+    font-size: 0.7rem;
+    font-weight: 600;
+    padding: 0.1rem 0.5rem;
+    border-radius: 10px;
+    white-space: nowrap;
   }
 
-  .chip-dot {
-    width: 9px;
-    height: 9px;
+  .filter-panel {
+    position: absolute;
+    top: calc(100% + 0.5rem);
+    right: 0;
+    width: max-content;
+    min-width: 230px;
+    max-width: min(300px, 78vw);
+    max-height: min(24rem, 60vh);
+    overflow-y: auto;
+    background: #fff;
+    border: 1px solid rgba(20, 20, 19, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18);
+    padding: 0.35rem;
+  }
+
+  .filter-row {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    width: 100%;
+    background: none;
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 0.65rem;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    color: var(--color-text-secondary);
+    text-align: left;
+    cursor: pointer;
+  }
+
+  .filter-row:hover {
+    background: rgba(20, 20, 19, 0.05);
+  }
+
+  .filter-all {
+    font-weight: 600;
+    border-bottom: 1px solid var(--color-border);
+    border-radius: 8px 8px 0 0;
+    margin-bottom: 0.25rem;
+  }
+
+  .row-dot {
+    width: 10px;
+    height: 10px;
     border-radius: 50%;
     flex-shrink: 0;
   }
 
-  .chip-count {
-    font-size: 0.7rem;
+  .filter-row:not(.active) {
     color: var(--color-text-muted);
+  }
+
+  .filter-row:not(.active) .row-dot {
+    background: rgba(20, 20, 19, 0.2) !important;
+  }
+
+  .row-name {
+    flex: 1;
+  }
+
+  .row-count {
+    font-size: 0.72rem;
+    color: var(--color-text-muted);
+  }
+
+  .row-check {
+    color: var(--color-accent);
+    flex-shrink: 0;
+    visibility: hidden;
+  }
+
+  .filter-row.active .row-check {
+    visibility: visible;
   }
 
   .blog-teaser {
@@ -377,12 +449,6 @@ const posts = (await getCollection('blog'))
     color: #fff !important;
     font-family: var(--font-sans) !important;
     font-weight: 600 !important;
-  }
-
-  /* Los controles del mapa (zoom, cerca de mí, azar) bajan para no chocar
-     con la fila de chips. */
-  #mapa .leaflet-top {
-    top: 3.2rem;
   }
 
   /* Botones "Cerca de mí" y "Reel al azar" (se crean desde el script). */
@@ -634,10 +700,15 @@ const posts = (await getCollection('blog'))
     }
   }
 
-  // Filtro por categorías con los chips que flotan sobre el mapa.
+  // Filtro por categorías: botón "Categorías" que despliega un panel.
   const activas = new Set<string>(categorias.map((c: any) => c.id));
-  const chipsCat = Array.from(document.querySelectorAll<HTMLButtonElement>('.map-chips .chip:not(.chip-all)'));
-  const chipTodas = document.querySelector<HTMLButtonElement>('.map-chips .chip-all');
+  const filtro = document.querySelector<HTMLElement>('.map-filter')!;
+  const botonFiltro = filtro.querySelector<HTMLButtonElement>('.filter-toggle')!;
+  const badge = filtro.querySelector<HTMLElement>('.filter-badge')!;
+  const panel = filtro.querySelector<HTMLElement>('.filter-panel')!;
+  const filas = Array.from(panel.querySelectorAll<HTMLButtonElement>('.filter-row:not(.filter-all)'));
+  const filaTodas = panel.querySelector<HTMLButtonElement>('.filter-all')!;
+  const totalCats = filas.length;
 
   function aplicarFiltro() {
     markers.forEach(m => {
@@ -646,26 +717,52 @@ const posts = (await getCollection('blog'))
       if (activo && !enMapa) clusterGroup.addLayer(m);
       if (!activo && enMapa) clusterGroup.removeLayer(m);
     });
-    chipTodas?.classList.toggle('active', chipsCat.every(c => c.classList.contains('active')));
+
+    filas.forEach(f => {
+      const activo = activas.has(f.dataset.category!);
+      f.classList.toggle('active', activo);
+      f.setAttribute('aria-pressed', String(activo));
+    });
+    const todas = activas.size === totalCats;
+    filaTodas.classList.toggle('active', todas);
+    badge.textContent = todas ? 'Todas' : `${activas.size} de ${totalCats}`;
   }
 
-  chipsCat.forEach(chip => {
-    chip.addEventListener('click', () => {
-      const cat = chip.dataset.category!;
-      const activar = !chip.classList.contains('active');
-      chip.classList.toggle('active', activar);
-      chip.setAttribute('aria-pressed', String(activar));
-      if (activar) activas.add(cat); else activas.delete(cat);
+  function cerrarPanel() {
+    panel.hidden = true;
+    botonFiltro.setAttribute('aria-expanded', 'false');
+  }
+
+  botonFiltro.addEventListener('click', () => {
+    const abrir = panel.hidden;
+    panel.hidden = !abrir;
+    botonFiltro.setAttribute('aria-expanded', String(abrir));
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!panel.hidden && !filtro.contains(e.target as Node)) cerrarPanel();
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') cerrarPanel();
+  });
+
+  filas.forEach(fila => {
+    fila.addEventListener('click', () => {
+      const cat = fila.dataset.category!;
+      if (activas.has(cat)) activas.delete(cat); else activas.add(cat);
       aplicarFiltro();
     });
   });
 
-  chipTodas?.addEventListener('click', () => {
-    chipsCat.forEach(chip => {
-      chip.classList.add('active');
-      chip.setAttribute('aria-pressed', 'true');
-      activas.add(chip.dataset.category!);
-    });
+  // "Todas": si falta alguna las activa todas; si ya están todas, las
+  // desactiva (así se puede dejar solo una categoría con dos toques).
+  filaTodas.addEventListener('click', () => {
+    if (activas.size === totalCats) {
+      activas.clear();
+    } else {
+      filas.forEach(f => activas.add(f.dataset.category!));
+    }
     aplicarFiltro();
   });
 

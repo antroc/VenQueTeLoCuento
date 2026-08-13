@@ -34,7 +34,10 @@ const ogImage = new URL(url('/img/og.jpg'), Astro.site).href;
 <body class:list={[{ 'full-width': fullWidth }]}>
   <nav class="nav">
     <div class="nav-inner">
-      <a href={url('/')} class="nav-brand">¡Ven que te lo cuento!</a>
+      <a href={url('/')} class="nav-brand">
+        ¡Ven que te lo cuento!
+        <span class="nav-claim">por Carmen Celdrán Gómez</span>
+      </a>
       <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
         <span></span>
         <span></span>
@@ -120,15 +123,32 @@ const ogImage = new URL(url('/img/og.jpg'), Astro.site).href;
   }
 
   .nav-brand {
+    display: flex;
+    flex-direction: column;
     font-family: var(--font-serif);
     font-size: 1.25rem;
     font-weight: 700;
+    line-height: 1.15;
     color: #fff;
+    /* Si la firma no cupiera (p. ej. mientras carga la fuente manuscrita),
+       se recorta en vez de romper la barra. */
+    min-width: 0;
+    overflow: hidden;
   }
 
   .nav-brand:hover {
     opacity: 1;
     color: var(--color-accent);
+  }
+
+  /* Firma manuscrita bajo el nombre del sitio. */
+  .nav-claim {
+    font-family: var(--font-hand);
+    font-size: 0.95rem;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: #fff;
+    white-space: nowrap;
   }
 
   .nav-links {
@@ -246,6 +266,14 @@ const ogImage = new URL(url('/img/og.jpg'), Astro.site).href;
   }
 
   @media (max-width: 640px) {
+    .nav-brand {
+      font-size: 1.1rem;
+    }
+
+    .nav-claim {
+      font-size: 0.85rem;
+    }
+
     .nav-toggle {
       display: flex;
     }
