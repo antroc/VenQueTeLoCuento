@@ -1298,5 +1298,25 @@
     "lng": -1.128699,
     "miniatura": "/img/reels/133-jaime-alfonso-el-barbudo.jpg",
     "urlReel": "https://www.instagram.com/p/DIDqOjEtCql/"
+  },
+  {
+    "id": "134",
+    "titulo": "Las hornacinas",
+    "descripcion": "",
+    "categoria": "curiosidades",
+    "lat": 37.988948,
+    "lng": -1.131137,
+    "miniatura": "/img/reels/134-las-hornacinas.jpg",
+    "urlReel": "https://www.instagram.com/p/DZPZ81HM_6d/"
+  },
+  {
+    "id": "135",
+    "titulo": "El primer manicomio de Murcia",
+    "descripcion": "",
+    "categoria": "curiosidades",
+    "lat": 37.987815,
+    "lng": -1.132812,
+    "miniatura": "/img/reels/135-el-primer-manicomio-de-murcia.jpg",
+    "urlReel": "https://www.instagram.com/p/C7D0V_rNTDu/"
   }
 ]

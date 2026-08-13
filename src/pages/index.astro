@@ -674,6 +674,32 @@ const posts = (await getCollection('blog'))
     () => map.locate({ setView: true, maxZoom: 16 }),
   );
 
+  // Centra el mapa en un reel y abre su popup. No nos fiamos solo del
+  // callback de zoomToShowLayer (a veces no se dispara, sobre todo si se
+  // llama nada más crear el mapa): mientras el marcador siga agrupado y
+  // sin icono, forzamos el zoom a sus coordenadas y reintentamos abrir
+  // el popup. Abrir un popup ya abierto no tiene efecto.
+  function abrirReel(marker: any) {
+    clusterGroup.zoomToShowLayer(marker, () => marker.openPopup());
+    const inicio = Date.now();
+    let zoomForzado = false;
+    const reintento = window.setInterval(() => {
+      // Hasta comprobar que el popup está abierto de verdad: el agrupador
+      // puede cerrarlo al reorganizar los marcadores tras una animación.
+      if (marker.isPopupOpen()) {
+        window.clearInterval(reintento);
+        return;
+      }
+      if (marker._icon && !(map as any)._animatingZoom) marker.openPopup();
+      const espera = Date.now() - inicio;
+      if (!zoomForzado && espera > 1200 && !marker._icon) {
+        zoomForzado = true;
+        map.setView(marker.getLatLng(), 18, { animate: false });
+      }
+      if (espera > 6000) window.clearInterval(reintento);
+    }, 250);
+  }
+
   // "Reel al azar": abre el popup de un reel aleatorio entre las
   // categorías activas.
   botonMapa(
@@ -686,7 +712,7 @@ const posts = (await getCollection('blog'))
         return;
       }
       const elegido = candidatos[Math.floor(Math.random() * candidatos.length)];
-      clusterGroup.zoomToShowLayer(elegido, () => elegido.openPopup());
+      abrirReel(elegido);
     },
   );
 
@@ -696,7 +722,7 @@ const posts = (await getCollection('blog'))
   if (reelPedido) {
     const marker = markers.find(m => (m as any)._reelId === reelPedido);
     if (marker) {
-      clusterGroup.zoomToShowLayer(marker, () => marker.openPopup());
+      abrirReel(marker);
     }
   }
 
