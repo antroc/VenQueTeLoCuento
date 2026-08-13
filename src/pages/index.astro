@@ -10,10 +10,11 @@ const cats = categorias
   .map((cat) => ({ ...cat, total: reels.filter((r) => r.categoria === cat.id).length }))
   .filter((c) => c.total > 0);
 
-// Últimos artículos para el escaparate del blog.
-const posts = (await getCollection('blog'))
-  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime())
-  .slice(0, 3);
+// Artículos ordenados por fecha: los tres últimos para el escaparate
+// y el total para el botón de la portada.
+const todosLosPosts = (await getCollection('blog'))
+  .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
+const posts = todosLosPosts.slice(0, 3);
 ---
 
 <BaseLayout title="¡Ven, que te lo cuento! — Mapa del patrimonio">
@@ -22,31 +23,23 @@ const posts = (await getCollection('blog'))
     <div class="hero-content">
       <h1>¡Ven, que te lo cuento!</h1>
       <p>Lugares, historias y tradiciones de la Región de Murcia, reel a reel</p>
-      <a href="#mapa" class="hero-btn">Explorar el mapa ↓</a>
     </div>
   </section>
 
   <section class="map-intro">
-    <div class="container">
-      <h2>Explora el patrimonio</h2>
-      <p>
-        Cada marcador del mapa es un lugar con su historia, contada en un reel.
-        Filtra por categoría, busca qué tienes cerca o déjate sorprender.
-      </p>
-      <div class="stats">
-        <div class="stat">
-          <span class="stat-num">{reels.length}</span>
-          <span class="stat-label">lugares con historia</span>
-        </div>
-        <div class="stat">
-          <span class="stat-num">{cats.length}</span>
-          <span class="stat-label">categorías</span>
-        </div>
-        <div class="stat">
-          <span class="stat-num">1</span>
-          <span class="stat-label">región por descubrir</span>
-        </div>
-      </div>
+    <div class="container acciones">
+      <a href={url('/videos')} class="accion">
+        <span class="accion-num">{reels.length}</span>
+        <span class="accion-label">vídeos</span>
+      </a>
+      <a href={url('/blog')} class="accion">
+        <span class="accion-num">{todosLosPosts.length}</span>
+        <span class="accion-label">artículos</span>
+      </a>
+      <a href="#mapa" class="accion">
+        <span class="accion-num accion-flecha" aria-hidden="true">↓</span>
+        <span class="accion-label">explorar el mapa</span>
+      </a>
     </div>
   </section>
 
@@ -154,50 +147,41 @@ const posts = (await getCollection('blog'))
     margin-right: auto;
   }
 
-  .hero-btn {
-    display: inline-block;
-    padding: 0.75rem 2rem;
-    background: var(--color-accent);
-    color: #fff;
-    border-radius: 8px;
-    font-weight: 600;
-    font-size: 1rem;
-    transition: background 0.2s;
-    text-decoration: none;
-  }
-
-  .hero-btn:hover {
-    background: #c4654a;
-    opacity: 1;
-  }
-
   .map-intro {
-    padding: 3rem 0 2.5rem;
-    text-align: center;
+    padding: 2.5rem 0;
     background: var(--color-bg);
   }
 
-  .map-intro h2 {
-    font-size: 1.8rem;
-    margin-bottom: 0.5rem;
-  }
-
-  .map-intro p {
-    color: var(--color-text-muted);
-    font-size: 0.95rem;
-    max-width: 520px;
-    margin: 0 auto;
-  }
-
-  .stats {
+  /* Tres tarjetas-botón: vídeos, artículos y mapa. El número grande
+     conserva el aire de los antiguos contadores, pero ahora llevan
+     a algún sitio. */
+  .acciones {
     display: flex;
     justify-content: center;
-    gap: 3.5rem;
-    margin-top: 1.75rem;
+    gap: 1.25rem;
   }
 
-  .stat-num {
-    display: block;
+  .accion {
+    flex: 0 1 190px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.25rem 1rem 1.1rem;
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: 14px;
+    text-align: center;
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+  }
+
+  .accion:hover {
+    opacity: 1;
+    border-color: var(--color-accent);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(20, 20, 19, 0.1);
+  }
+
+  .accion-num {
     font-family: var(--font-serif);
     font-size: 2.4rem;
     font-weight: 700;
@@ -205,9 +189,10 @@ const posts = (await getCollection('blog'))
     color: var(--color-accent);
   }
 
-  .stat-label {
-    font-size: 0.85rem;
-    color: var(--color-text-muted);
+  .accion-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--color-text-secondary);
   }
 
   /* El mapa no llega a los bordes de la pantalla: deja un margen lateral
@@ -408,12 +393,22 @@ const posts = (await getCollection('blog'))
   }
 
   @media (max-width: 640px) {
-    .stats {
-      gap: 2rem;
+    .acciones {
+      gap: 0.6rem;
     }
 
-    .stat-num {
+    .accion {
+      flex: 1 1 0;
+      min-width: 0;
+      padding: 0.9rem 0.4rem 0.8rem;
+    }
+
+    .accion-num {
       font-size: 1.9rem;
+    }
+
+    .accion-label {
+      font-size: 0.78rem;
     }
   }
 </style>
