@@ -10,7 +10,7 @@ const posts = (await getCollection('blog')).sort(
 const allTags = [...new Set(posts.flatMap(p => p.data.tags))].sort();
 ---
 
-<BaseLayout title="Blog — ¡Ven que te lo cuento!">
+<BaseLayout title="Blog — ¡Ven, que te lo cuento!">
   <section class="blog-header">
     <div class="container">
       <h1>Blog</h1>

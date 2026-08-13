@@ -1,4 +1,4 @@
-# Requisitos - "¡Ven que te lo cuento!"
+# Requisitos - "¡Ven, que te lo cuento!"
 
 ## 1. Descripción general
 
@@ -63,7 +63,7 @@ Web estática de patrimonio cultural, centrada principalmente en la Región de M
 ### 3.4. Navegación
 
 - Barra de navegación con:
-  - Logo/nombre: "¡Ven que te lo cuento!"
+  - Logo/nombre: "¡Ven, que te lo cuento!"
   - Enlaces: Mapa (inicio) | Blog | Sobre mí
 
 ---

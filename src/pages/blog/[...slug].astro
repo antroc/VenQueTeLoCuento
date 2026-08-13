@@ -15,9 +15,9 @@ const { post } = Astro.props;
 const { Content } = await post.render();
 ---
 
-<BaseLayout title={`${post.data.title} — ¡Ven que te lo cuento!`} description={post.data.description}>
+<BaseLayout title={`${post.data.title} — ¡Ven, que te lo cuento!`} description={post.data.description}>
   <article class="container article">
-    <a href={url('/blog')} class="back-link">← Volver al blog</a>
+    <a href={url('/blog')} class="back-link">← Volver a los artículos</a>
 
     <header>
       <time datetime={post.data.date.toISOString()}>

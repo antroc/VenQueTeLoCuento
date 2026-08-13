@@ -16,11 +16,11 @@ const posts = (await getCollection('blog'))
   .slice(0, 3);
 ---
 
-<BaseLayout title="¡Ven que te lo cuento! — Mapa del patrimonio">
+<BaseLayout title="¡Ven, que te lo cuento! — Mapa del patrimonio">
   <section class="hero" style={`background-image: url('${url('/img/hero.jpg')}')`}>
     <div class="hero-overlay"></div>
     <div class="hero-content">
-      <h1>¡Ven que te lo cuento!</h1>
+      <h1>¡Ven, que te lo cuento!</h1>
       <p>Lugares, historias y tradiciones de la Región de Murcia, reel a reel</p>
       <a href="#mapa" class="hero-btn">Explorar el mapa ↓</a>
     </div>
@@ -79,7 +79,7 @@ const posts = (await getCollection('blog'))
     <section class="blog-teaser">
       <div class="container">
         <div class="teaser-head">
-          <h2>Del blog</h2>
+          <h2>Últimos artículos</h2>
           <a href={url('/blog')} class="teaser-all">Todos los artículos →</a>
         </div>
         <div class="teaser-grid">

@@ -7,7 +7,7 @@ interface Props {
   fullWidth?: boolean;
 }
 
-const { title, description = '¡Ven que te lo cuento! — Patrimonio cultural de la Región de Murcia en reels de Instagram', fullWidth = false } = Astro.props;
+const { title, description = '¡Ven, que te lo cuento! — Lugares, historias y tradiciones de la Región de Murcia, reel a reel', fullWidth = false } = Astro.props;
 const currentPath = sinBase(Astro.url.pathname);
 
 // Imagen para las tarjetas de WhatsApp, Instagram, etc. Debe ser una URL
@@ -35,7 +35,7 @@ const ogImage = new URL(url('/img/og.jpg'), Astro.site).href;
   <nav class="nav">
     <div class="nav-inner">
       <a href={url('/')} class="nav-brand">
-        ¡Ven que te lo cuento!
+        ¡Ven, que te lo cuento!
         <span class="nav-claim">por Carmen Celdrán Gómez</span>
       </a>
       <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">
@@ -45,8 +45,8 @@ const ogImage = new URL(url('/img/og.jpg'), Astro.site).href;
       </button>
       <ul class="nav-links">
         <li><a href={url('/')} class:list={[{ active: currentPath === '/' }]}>Mapa</a></li>
-        <li><a href={url('/videos')} class:list={[{ active: currentPath.startsWith('/videos') }]}>Videos</a></li>
-        <li><a href={url('/blog')} class:list={[{ active: currentPath.startsWith('/blog') }]}>Blog</a></li>
+        <li><a href={url('/videos')} class:list={[{ active: currentPath.startsWith('/videos') }]}>Vídeos</a></li>
+        <li><a href={url('/blog')} class:list={[{ active: currentPath.startsWith('/blog') }]}>Artículos</a></li>
         <li><a href={url('/sobre-mi')} class:list={[{ active: currentPath === '/sobre-mi/' || currentPath === '/sobre-mi' }]}>Sobre mí</a></li>
       </ul>
     </div>
@@ -59,8 +59,8 @@ const ogImage = new URL(url('/img/og.jpg'), Astro.site).href;
   <footer class="footer">
     <div class="container footer-inner">
       <div class="footer-brand">
-        <a href={url('/')} class="footer-logo">¡Ven que te lo cuento!</a>
-        <p>Patrimonio cultural de la Región de Murcia</p>
+        <a href={url('/')} class="footer-logo">¡Ven, que te lo cuento!</a>
+        <p>Lugares, historias y tradiciones de la Región de Murcia</p>
       </div>
 
       <div class="footer-social">
@@ -76,7 +76,7 @@ const ogImage = new URL(url('/img/og.jpg'), Astro.site).href;
       </div>
 
       <div class="footer-legal">
-        <p>© {new Date().getFullYear()} ¡Ven que te lo cuento! — Todos los derechos reservados</p>
+        <p>© {new Date().getFullYear()} ¡Ven, que te lo cuento! — Todos los derechos reservados</p>
         <a href={url('/politica-privacidad')}>Política de privacidad</a>
       </div>
     </div>
