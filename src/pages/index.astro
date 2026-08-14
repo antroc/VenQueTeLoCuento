@@ -15,9 +15,25 @@ const cats = categorias
 const todosLosPosts = (await getCollection('blog'))
   .sort((a, b) => b.data.date.getTime() - a.data.date.getTime());
 const posts = todosLosPosts.slice(0, 3);
+
+// Datos estructurados para Google: qué web es esta y de quién.
+const datosWeb = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: '¡Ven, que te lo cuento!',
+  url: new URL(url('/'), Astro.site).href,
+  description: 'Lugares, historias y tradiciones de la Región de Murcia, reel a reel',
+  inLanguage: 'es',
+  author: {
+    '@type': 'Person',
+    name: 'Carmen Celdrán Gómez',
+    url: new URL(url('/sobre-mi'), Astro.site).href,
+  },
+};
 ---
 
 <BaseLayout title="¡Ven, que te lo cuento! — Mapa del patrimonio">
+  <script type="application/ld+json" set:html={JSON.stringify(datosWeb)} />
   <section class="hero" style={`background-image: url('${url('/img/hero.jpg')}')`}>
     <div class="hero-overlay"></div>
     <div class="hero-content">

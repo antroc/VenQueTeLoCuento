@@ -1,0 +1,8 @@
+# Mientras la web viva en la subcarpeta de antroc.github.io, el robots.txt
+# que manda es el de la raíz del dominio; este quedará operativo el día que
+# la web pase al dominio propio. El sitemap se envía además desde Google
+# Search Console, que no depende de este fichero.
+User-agent: *
+Allow: /
+
+Sitemap: https://antroc.github.io/VenQueTeLoCuento/sitemap-index.xml

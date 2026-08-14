@@ -37,9 +37,30 @@ const minutos = Math.max(1, Math.round(post.body.split(/\s+/).length / 200));
 // La primera foto hace de cabecera; su copia en el cuerpo se oculta
 // desde el script de abajo para no verla dos veces.
 const portada = post.data.images?.[0];
+
+// Datos estructurados para Google: esto es un artículo de Carmen,
+// con su fecha, sus fotos y su URL.
+const datosArticulo = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: post.data.title,
+  ...(post.data.description ? { description: post.data.description } : {}),
+  datePublished: post.data.date.toISOString(),
+  inLanguage: 'es',
+  image: (post.data.images ?? []).map(i => new URL(url(i), Astro.site).href),
+  author: { '@type': 'Person', name: 'Carmen Celdrán Gómez' },
+  mainEntityOfPage: new URL(Astro.url.pathname, Astro.site).href,
+};
 ---
 
-<BaseLayout title={`${post.data.title} — ¡Ven, que te lo cuento!`} description={post.data.description}>
+<BaseLayout
+  title={`${post.data.title} — ¡Ven, que te lo cuento!`}
+  description={post.data.description}
+  type="article"
+  ogImage={portada}
+  publishedDate={post.data.date}
+>
+  <script type="application/ld+json" set:html={JSON.stringify(datosArticulo)} />
   <article class="container article">
     <a href={url('/blog')} class="back-link">← Volver a los artículos</a>
 

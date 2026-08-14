@@ -1,4 +1,5 @@
 import { defineConfig } from 'astro/config';
+import sitemap from '@astrojs/sitemap';
 
 // La web se publica en https://antroc.github.io/VenQueTeLoCuento/, es decir,
 // dentro de una subcarpeta. Por eso el build necesita el prefijo `base`.
@@ -41,6 +42,13 @@ export default defineConfig({
   site: 'https://antroc.github.io',
   base: enProduccion ? '/VenQueTeLoCuento' : '/',
   output: 'static',
+  integrations: [
+    // Genera sitemap-index.xml en cada build, con todas las páginas
+    // menos el editor local /admin (que además lleva noindex).
+    sitemap({
+      filter: (pagina) => !pagina.includes('/admin'),
+    }),
+  ],
   markdown: {
     rehypePlugins: [rehypePrefijoBase],
   },
