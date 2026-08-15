@@ -4,6 +4,8 @@ date: 2022-11-01
 tags: ["patrimonio", "arquitectura"]
 images:
   - "/img/blog/casas-cuevas-abanilla-1.jpg"
+  - "/img/blog/casas-cuevas-abanilla-2.jpg"
+  - "/img/blog/casas-cuevas-abanilla-3.jpg"
 description: "Las casas cueva de Abanilla, un hábitat troglodita, ecológico y económico entre un paisaje lunar de Badlands que recuerda a la Tierra Media."
 ---
 

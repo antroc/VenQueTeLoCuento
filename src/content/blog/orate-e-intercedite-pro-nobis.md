@@ -4,6 +4,9 @@ date: 2021-11-01
 tags: ["patrimonio", "historia", "tradiciones"]
 images:
   - "/img/blog/orate-intercedite-1.jpg"
+  - "/img/blog/orate-intercedite-2.jpg"
+  - "/img/blog/orate-intercedite-3.jpg"
+  - "/img/blog/orate-intercedite-4.jpg"
 description: "El cementerio de Nuestro Padre Jesús de Espinardo, con su portada de Pedro Cerdán, es patrimonio artístico, arquitectónico y paisajístico que honrar."
 ---
 

@@ -15,7 +15,7 @@ El conductor puso rumbo hacia el Monasterio de la Encarnación en Mula para ir a
 
 <figure>
   <img src="/img/blog/con-la-iglesia-hemos-topado-1.jpg" alt="Monasterio de la Encarnación de Mula">
-  <figcaption>El Monasterio de la Encarnación, en Mula.</figcaption>
+  <figcaption>El Monasterio de la Encarnación, en Mula. Fotografía de Juan Gutiérrez García.</figcaption>
 </figure>
 
 La falta de vocación está provocando efectos colaterales muy dañinos respecto al patrimonio de nuestra Región, en este caso, el Monasterio de la Encarnación. Aunque algunos conventos o monasterios son comprados y transformados en hoteles o albergues, otros sufrirán la peor plaga de este siglo: el abandono y la desidia.

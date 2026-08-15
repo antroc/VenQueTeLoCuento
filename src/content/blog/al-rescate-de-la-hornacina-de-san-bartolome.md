@@ -4,6 +4,7 @@ date: 2023-07-01
 tags: ["patrimonio", "historia"]
 images:
   - "/img/blog/hornacina-san-bartolome-1.jpg"
+  - "/img/blog/hornacina-san-bartolome-2.jpg"
 description: "Un viaje a Roma, la Vía di Valle Murcia y una petición murciana: que se restaure urgentemente la hornacina de las ánimas de San Bartolomé."
 ---
 

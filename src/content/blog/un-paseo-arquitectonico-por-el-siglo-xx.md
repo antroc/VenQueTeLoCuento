@@ -4,6 +4,9 @@ date: 2021-07-01
 tags: ["arquitectura", "patrimonio"]
 images:
   - "/img/blog/paseo-arquitectonico-1.jpg"
+  - "/img/blog/paseo-arquitectonico-2.jpg"
+  - "/img/blog/paseo-arquitectonico-3.jpg"
+  - "/img/blog/paseo-arquitectonico-4.jpg"
 description: "De La Convalecencia a la casa de los nueve pisos: un recorrido por el modernismo murciano de la mano del arquitecto José Antonio Rodríguez Martínez."
 ---
 
@@ -32,15 +35,10 @@ Seguimos andando hasta llegar a la plaza Santo Domingo, donde se alza la casa Ce
   <figcaption>La casa Cerdá, coronada por su templete.</figcaption>
 </figure>
 
-<figure>
-  <img src="/img/blog/paseo-arquitectonico-4.jpg" alt="Cúpula del edificio de la Sociedad de Cazadores">
-  <figcaption>Edificio de la Sociedad de Cazadores.</figcaption>
-</figure>
-
 Tampoco podemos olvidar el edificio de los almacenes de la Alegría de la Huerta en las cuatro esquinas, e incluso el edificio Guillamón, en la calle Frenería o la casa Díaz Cassou, en la calle Santa Teresa, donde se encuentra la obra más representativa del modernismo murciano que destaca por su mirador semicircular rematado por una barandilla de hierro y el apellido Díaz Cassou tallado en piedra. El interior de la casa es decorado por el pintor García del Bosque.
 
 <figure>
-  <img src="/img/blog/paseo-arquitectonico-5.jpg" alt="Casa Díaz Cassou">
+  <img src="/img/blog/paseo-arquitectonico-4.jpg" alt="Casa Díaz Cassou">
   <figcaption>Casa Díaz Cassou.</figcaption>
 </figure>
 

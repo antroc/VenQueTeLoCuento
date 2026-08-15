@@ -4,6 +4,7 @@ date: 2023-09-01
 tags: ["patrimonio"]
 images:
   - "/img/blog/sos-fuensanta-1.jpg"
+  - "/img/blog/sos-fuensanta-2.jpg"
 description: "El muro del mirador oeste del Santuario de la Fuensanta ha colapsado sobre la cueva de Francisca de Gracia. Un llamamiento a recuperar el entorno de la patrona."
 ---
 

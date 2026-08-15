@@ -4,6 +4,7 @@ date: 2022-01-01
 tags: ["patrimonio", "arte"]
 images:
   - "/img/blog/patrimonio-grafico-1.jpg"
+  - "/img/blog/patrimonio-grafico-2.jpg"
 description: "Los rótulos comerciales también son historia y memoria de la ciudad: del edificio Alba a La Bola de Oro, salvemos los letreros con alma de Murcia."
 ---
 
@@ -26,11 +27,6 @@ En la Región de Murcia hay infinidad de edificios y de carteles que forman part
 </figure>
 
 Los rótulos murcianos más emblemáticos a lo largo de los años son casi incontables. Entre ellos destacan el del edificio Alba, Expo-Libro, el Teatro Circo, el Cine Rex, el Real Casino de Murcia, Zaher, Centrofama y los de pequeños comercios que han desaparecido engullidos por la piqueta, como fue el caso del recordado Bazar Murciano. Aunque hay edificios como el de La Bola de Oro, en la calle Arco de Verónicas, que ha sido rescatado por el grupo Victorio Sánchez e incluso se ha respetado el rótulo del comercio. Una gran iniciativa que hay que aplaudir, pues los rótulos también son historia y memoria de una gran ciudad.
-
-<figure>
-  <img src="/img/blog/patrimonio-grafico-3.jpg" alt="Rótulo de La Bola de Oro">
-  <figcaption>La Bola de Oro, un rótulo rescatado.</figcaption>
-</figure>
 
 En Murcia se debería habilitar un espacio para almacenar los carteles, o bien un museo para el recuerdo y, de esta forma, podríamos salvar los vestigios del pasado. Pero también se podría concienciar a la gente a través de una visita guiada donde los protagonistas sean los carteles que fueron o son parte del paisaje murciano. Y como broche de oro, se podría preparar una exposición sobre esta temática para remover conciencias y subrayar la importancia que tienen estos rótulos comerciales.
 

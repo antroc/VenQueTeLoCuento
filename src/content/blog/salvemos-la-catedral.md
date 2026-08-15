@@ -4,6 +4,8 @@ date: 2020-07-01
 tags: ["patrimonio", "arte"]
 images:
   - "/img/blog/salvemos-la-catedral-1.jpg"
+  - "/img/blog/salvemos-la-catedral-2.jpg"
+  - "/img/blog/salvemos-la-catedral-3.jpg"
 description: "La caída de cascotes de la fachada barroca encendió la alarma: la Catedral, icono patrimonial de Murcia, necesita una restauración completa."
 ---
 
@@ -25,15 +27,10 @@ Pero aunque la esplendorosa fachada barroca reclame toda la atención, hoy quier
 
 En la fachada de los apóstoles que data del siglo XV, hay cuatro figuras: en lado izquierdo están San Andrés y San Pablo; y en el lado derecho, Santiago y San Pedro; también se encuentran los ángeles músicos y, junto a ellos, el escudo de Isabel II por su ayuda prestada a reparar el templo en 1854 tras su incendio.
 
-<figure>
-  <img src="/img/blog/salvemos-la-catedral-3.jpg" alt="San Pedro y Santiago en la Puerta de los Apóstoles">
-  <figcaption>San Pedro y Santiago apóstol (Puerta de los Apóstoles).</figcaption>
-</figure>
-
 Hay una necesidad imperiosa de limpiar esa magnífica fachada y restaurar la cruz de San Andrés, cuyo deterioro vemos día a día. La piedra debe recuperar su color original, hoy es de color negro por la polución.
 
 <figure>
-  <img src="/img/blog/salvemos-la-catedral-4.jpg" alt="San Andrés con su cruz en la Puerta de los Apóstoles">
+  <img src="/img/blog/salvemos-la-catedral-3.jpg" alt="San Andrés con su cruz en la Puerta de los Apóstoles">
   <figcaption>San Andrés y su cruz necesitan una limpieza y una restauración (Puerta de los Apóstoles).</figcaption>
 </figure>
 

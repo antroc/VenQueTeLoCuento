@@ -4,6 +4,7 @@ date: 2019-11-01
 tags: ["patrimonio", "arquitectura"]
 images:
   - "/img/blog/casino-de-cartagena-1.jpg"
+  - "/img/blog/casino-de-cartagena-2.jpg"
 description: "El Palacio de Casa Tilly, remodelado por Beltrí en 1894, es sede del Casino de Cartagena: un BIC que merece la restauración que tuvo el de Murcia."
 ---
 

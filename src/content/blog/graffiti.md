@@ -4,6 +4,9 @@ date: 2021-01-01
 tags: ["patrimonio", "arte"]
 images:
   - "/img/blog/graffiti-1.jpg"
+  - "/img/blog/graffiti-2.jpg"
+  - "/img/blog/graffiti-3.jpg"
+  - "/img/blog/graffiti-4.jpg"
 description: "De las pintadas de Pompeya al mural de Kobra: el uso de las fachadas para transmitir mensajes es tan antiguo como la necedad de ensuciar el patrimonio."
 ---
 
@@ -35,21 +38,11 @@ Pese a todo, en los últimos decenios se ha generalizado en nuestras calles la p
 El Ayuntamiento de Murcia tomó hace tiempo cartas en el asunto. Por un lado, la Policía Local tiene instrucciones de identificar y, en su caso, sancionar, a los gamberros. Por otro la "oficina del Grafitti" realiza una incansable labor de limpieza de las fachadas urbanas con el encomiable propósito de mantener una ciudad limpia y bonita.
 
 <figure>
-  <img src="/img/blog/graffiti-4.jpg" alt="Trabajos de limpieza en el lateral de Las Claras">
-  <figcaption>Lateral del centro cultural Las Claras durante los trabajos de limpieza.</figcaption>
-</figure>
-
-<figure>
-  <img src="/img/blog/graffiti-5.jpg" alt="Lateral del centro cultural Las Claras limpio">
+  <img src="/img/blog/graffiti-4.jpg" alt="Lateral del centro cultural Las Claras limpio">
   <figcaption>Lateral del centro cultural Las Claras tras su limpieza.</figcaption>
 </figure>
 
 Sin embargo, se trata de un esfuerzo vano en el que se invierten grandes cantidades de dinero de los ciudadanos: al poco tiempo los garabatos y las "firmas" reaparecen con mayor fuerza, reavivando la imagen de ciudad descuidada que los murcianos no merecemos.
-
-<figure>
-  <img src="/img/blog/graffiti-6.jpg" alt="Nueva pintada tras la limpieza">
-  <figcaption>Pocos días después de su limpieza, apareció una nueva pintada en la fachada.</figcaption>
-</figure>
 
 De nada sirve disponer de un ejemplar servicio de limpieza urbana si la sociedad no tiene la mínima cultura necesaria para saber que dañar o estropear el patrimonio cultural es dañar nuestro propio bolsillo.
 

@@ -4,6 +4,9 @@ date: 2021-03-01
 tags: ["patrimonio", "arquitectura"]
 images:
   - "/img/blog/requiem-por-una-plaza-1.jpg"
+  - "/img/blog/requiem-por-una-plaza-2.jpg"
+  - "/img/blog/requiem-por-una-plaza-3.jpg"
+  - "/img/blog/requiem-por-una-plaza-4.jpg"
 description: "Moneo versus Catedral: la historia de la plaza Belluga, el desaparecido palacete del Doctoral de la Riva y un duelo arquitectónico que sigue vigente."
 ---
 
