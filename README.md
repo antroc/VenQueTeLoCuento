@@ -75,9 +75,9 @@ No renumeres los demás: los ids no tienen que ser correlativos.
 
 ### Qué se actualiza solo al tocar reels
 
-El marcador del mapa, la página de Vídeos, el contador «X vídeos» de la
-portada, los números del filtro de categorías y el sitemap. **Nada más que
-tocar.**
+El marcador del mapa, la página de Vídeos (su buscador incluido), el contador
+«X vídeos» de la portada, los números del filtro de categorías, la miniatura
+reducida que se sirve en la web y el sitemap. **Nada más que tocar.**
 
 ---
 
@@ -176,6 +176,12 @@ Viven en [`src/data/categorias.json`](src/data/categorias.json): id, nombre,
 icono (un SVG en línea) y color. Para añadir una categoría nueva, copia un
 bloque existente y cambia esas cuatro cosas; los filtros del mapa y la página
 de Vídeos la recogen solos. Las categorías sin ningún reel no se muestran.
+
+Cada categoría tiene su propio enlace en la página de Vídeos, formado con su
+id: `…/videos#semana-santa` abre la página ya filtrada por Semana Santa. Sirve
+para compartir una categoría concreta por WhatsApp o desde Instagram. Por eso
+conviene no cambiar el id de una categoría existente (cambiar el nombre sí es
+gratis).
 
 ---
 
