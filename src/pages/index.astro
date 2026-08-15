@@ -4,6 +4,11 @@ import { getCollection } from 'astro:content';
 import reels from '../data/reels.json';
 import categorias from '../data/categorias.json';
 import { url } from '../lib/url';
+import { miniaturas } from '../lib/miniaturas';
+
+// Miniaturas reducidas (480 px, webp) para los popups del mapa; si una foto
+// no existe todavía, el popup usa la ruta original como hasta ahora.
+const thumbs = await miniaturas(reels);
 
 // Categorías con su nº de reels, sin las vacías (mismo criterio que la página de videos).
 const cats = categorias
@@ -566,9 +571,10 @@ const datosWeb = {
   }
 </style>
 
-<script define:vars={{ reels, categorias }}>
+<script define:vars={{ reels, categorias, thumbs }}>
   window.__reelsData = reels;
   window.__categoriasData = categorias;
+  window.__thumbsData = thumbs;
 </script>
 
 <script>
@@ -577,6 +583,8 @@ const datosWeb = {
 
   const reels = (window as any).__reelsData;
   const categorias = (window as any).__categoriasData;
+  // Miniaturas reducidas en el build, por id de reel (ver src/lib/miniaturas.ts).
+  const thumbs: Record<string, string> = (window as any).__thumbsData || {};
 
   // Prefijo de la subcarpeta donde se publica la web (ver src/lib/url.ts).
   const base = import.meta.env.BASE_URL.replace(/\/$/, '');
@@ -615,7 +623,7 @@ const datosWeb = {
 
     marker.bindPopup(`
       <div class="reel-popup">
-        <img src="${base}${reel.miniatura}" alt="${reel.titulo}" loading="lazy"
+        <img src="${thumbs[reel.id] ?? base + reel.miniatura}" alt="${reel.titulo}" loading="lazy"
              onerror="this.style.display='none'" />
         <h3>${reel.titulo}</h3>
         ${reel.descripcion ? `<p>${reel.descripcion}</p>` : ''}

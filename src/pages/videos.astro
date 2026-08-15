@@ -3,6 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import reels from '../data/reels.json';
 import categorias from '../data/categorias.json';
 import { url } from '../lib/url';
+import { miniaturas } from '../lib/miniaturas';
 
 // Secciones en el mismo orden que la leyenda del mapa, sin categorías vacías.
 // Dentro de cada una se respeta el orden de reels.json.
@@ -11,6 +12,16 @@ const secciones = categorias
   .filter((s) => s.videos.length > 0);
 
 const total = reels.length;
+
+// Miniaturas reducidas (480 px, webp) generadas en el build. Si una foto no
+// existe todavía, se usa la ruta original y el onerror deja ver el icono.
+const thumbs = await miniaturas(reels);
+
+// Texto por el que busca el buscador: título + categoría, en minúsculas y sin
+// tildes, para que «jeronimos» encuentre «Jerónimos». La misma normalización
+// se aplica en el script a lo que teclea el usuario.
+const normaliza = (s: string) =>
+  s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
 ---
 
 <BaseLayout
@@ -25,49 +36,80 @@ const total = reels.length;
   </section>
 
   <section class="container videos-content">
-    <div class="cats-filter">
-      <span class="cats-label">Filtrar:</span>
-      <button class="cat-btn active" data-cat="all">Todas</button>
-      {secciones.map(({ cat, videos }) => (
-        <button class="cat-btn" data-cat={cat.id}>
-          <span class="cat-dot" style={`background: ${cat.color}`}></span>
-          {cat.nombre} ({videos.length})
+    <!-- Barra pegajosa: buscador + categorías. Se queda bajo la navegación
+         al hacer scroll para poder saltar de categoría desde cualquier punto. -->
+    <div class="toolbar">
+      <input
+        type="search"
+        id="buscador"
+        placeholder="Buscar vídeos…"
+        aria-label="Buscar vídeos por título"
+        autocomplete="off"
+      />
+      <div class="cats-filter" role="group" aria-label="Filtrar por categoría">
+        <button class="cat-btn active" data-cat="all" aria-pressed="true">
+          Todas <span class="cat-count">{total}</span>
         </button>
-      ))}
+        {secciones.map(({ cat, videos }) => (
+          <button class="cat-btn" data-cat={cat.id} aria-pressed="false">
+            <span class="cat-dot" style={`background: ${cat.color}`}></span>
+            {cat.nombre} <span class="cat-count">{videos.length}</span>
+          </button>
+        ))}
+      </div>
     </div>
+
+    <p class="sin-resultados" hidden>No hay vídeos que encajen con esa búsqueda.</p>
 
     {secciones.map(({ cat, videos }) => (
       <section class="cat-section" data-cat={cat.id} id={cat.id}>
         <h2 class="cat-title">
           <span class="cat-badge" style={`background: ${cat.color}`} set:html={cat.icono} />
           {cat.nombre}
-          <span class="cat-count">{videos.length}</span>
+          <span class="cat-count-title">{videos.length}</span>
         </h2>
 
         <div class="videos-grid">
           {videos.map((reel) => (
-            <article class="video-card">
+            <article class="video-card" data-buscable={normaliza(`${reel.titulo} ${cat.nombre}`)}>
+              <!-- La miniatura y el título llevan al mismo sitio: solo el título
+                   es enlace accesible (como en el listado del blog). -->
               <a
                 href={reel.urlReel}
                 target="_blank"
                 rel="noopener"
                 class="video-thumb"
                 style={`background: ${cat.color}`}
-                aria-label={`Ver «${reel.titulo}» en Instagram`}
+                tabindex="-1"
+                aria-hidden="true"
               >
                 <span class="thumb-icon" set:html={cat.icono} />
                 <img
-                  src={url(reel.miniatura)}
-                  alt={reel.titulo}
+                  src={thumbs[reel.id] ?? url(reel.miniatura)}
+                  alt=""
                   loading="lazy"
                   onerror="this.remove()"
                 />
-                <span class="thumb-play" aria-hidden="true">
+                <span class="thumb-insta">
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                </span>
+                <span class="thumb-play">
                   <svg viewBox="0 0 24 24" width="34" height="34" fill="white"><path d="M8 5v14l11-7z"/></svg>
+                  <span class="thumb-cta">Ver en Instagram ↗</span>
                 </span>
               </a>
-              <h3><a href={reel.urlReel} target="_blank" rel="noopener">{reel.titulo}</a></h3>
-              <a class="map-link" href={url(`/?reel=${reel.id}#mapa`)}>Ver en el mapa</a>
+              <h3>
+                <a
+                  href={reel.urlReel}
+                  target="_blank"
+                  rel="noopener"
+                  aria-label={`Ver «${reel.titulo}» en Instagram (se abre en otra pestaña)`}
+                >{reel.titulo}</a>
+              </h3>
+              <a class="map-link" href={url(`/?reel=${reel.id}#mapa`)}>
+                <svg viewBox="0 0 24 24" width="12" height="12" fill="currentColor" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z"/></svg>
+                Ver en el mapa
+              </a>
             </article>
           ))}
         </div>
@@ -77,24 +119,109 @@ const total = reels.length;
 </BaseLayout>
 
 <script>
-  document.querySelectorAll<HTMLButtonElement>('.cat-btn').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      document.querySelectorAll('.cat-btn').forEach((b) => b.classList.remove('active'));
-      btn.classList.add('active');
+  const toolbar = document.querySelector<HTMLElement>('.toolbar')!;
+  const filaChips = document.querySelector<HTMLElement>('.cats-filter')!;
+  const buscador = document.getElementById('buscador') as HTMLInputElement;
+  const chips = Array.from(document.querySelectorAll<HTMLButtonElement>('.cat-btn'));
+  const secciones = Array.from(document.querySelectorAll<HTMLElement>('.cat-section'));
+  const aviso = document.querySelector<HTMLElement>('.sin-resultados')!;
+  const navAltura = parseInt(getComputedStyle(document.documentElement).getPropertyValue('--nav-height')) || 64;
 
-      const cat = btn.dataset.cat;
-      document.querySelectorAll<HTMLElement>('.cat-section').forEach((sec) => {
-        sec.style.display = cat === 'all' || sec.dataset.cat === cat ? '' : 'none';
+  const idsValidos = new Set(chips.map((c) => c.dataset.cat!));
+  let catActiva = 'all';
+
+  // Misma normalización que en el frontmatter (data-buscable).
+  const normaliza = (s: string) =>
+    s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+
+  // La altura de la barra pegajosa, para que las anclas (#categoria) no
+  // queden debajo de ella.
+  function medirToolbar() {
+    document.documentElement.style.setProperty('--toolbar-h', `${toolbar.offsetHeight}px`);
+  }
+
+  // En móvil los chips van en una fila con scroll horizontal: el activo se
+  // centra para que no quede bajo el desvanecido del borde. En escritorio la
+  // fila no tiene scroll y no hace nada.
+  function centrarChip(chip: HTMLElement) {
+    if (filaChips.scrollWidth <= filaChips.clientWidth) return;
+    const fila = filaChips.getBoundingClientRect();
+    const caja = chip.getBoundingClientRect();
+    filaChips.scrollBy({ left: caja.left + caja.width / 2 - (fila.left + fila.width / 2) });
+  }
+
+  function aplicar() {
+    const texto = normaliza(buscador.value.trim());
+    let visibles = 0;
+
+    secciones.forEach((sec) => {
+      const pasaCat = catActiva === 'all' || sec.dataset.cat === catActiva;
+      let enSeccion = 0;
+      sec.querySelectorAll<HTMLElement>('.video-card').forEach((tarjeta) => {
+        const pasaTexto = !texto || (tarjeta.dataset.buscable || '').includes(texto);
+        const visible = pasaCat && pasaTexto;
+        tarjeta.hidden = !visible;
+        if (visible) enSeccion++;
       });
+      sec.hidden = enSeccion === 0;
+      visibles += enSeccion;
+    });
+
+    aviso.hidden = visibles > 0;
+
+    chips.forEach((chip) => {
+      const activo = chip.dataset.cat === catActiva;
+      chip.classList.toggle('active', activo);
+      chip.setAttribute('aria-pressed', String(activo));
+      if (activo) centrarChip(chip);
+    });
+  }
+
+  // Al filtrar, la página se acorta: llevamos al usuario a la barra para que
+  // no se quede en un punto que ya no existe (o en medio de otra categoría).
+  function irALaBarra() {
+    const top = toolbar.getBoundingClientRect().top + window.scrollY - navAltura;
+    if (window.scrollY > top) window.scrollTo({ top });
+  }
+
+  function activar(cat: string, desplazar: boolean) {
+    catActiva = idsValidos.has(cat) ? cat : 'all';
+    aplicar();
+    if (desplazar) irALaBarra();
+  }
+
+  chips.forEach((chip) => {
+    chip.addEventListener('click', () => {
+      const cat = chip.dataset.cat!;
+      // replaceState en vez de location.hash: sin salto de ancla nativo ni
+      // una entrada de historial por cada pulsación.
+      const sinHash = window.location.pathname + window.location.search;
+      history.replaceState(null, '', cat === 'all' ? sinHash : `#${cat}`);
+      activar(cat, true);
     });
   });
+
+  buscador.addEventListener('input', aplicar);
+
+  // El hash filtra: /videos#semana-santa muestra solo esa categoría. Así llegan
+  // los enlaces «Más vídeos de esta categoría →» del popup del mapa.
+  function desdeHash() {
+    const cat = decodeURIComponent(window.location.hash.slice(1));
+    activar(cat, cat !== '');
+  }
+
+  window.addEventListener('hashchange', desdeHash);
+  window.addEventListener('resize', medirToolbar);
+
+  medirToolbar();
+  desdeHash();
 </script>
 
 <style>
   .videos-header {
     padding: 3rem 0 2rem;
     border-bottom: 1px solid var(--color-border);
-    margin-bottom: 2rem;
+    margin-bottom: 0;
   }
 
   .videos-header h1 {
@@ -110,18 +237,43 @@ const total = reels.length;
     padding-bottom: 4rem;
   }
 
-  .cats-filter {
+  /* Barra pegajosa bajo la navegación: buscador y chips en la misma rejilla
+     (los chips fluyen con display: contents). */
+  .toolbar {
+    position: sticky;
+    top: var(--nav-height);
+    z-index: 10;
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
     align-items: center;
-    margin-bottom: 2.5rem;
+    gap: 0.5rem;
+    /* Sangra hasta los bordes del contenedor para tapar del todo lo que pasa
+       por debajo al hacer scroll (sin el sangrado asoma una línea de 1 px). */
+    padding: 0.85rem 1.5rem;
+    margin: 0 -1.5rem 2rem;
+    background: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
   }
 
-  .cats-label {
-    font-weight: 500;
-    font-size: 0.9rem;
-    color: var(--color-text-secondary);
+  #buscador {
+    flex: 0 0 220px;
+    padding: 0.45rem 0.9rem;
+    border: 1px solid var(--color-border);
+    border-radius: 20px;
+    background: #fff;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    color: var(--color-text);
+  }
+
+  #buscador:focus {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 1px;
+    border-color: transparent;
+  }
+
+  .cats-filter {
+    display: contents;
   }
 
   .cat-btn {
@@ -136,7 +288,13 @@ const total = reels.length;
     cursor: pointer;
     font-family: var(--font-sans);
     color: var(--color-text-secondary);
+    white-space: nowrap;
     transition: all 0.2s;
+  }
+
+  .cat-count {
+    font-size: 0.7rem;
+    color: var(--color-text-muted);
   }
 
   .cat-btn:hover,
@@ -146,6 +304,11 @@ const total = reels.length;
     border-color: var(--color-accent);
   }
 
+  .cat-btn:hover .cat-count,
+  .cat-btn.active .cat-count {
+    color: rgba(255, 255, 255, 0.8);
+  }
+
   .cat-dot {
     width: 9px;
     height: 9px;
@@ -153,11 +316,16 @@ const total = reels.length;
     flex-shrink: 0;
   }
 
+  .sin-resultados {
+    color: var(--color-text-muted);
+    margin-bottom: 2rem;
+  }
+
   .cat-section {
     margin-bottom: 3rem;
-    /* Para que al llegar desde el popup del mapa (/videos#categoria)
-       el título no quede oculto bajo la barra de navegación. */
-    scroll-margin-top: calc(var(--nav-height) + 1rem);
+    /* Para que al llegar por ancla (/videos#categoria) el título no quede
+       oculto bajo la navegación ni bajo la barra pegajosa. */
+    scroll-margin-top: calc(var(--nav-height) + var(--toolbar-h, 0px) + 1rem);
   }
 
   .cat-title {
@@ -178,7 +346,7 @@ const total = reels.length;
     flex-shrink: 0;
   }
 
-  .cat-count {
+  .cat-count-title {
     font-family: var(--font-sans);
     font-size: 0.8rem;
     font-weight: 500;
@@ -199,7 +367,7 @@ const total = reels.length;
     font-size: 0.9rem;
     font-weight: 600;
     line-height: 1.35;
-    margin: 0.6rem 0 0.15rem;
+    margin: 0.6rem 0 0.2rem;
   }
 
   .video-card h3 a {
@@ -242,15 +410,44 @@ const total = reels.length;
     object-fit: cover;
   }
 
+  /* Glifo de Instagram siempre visible: avisa de que el vídeo se ve allí. */
+  .thumb-insta {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: rgba(20, 20, 19, 0.55);
+    color: #fff;
+    z-index: 1;
+  }
+
   .thumb-play {
     position: absolute;
     inset: 0;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    background: rgba(20, 20, 19, 0.25);
+    gap: 0.4rem;
+    background: rgba(20, 20, 19, 0.3);
     opacity: 0;
     transition: opacity 0.2s;
+  }
+
+  .thumb-cta {
+    font-family: var(--font-sans);
+    font-size: 0.72rem;
+    font-weight: 600;
+    padding: 0.3rem 0.75rem;
+    border-radius: 20px;
+    background: #fff;
+    color: var(--color-text);
+    white-space: nowrap;
   }
 
   .video-thumb:hover .thumb-play {
@@ -258,6 +455,9 @@ const total = reels.length;
   }
 
   .map-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
     font-size: 0.78rem;
     color: var(--color-text-muted);
   }
@@ -268,6 +468,46 @@ const total = reels.length;
   }
 
   @media (max-width: 640px) {
+    /* Buscador a todo lo ancho y los chips en una sola fila con scroll
+       horizontal que sangra hasta los bordes de la pantalla. */
+    .toolbar {
+      flex-direction: column;
+      /* nowrap: con wrap, la línea tomaría el ancho intrínseco de la fila
+         de chips (casi 2000 px) y desbordaría la pantalla. */
+      flex-wrap: nowrap;
+      align-items: stretch;
+      gap: 0.65rem;
+      padding: 0.75rem 1.5rem;
+    }
+
+    #buscador {
+      flex: none;
+      width: 100%;
+    }
+
+    .cats-filter {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 0.5rem;
+      min-width: 0;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+      margin: 0 -1.5rem;
+      padding: 0 1.5rem;
+      /* Se desvanece por la derecha como pista de que hay más categorías. */
+      mask-image: linear-gradient(90deg, #000 calc(100% - 2rem), transparent);
+      -webkit-mask-image: linear-gradient(90deg, #000 calc(100% - 2rem), transparent);
+    }
+
+    .cats-filter::-webkit-scrollbar {
+      display: none;
+    }
+
+    .cat-btn {
+      flex-shrink: 0;
+    }
+
     .videos-grid {
       grid-template-columns: repeat(2, 1fr);
       gap: 1rem;

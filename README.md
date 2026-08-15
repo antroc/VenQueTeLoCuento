@@ -149,6 +149,9 @@ Borra su `.md` y sus fotos de `public/img/blog/`.
 
 - Formato JPG, y mejor si no pasan de ~1200-1600 px de lado: cargan rápido y
   se ven perfectas.
+- Las miniaturas de los reels se **reducen solas al publicar** (a 480 px de
+  ancho, en webp): en la página de Vídeos y en los popups del mapa se sirve la
+  versión ligera, así que puedes subir el JPG tal cual sale del móvil.
 - Nombres de fichero sin espacios, sin tildes y en minúsculas:
   `casa-del-piñon.jpg` ❌ → `casa-del-pinon.jpg` ✅
 - Si una foto sale girada, ábrela en Vista Previa del Mac, gírala y guarda,
