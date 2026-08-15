@@ -4,28 +4,37 @@ date: 2025-03-01
 tags: ["patrimonio", "leyendas"]
 images:
   - "/img/blog/salvemos-palacio-saavedra-1.jpg"
+  - "/img/blog/salvemos-palacio-saavedra-2.jpg"
+  - "/img/blog/salvemos-palacio-saavedra-3.jpg"
+  - "/img/blog/salvemos-palacio-saavedra-4.jpg"
+  - "/img/blog/salvemos-palacio-saavedra-5.jpg"
 description: "El Palacio Saavedra, hoy colegio mayor Azarbe, sobrevivió a la piqueta pero no al vandalismo. Su historia —y la leyenda del torreón del duende— merecen respeto."
 ---
 
 Como si fuera el día de la marmota, vuelvo a pasear por la calle Rambla y me detengo, una vez más, frente al Palacio Saavedra, hoy colegio mayor Azarbe. Tengo especial cariño a todos los palacios que siguen en pie después de una época en la que la piqueta arrasaba, pues son muy pocos los que quedan y por eso deberíamos darles un trato especial, para que sus muros no sufran el deterioro del entorno urbano.
 
 <figure>
-  <img src="/img/blog/salvemos-palacio-saavedra-1.jpg" alt="Fachada del Palacio Saavedra Fajardo">
-  <figcaption>Fachada del Palacio Saavedra Fajardo.</figcaption>
+  <img src="/img/blog/salvemos-palacio-saavedra-1.jpg" alt="Fachada principal del Palacio Saavedra Fajardo">
+  <figcaption>Fachada principal del Palacio Saavedra Fajardo.</figcaption>
 </figure>
 
 En 2020 solicité al Ayuntamiento, concretamente a la Oficina del grafiti, a través de redes sociales, que limpiara su fachada principal y lateral. Aunque el edificio es propiedad de la Universidad de Murcia, este respondió pintando ambas fachadas. Sin embargo, la parte trasera no tuvo la misma suerte, pues cada vez crece más el número de grafitis compitiendo por ocupar el mayor espacio.
 
 <figure>
-  <img src="/img/blog/salvemos-palacio-saavedra-3.jpg" alt="Estado de la fachada de la torre en 2020">
-  <figcaption>Estado de la fachada de la torre en el 2020.</figcaption>
+  <img src="/img/blog/salvemos-palacio-saavedra-2.jpg" alt="Estado de la fachada de la torre en 2020">
+  <figcaption>Estado de la fachada de la torre en 2020.</figcaption>
+</figure>
+
+<figure>
+  <img src="/img/blog/salvemos-palacio-saavedra-3.jpg" alt="Grafitis en la parte trasera del palacio">
+  <figcaption>Crecen los grafitis en la parte trasera del palacio.</figcaption>
 </figure>
 
 Este 2025 han vuelto los grafitis a la fachada lateral. Parece ser que las campañas de concienciación para reducir el vandalismo no surten efecto. A pesar de los esfuerzos de la Oficina del grafiti por eliminar pintadas ilegales, desgraciadamente seguirá el efecto llamada para convertir las paredes en un lienzo, para esos desalmados que no respetan el patrimonio murciano. Es una realidad que borrar esos grafitis lo pagamos los ciudadanos a través de nuestros impuestos.
 
 <figure>
-  <img src="/img/blog/salvemos-palacio-saavedra-2.jpg" alt="Grafitis en la parte trasera del palacio">
-  <figcaption>Crecen los grafitis en la parte trasera del palacio.</figcaption>
+  <img src="/img/blog/salvemos-palacio-saavedra-4.jpg" alt="Grafitis en la fachada lateral de la torre en 2025">
+  <figcaption>Los grafitis han vuelto a la fachada lateral en 2025.</figcaption>
 </figure>
 
 Recientemente salió una noticia en el diario Granada Hoy que narra que la ciudad de Granada ha implantado un proyecto piloto con el cual, con la ayuda de la Inteligencia Artificial, se podrá detectar en tiempo real cualquier acto vandálico, entre los que se incluyen las pintadas a fachadas. Sin duda es un sistema novedoso que, poco a poco, se irá instalando en las distintas ciudades de España. Esperemos que esta medida pueda disuadir a los infractores, ya que el gasto de borrar grafitis en las distintas ciudades de España es cada vez mayor.
@@ -33,7 +42,7 @@ Recientemente salió una noticia en el diario Granada Hoy que narra que la ciuda
 El Palacio Saavedra es uno de los pocos palacios que se salvó de la piqueta, pero sigue siendo maltratado con actos vandálicos. Su historia merece respeto: Don Gregorio Saavedra y Fontes construyó el palacio en el siglo XVII en el barrio de Santa Eulalia. En su fachada podemos ver cuatro columnas y un balcón central, con el escudo de los Saavedra en el centro, el de los Fajardo a un lado y el de los Fontes al otro.
 
 <figure>
-  <img src="/img/blog/salvemos-palacio-saavedra-4.jpg" alt="Fachada lateral de la torre del Palacio Saavedra Fajardo">
+  <img src="/img/blog/salvemos-palacio-saavedra-5.jpg" alt="Fachada lateral de la torre del Palacio Saavedra Fajardo">
   <figcaption>Fachada lateral de la torre del Palacio Saavedra Fajardo.</figcaption>
 </figure>
 

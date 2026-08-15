@@ -4,6 +4,9 @@ date: 2024-03-01
 tags: ["patrimonio", "arquitectura"]
 images:
   - "/img/blog/palacio-almodovar-1.jpg"
+  - "/img/blog/palacio-almodovar-2.jpg"
+  - "/img/blog/palacio-almodovar-3.jpg"
+  - "/img/blog/palacio-almodovar-4.jpg"
 description: "El palacio del siglo XVII de la plaza de Santo Domingo, custodiado por sus gigantes, renace tras su rehabilitación como la rosa de Jericó."
 ---
 
@@ -17,15 +20,20 @@ Hoy vengo a contaros la historia de un Palacio que milagrosamente se salvó de l
 Como curiosidad, el famoso Arco de Santo Domingo se construyó en el siglo XVIII por Toribio Martínez de la Vega (autor del Puente Viejo) para que los condes de Almodóvar accedieran directamente desde el Palacio a la capilla de la Virgen del Rosario, y de esta forma no pisaran la calle, pues estos eran mecenas y devotos de esta imagen. Hoy, este pasadizo no tan secreto (puesto que tiene 4 ventanas que se ven desde fuera) está tapiado. Sería un sueño recuperarlo para hacer visitas guiadas desde el Palacio hasta la Iglesia.
 
 <figure>
-  <img src="/img/blog/palacio-almodovar-2.jpg" alt="Detalle de uno de los gigantes con su maza">
-  <figcaption>Detalle de uno de los gigantes con su maza.</figcaption>
+  <img src="/img/blog/palacio-almodovar-2.jpg" alt="Uno de los gigantes del Palacio Almodóvar con su maza">
+  <figcaption>Uno de los gigantes, con la maza al hombro.</figcaption>
+</figure>
+
+<figure>
+  <img src="/img/blog/palacio-almodovar-3.jpg" alt="El otro gigante de la fachada del Palacio Almodóvar">
+  <figcaption>El otro gigante, con la maza en alto.</figcaption>
 </figure>
 
 Y es en el siglo XXI cuando la empresa Profusa adquiere el edificio para rehabilitarlo. Como novedad, se le añadió una quinta planta, donde se sitúa la primera azotea panorámica de Murcia. Su uso ha sido hasta la fecha comercial, cultural y gastronómico.
 
 <figure>
-  <img src="/img/blog/palacio-almodovar-3.jpg" alt="Techo interior con el escudo de los condes de Almodóvar">
-  <figcaption>Techo interior con el escudo nobiliario.</figcaption>
+  <img src="/img/blog/palacio-almodovar-4.jpg" alt="Techo de la escalera con el escudo de los condes de Almodóvar">
+  <figcaption>El techo de la escalera, con el escudo nobiliario.</figcaption>
 </figure>
 
 Nuestro Real Casino de Murcia también habilitó su encantadora terraza hace más de una década, con unas vistas maravillosas a la torre de la Catedral y los tragaluces del edificio.

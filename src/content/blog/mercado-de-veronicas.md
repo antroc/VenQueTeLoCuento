@@ -4,6 +4,10 @@ date: 2024-07-01
 tags: ["patrimonio", "arquitectura"]
 images:
   - "/img/blog/mercado-de-veronicas-1.jpg"
+  - "/img/blog/mercado-de-veronicas-2.jpg"
+  - "/img/blog/mercado-de-veronicas-3.jpg"
+  - "/img/blog/mercado-de-veronicas-4.jpg"
+  - "/img/blog/mercado-de-veronicas-5.jpg"
 description: "Del mercado de los jueves concedido por Alfonso X al edificio modernista de Pedro Cerdán: historia y futuro del Mercado de Verónicas."
 ---
 
@@ -22,7 +26,7 @@ Estos porches desaparecieron a principios del siglo XX, entre 1910 y 1930, pues 
 
 <figure>
   <img src="/img/blog/mercado-de-veronicas-4.jpg" alt="Primitivo Mercado de Verónicas proyectado por Juan José Belmonte">
-  <figcaption>Primitivo Mercado de Verónicas, Juan José Belmonte.</figcaption>
+  <figcaption>Primitivo Mercado de Verónicas, de Juan José Belmonte.</figcaption>
 </figure>
 
 Hoy, el famoso Mercado de Verónicas tal y como lo conocemos, fue proyectado por los arquitectos Pedro Cerdán y José A. Rodríguez. Su estilo es modernista y tiene 22 pórticos paralelos y cuatro grandes accesos donde se combina la piedra blanca y el ladrillo rojo, aunque ha sufrido varias modificaciones, entre otras la que se ejecutó en 1975 para crear la entreplanta y aumentar el número de dependencias.
@@ -32,11 +36,16 @@ Hoy, el famoso Mercado de Verónicas tal y como lo conocemos, fue proyectado por
   <figcaption>El Mercado de Verónicas en la actualidad.</figcaption>
 </figure>
 
-Se intentó rehabilitar la fachada en el año 2001 con los zócalos que se pusieron para favorecer la transpiración. Ninguno de los parches consiguió parar el deterioro de este mercado.
-
 <figure>
   <img src="/img/blog/mercado-de-veronicas-2.jpg" alt="Detalle de los pináculos del Mercado de Verónicas">
   <figcaption>Detalle de los pináculos del mercado.</figcaption>
+</figure>
+
+Se intentó rehabilitar la fachada en el año 2001 con los zócalos que se pusieron para favorecer la transpiración. Ninguno de los parches consiguió parar el deterioro de este mercado.
+
+<figure>
+  <img src="/img/blog/mercado-de-veronicas-5.jpg" alt="Deterioro de la fachada del Mercado de Verónicas">
+  <figcaption>El deterioro de la fachada, a pesar de los parches.</figcaption>
 </figure>
 
 Este año 2024 se cerrará el mercado el mes de agosto para realizar obras de mejora y con ello renovar el aislamiento térmico en fachada y cubiertas, además de intentar solucionar las humedades. Y en una segunda fase se abordará devolver la imagen del proyecto inicial de 1910, pues se contempla suprimir la planta superior.

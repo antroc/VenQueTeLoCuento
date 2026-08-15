@@ -4,6 +4,10 @@ date: 2026-07-01
 tags: ["patrimonio", "arquitectura"]
 images:
   - "/img/blog/casa-de-postas-de-librilla-1.jpg"
+  - "/img/blog/casa-de-postas-de-librilla-2.jpg"
+  - "/img/blog/casa-de-postas-de-librilla-3.jpg"
+  - "/img/blog/casa-de-postas-de-librilla-4.jpg"
+  - "/img/blog/casa-de-postas-de-librilla-5.jpg"
 description: "Una joya del siglo XVIII que se deshace en silencio: la casa de postas construida por la Casa de Alba espera todavía una oportunidad real."
 ---
 
@@ -28,14 +32,14 @@ La disposición de sus accesos explicaba perfectamente el uso para el que fue co
 Con el paso del tiempo, la casa de postas perdió su función original. Durante la Guerra Civil española, el edificio estuvo a punto de convertirse en fábrica conservera, pero esto no cuajó. También se utilizó parte del edificio como almacén general para guardar aperos agrícolas y paja.
 
 <figure>
-  <img src="/img/blog/casa-de-postas-de-librilla-3.jpg" alt="Arco interior de la casa de postas">
+  <img src="/img/blog/casa-de-postas-de-librilla-3.jpg" alt="Arco interior de la casa de postas invadido por la vegetación">
   <figcaption>El interior, invadido por la vegetación y los escombros.</figcaption>
 </figure>
 
 Hoy, la casa de postas de Librilla se encuentra en un estado deplorable, y aunque es un BIC, su deterioro es evidente y doloroso. Lo que fue un edificio noble, ligado a la historia de los caminos, del viaje y de la hospitalidad, permanece ahora expuesto a la ruina, al olvido y a la indiferencia. Cada visita confirma que el tiempo juega en su contra y que la falta de una intervención urgente puede acabar convirtiendo esta joya patrimonial en un recuerdo irrecuperable.
 
 <figure>
-  <img src="/img/blog/casa-de-postas-de-librilla-2.jpg" alt="Fachada lateral de la casa de postas con pintadas">
+  <img src="/img/blog/casa-de-postas-de-librilla-2.jpg" alt="Fachada de la casa de postas con pintadas">
   <figcaption>La fachada, cada vez más deteriorada.</figcaption>
 </figure>
 
@@ -44,8 +48,8 @@ En el año 2023, un grupo de vecinos de Librilla, a través de una asociación, 
 Sin embargo, por el momento, el edificio sigue sin salvarse. Su estado continúa siendo pésimo y la decadencia avanza sin pausa. La casa de postas de Librilla, una de las construcciones más singulares de su género, sigue esperando una oportunidad real.
 
 <figure>
-  <img src="/img/blog/casa-de-postas-de-librilla-4.jpg" alt="Pasillo interior en ruinas">
-  <figcaption>La ruina avanza sin pausa en el interior.</figcaption>
+  <img src="/img/blog/casa-de-postas-de-librilla-4.jpg" alt="El patio interior visto a través de la reja">
+  <figcaption>El patio central, visto a través de la reja.</figcaption>
 </figure>
 
 No hablamos sólo de muros antiguos ni de una fachada con escudo. Hablamos de memoria, de historia y de identidad. Hablamos de un edificio que fue testigo del tránsito de viajeros, comerciantes, correos, carruajes y caballerías. Hablamos de una arquitectura que explica una forma de vivir y de desplazarse que ya desapareció, pero que forma parte esencial de nuestra historia.

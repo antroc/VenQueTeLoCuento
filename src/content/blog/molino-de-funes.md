@@ -4,6 +4,7 @@ date: 2024-11-01
 tags: ["patrimonio", "huerta"]
 images:
   - "/img/blog/molino-de-funes-1.jpg"
+  - "/img/blog/molino-de-funes-2.jpg"
 description: "Uno de los pocos molinos de la huerta de Murcia que sigue en pie, testigo del crimen de la Arboleja e inspiración del pintor Ramón Gaya."
 ---
 
@@ -14,8 +15,8 @@ Dentro de la ruta de la Aljufía hay otros molinos como el del Amor, el de los C
 El Molino de Funes y la Casa Roja, anexa al molino, presentan un estado de conservación pésimo, no en vano en el año 2022 entró en la lista roja de Hispania Nostra, empeorándose su degradación cada día que pasa. Además, hay que sumar que su entorno es cada vez más sucio, rodeado de escombros y basura.
 
 <figure>
-  <img src="/img/blog/molino-de-funes-1.jpg" alt="Estado actual del Molino de Funes">
-  <figcaption>Estado actual del molino.</figcaption>
+  <img src="/img/blog/molino-de-funes-1.jpg" alt="El Molino de Funes y la Casa Roja sobre la acequia Aljufía">
+  <figcaption>Estado actual del molino, sobre la acequia Aljufía.</figcaption>
 </figure>
 
 Y si no fuera suficiente, este molino fue testigo de un crimen: el llamado crimen de la Arboleja, que ocurrió un 11 de octubre de 1896, donde Miguel Illán, padre de 6 hijos, fue tirado a la acequia con una faja al cuello y las manos atadas. El cadáver fue encontrado cinco días después por mandato judicial, pues se paró el caudal de la Aljufía. Este crimen tuvo jurado popular y no encontró culpable al dueño del molino, Manuel Funes. Una historia que forma parte de las crónicas negras murcianas.

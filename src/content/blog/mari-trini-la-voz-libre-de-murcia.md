@@ -4,6 +4,9 @@ date: 2026-01-01
 tags: ["personajes", "música"]
 images:
   - "/img/blog/mari-trini-1.jpg"
+  - "/img/blog/mari-trini-2.jpg"
+  - "/img/blog/mari-trini-3.jpg"
+  - "/img/blog/mari-trini-4.jpg"
 description: "María Trinidad Pérez de Miravete, murciana de nacimiento y de corazón, compuso cerca de trescientas canciones y rompió moldes en la música española."
 ---
 
@@ -11,10 +14,25 @@ María Trinidad Pérez de Miravete Mille nació el 12 de julio de 1947 en el nú
 
 <figure>
   <img src="/img/blog/mari-trini-1.jpg" alt="Retrato de Mari Trini">
-  <figcaption>Imagen de la página de Facebook Mari Trini Oficial.</figcaption>
+  <figcaption>Mari Trini.</figcaption>
+</figure>
+
+<figure>
+  <img src="/img/blog/mari-trini-2.jpg" alt="Portal de la casa natal de Mari Trini en la calle Alejandro Séiquer">
+  <figcaption>El portal de su casa natal, en la calle Alejandro Séiquer, con la placa que la recuerda.</figcaption>
+</figure>
+
+<figure>
+  <img src="/img/blog/mari-trini-3.jpg" alt="Placa conmemorativa en el número 13 de la calle Alejandro Séiquer">
+  <figcaption>La placa conmemorativa en el número 13.</figcaption>
 </figure>
 
 Se bautizó en la iglesia de San Lorenzo y su familia poseía dos casas en Singla, pedanía de Caravaca de la Cruz, donde pasaba largas temporadas. Tal vez por eso, la Wikipedia y otros medios insisten en situar su origen en Caravaca, aunque Mari Trini fue, sin duda, murciana de nacimiento y de corazón.
+
+<figure>
+  <img src="/img/blog/mari-trini-4.jpg" alt="Escalera del portal de la casa natal de Mari Trini">
+  <figcaption>La escalera del portal de la casa natal.</figcaption>
+</figure>
 
 Su linaje también la vinculaba al arte: era descendiente directa del escultor Francisco Salzillo, el gran imaginero murciano del siglo XVIII. Su familia pertenecía a una rama de la aristocracia y su infancia transcurrió entre la tradición y la cultura.
 

@@ -4,6 +4,8 @@ date: 2026-03-01
 tags: ["arte", "personajes"]
 images:
   - "/img/blog/elisa-seiquer-1.jpg"
+  - "/img/blog/elisa-seiquer-2.jpg"
+  - "/img/blog/elisa-seiquer-3.jpg"
 description: "La escultora Elisa Séiquer, Premio Salzillo en 1971, vivió fiel a su arte. Una petición: una placa conmemorativa en su casa natal de Santa Catalina."
 ---
 
@@ -35,7 +37,7 @@ En la actualidad, la única escultura de Elisa Séiquer que se encuentra en el j
 
 <figure>
   <img src="/img/blog/elisa-seiquer-1.jpg" alt="Escultura Juegos de muchachos de Elisa Séiquer">
-  <figcaption>Escultura Juegos de muchachos, de Elisa Séiquer.</figcaption>
+  <figcaption>Escultura Juegos de muchachos, de Elisa Séiquer, en el jardín de Isaac Peral.</figcaption>
 </figure>
 
 Elisa falleció prematuramente a los 50 años.

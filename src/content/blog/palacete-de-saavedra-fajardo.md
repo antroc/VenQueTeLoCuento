@@ -4,6 +4,10 @@ date: 2026-05-01
 tags: ["patrimonio", "arquitectura"]
 images:
   - "/img/blog/palacete-saavedra-fajardo-1.jpg"
+  - "/img/blog/palacete-saavedra-fajardo-2.jpg"
+  - "/img/blog/palacete-saavedra-fajardo-3.jpg"
+  - "/img/blog/palacete-saavedra-fajardo-4.jpg"
+  - "/img/blog/palacete-saavedra-fajardo-5.jpg"
 description: "Un edificio del siglo XIX que guarda historias antes de su restauración: primera sede del Banco de España en Murcia y hogar del recordado Pub Estudio 27."
 ---
 
@@ -18,19 +22,29 @@ Desde hace años se viene señalando la necesidad de recuperar este edificio, y 
 
 Pero este edificio no es solo un conjunto de muros antiguos. A lo largo de su historia ha tenido muchas vidas. Fue la primera sede del Banco de España en Murcia, antes de que se levantara el edificio que hoy conocemos en la Gran Vía. También albergó el Registro de la Propiedad, las bodegas de la Casa Rambla y, más adelante, el icónico Pub Estudio 27, un espacio muy recordado por los murcianos.
 
+<figure>
+  <img src="/img/blog/palacete-saavedra-fajardo-2.jpg" alt="Escalera principal del palacete">
+  <figcaption>La escalera principal, detenida en el tiempo.</figcaption>
+</figure>
+
 Acceder a su interior es como detener el tiempo. Al subir las escaleras hasta el primer piso el silencio lo envuelve todo. Las estancias conservan el eco de lo que fueron, como si la historia se hubiera quedado suspendida entre sus paredes. Y entonces aparece un detalle inesperado, casi poético: un piano, abandonado pero presente, como símbolo de las vidas y emociones que pasaron por allí.
 
 <figure>
-  <img src="/img/blog/palacete-saavedra-fajardo-2.jpg" alt="Escalera interior del palacete">
-  <figcaption>La escalera interior, detenida en el tiempo.</figcaption>
+  <img src="/img/blog/palacete-saavedra-fajardo-3.jpg" alt="Piano abandonado junto a la chimenea, frente a una ventana">
+  <figcaption>El piano abandonado, junto a la chimenea.</figcaption>
 </figure>
 
 <figure>
-  <img src="/img/blog/palacete-saavedra-fajardo-3.jpg" alt="Piano abandonado frente a una ventana del palacete">
-  <figcaption>El piano abandonado, frente a la ventana.</figcaption>
+  <img src="/img/blog/palacete-saavedra-fajardo-4.jpg" alt="Enfilada de estancias vacías del palacete">
+  <figcaption>Las estancias, vacías, conservan el eco de lo que fueron.</figcaption>
 </figure>
 
 Descubrir este tipo de lugares es una forma de conocer una Murcia distinta, la que no siempre se suele ver, pero que sigue viva en sus edificios. Antes de que el inmueble cambie para siempre, merece la pena detenerse, mirar y escuchar. Porque hay historias que, si no se cuentan, corren el riesgo de desaparecer.
+
+<figure>
+  <img src="/img/blog/palacete-saavedra-fajardo-5.jpg" alt="Otra escalera del interior del palacete">
+  <figcaption>Otra de las escaleras del interior.</figcaption>
+</figure>
 
 ---
 
