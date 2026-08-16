@@ -20,7 +20,7 @@ const minutos = (cuerpo: string) => Math.max(1, Math.round(cuerpo.split(/\s+/).l
   title="Artículos — ¡Ven, que te lo cuento!"
   description="Artículos sobre los lugares, historias y tradiciones de la Región de Murcia."
 >
-  <section class="blog-header">
+  <section class="page-header">
     <div class="container">
       <h1>Artículos</h1>
       <p>{posts.length} historias de patrimonio, arte y cultura de la Región de Murcia</p>
@@ -28,17 +28,21 @@ const minutos = (cuerpo: string) => Math.max(1, Math.round(cuerpo.split(/\s+/).l
   </section>
 
   <section class="container blog-content">
+    <!-- Barra pegajosa: buscador + temas (estilos compartidos con Vídeos
+         en global.css). -->
     <div class="toolbar">
       <input
         type="search"
         id="buscador"
+        class="buscador"
         placeholder="Buscar artículos…"
         aria-label="Buscar artículos por título"
+        autocomplete="off"
       />
-      <div class="tags-filter">
-        <button class="tag-btn active" data-tag="all">Todos <span class="tag-count">{posts.length}</span></button>
+      <div class="chips" role="group" aria-label="Filtrar por tema">
+        <button class="chip active" data-tag="all" aria-pressed="true">Todos <span class="chip-count">{posts.length}</span></button>
         {temas.map(([tag, n]) => (
-          <button class="tag-btn" data-tag={tag}>{tag} <span class="tag-count">{n}</span></button>
+          <button class="chip" data-tag={tag} aria-pressed="false">{tag} <span class="chip-count">{n}</span></button>
         ))}
       </div>
     </div>
@@ -99,10 +103,14 @@ const minutos = (cuerpo: string) => Math.max(1, Math.round(cuerpo.split(/\s+/).l
     aviso.hidden = visibles > 0;
   }
 
-  document.querySelectorAll<HTMLButtonElement>('.tag-btn').forEach(btn => {
+  const chips = Array.from(document.querySelectorAll<HTMLButtonElement>('.chip'));
+  chips.forEach(btn => {
     btn.addEventListener('click', () => {
-      document.querySelectorAll('.tag-btn').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
+      chips.forEach(b => {
+        const activo = b === btn;
+        b.classList.toggle('active', activo);
+        b.setAttribute('aria-pressed', String(activo));
+      });
       temaActivo = btn.dataset.tag!;
       aplicar();
     });
@@ -112,89 +120,11 @@ const minutos = (cuerpo: string) => Math.max(1, Math.round(cuerpo.split(/\s+/).l
 </script>
 
 <style>
-  .blog-header {
-    padding: 3rem 0 2rem;
-    border-bottom: 1px solid var(--color-border);
-    margin-bottom: 2rem;
-  }
-
-  .blog-header h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.25rem;
-  }
-
-  .blog-header p {
-    color: var(--color-text-muted);
-  }
+  /* La cabecera, la barra pegajosa (buscador + chips) y el aviso de «sin
+     resultados» son estilos compartidos con Vídeos: ver global.css. */
 
   .blog-content {
     padding-bottom: 4rem;
-  }
-
-  .toolbar {
-    display: flex;
-    flex-direction: column;
-    gap: 0.9rem;
-    margin-bottom: 2.5rem;
-  }
-
-  #buscador {
-    width: 100%;
-    max-width: 380px;
-    padding: 0.55rem 1rem;
-    border: 1px solid var(--color-border);
-    border-radius: 10px;
-    background: #fff;
-    font-family: var(--font-sans);
-    font-size: 0.9rem;
-    color: var(--color-text);
-  }
-
-  #buscador:focus {
-    outline: 2px solid var(--color-accent);
-    outline-offset: 1px;
-    border-color: transparent;
-  }
-
-  .tags-filter {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    align-items: center;
-  }
-
-  .tag-btn {
-    background: transparent;
-    border: 1px solid var(--color-border);
-    padding: 0.3rem 0.75rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    cursor: pointer;
-    font-family: var(--font-sans);
-    color: var(--color-text-secondary);
-    transition: all 0.2s;
-  }
-
-  .tag-count {
-    font-size: 0.7rem;
-    color: var(--color-text-muted);
-  }
-
-  .tag-btn:hover,
-  .tag-btn.active {
-    background: var(--color-accent);
-    color: #fff;
-    border-color: var(--color-accent);
-  }
-
-  .tag-btn:hover .tag-count,
-  .tag-btn.active .tag-count {
-    color: rgba(255, 255, 255, 0.8);
-  }
-
-  .sin-resultados {
-    color: var(--color-text-muted);
-    margin-bottom: 2rem;
   }
 
   /* Cuadrícula de revista: dos columnas y el artículo más reciente
