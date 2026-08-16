@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import { url } from '../../lib/url';
+import categorias from '../../data/categorias.json';
 
 const posts = (await getCollection('blog')).sort(
   (a, b) => b.data.date.getTime() - a.data.date.getTime()
@@ -11,6 +12,27 @@ const posts = (await getCollection('blog')).sort(
 const conteo: Record<string, number> = {};
 posts.flatMap(p => p.data.tags).forEach(t => { conteo[t] = (conteo[t] || 0) + 1; });
 const temas = Object.entries(conteo).sort((a, b) => b[1] - a[1]);
+
+// Color del punto de cada tema (como el de las categorías en Vídeos). Si el
+// tema aparece en el nombre de una categoría de reels («personajes» →
+// Personajes históricos, «gastronomía» → Gastronomía…) toma su color, para
+// que la misma palabra tenga el mismo color en toda la web; al resto se les
+// reparte, por orden de frecuencia, la paleta de la web. No hay nada que
+// mantener: un tema nuevo recibe color solo.
+const normaliza = (s: string) => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+const PALETA = [
+  '#EDA100', '#8C5A32', '#6E6259', '#3A8E8C', '#7B8F3C', '#7D5BA6',
+  '#4A9E6D', '#C06C9E', '#B23A48', '#5B7FA5', '#A66B3E', '#5E7C8A',
+];
+const usados = new Set<string>();
+const colorTema: Record<string, string> = {};
+temas.forEach(([tag], i) => {
+  const cat = categorias.find(c => normaliza(c.nombre).split(/[^a-z0-9]+/).includes(normaliza(tag)));
+  const color = (cat && !usados.has(cat.color) ? cat.color : PALETA.find(c => !usados.has(c)))
+    ?? PALETA[i % PALETA.length];
+  usados.add(color);
+  colorTema[tag] = color;
+});
 
 // Tiempo de lectura estimado (~200 palabras por minuto).
 const minutos = (cuerpo: string) => Math.max(1, Math.round(cuerpo.split(/\s+/).length / 200));
@@ -42,7 +64,10 @@ const minutos = (cuerpo: string) => Math.max(1, Math.round(cuerpo.split(/\s+/).l
       <div class="chips" role="group" aria-label="Filtrar por tema">
         <button class="chip active" data-tag="all" aria-pressed="true">Todos <span class="chip-count">{posts.length}</span></button>
         {temas.map(([tag, n]) => (
-          <button class="chip" data-tag={tag} aria-pressed="false">{tag} <span class="chip-count">{n}</span></button>
+          <button class="chip" data-tag={tag} aria-pressed="false">
+            <span class="chip-dot" style={`background: ${colorTema[tag]}`}></span>
+            {tag} <span class="chip-count">{n}</span>
+          </button>
         ))}
       </div>
     </div>
