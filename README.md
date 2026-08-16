@@ -124,8 +124,7 @@ Detalles que conviene saber:
   arquitectura, arte, personajes, tradiciones, leyendas, huerta, gastronomía,
   música). Si escribes una nueva, aparece sola en los filtros — no hay ninguna
   lista que mantener.
-- Las rutas de las fotos siempre empiezan por `/img/blog/` — el prefijo de la
-  subcarpeta de GitHub Pages se añade solo al publicar.
+- Las rutas de las fotos siempre empiezan por `/img/blog/`.
 
 ### Qué se actualiza solo al tocar artículos
 
@@ -194,6 +193,12 @@ npm run dev
 
 Web en `http://localhost:4321` y editor de reels en `http://localhost:4321/admin`.
 
-Cuando llegue el dominio propio: en [`astro.config.mjs`](astro.config.mjs) pon
-`site: 'https://venquetelocuento.es'` y `base: '/'`, y crea `public/CNAME` con
-el dominio. Está comentado en el propio fichero.
+### Dominio y publicación
+
+La web se publica en **https://venquetelocuento.es** desde GitHub Pages: cada
+push a `main` lanza el workflow [`deploy.yml`](.github/workflows/deploy.yml),
+que hace el build y despliega `dist/`. El dominio está configurado en
+*Settings → Pages → Custom domain* del repositorio (y anotado en
+[`public/CNAME`](public/CNAME)); en el registrador el DNS lleva los cuatro
+registros A de GitHub Pages en `@` y un CNAME `www` → `antroc.github.io`.
+La antigua URL `antroc.github.io/VenQueTeLoCuento/` redirige sola al dominio.

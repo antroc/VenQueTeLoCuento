@@ -1,11 +1,10 @@
 // Todas las rutas internas de la web (enlaces e imágenes) pasan por aquí.
 //
-// Hace falta porque la web se publica dentro de una subcarpeta
-// (antroc.github.io/VenQueTeLoCuento/) y no en la raíz de un dominio: sin este
-// prefijo, un enlace a "/blog" apuntaría a antroc.github.io/blog, que no existe.
-//
-// El día que la web se mude a su dominio propio, basta con cambiar `base` en
-// astro.config.mjs: estas funciones devolverán las rutas sin prefijo solas.
+// Hoy la web se publica en la raíz de venquetelocuento.es (`base: '/'` en
+// astro.config.mjs), así que estas funciones devuelven las rutas tal cual.
+// Se mantienen porque hasta agosto de 2026 la web vivía en la subcarpeta
+// antroc.github.io/VenQueTeLoCuento/ y, si algún día vuelve a una subcarpeta,
+// basta con cambiar `base` en astro.config.mjs para que todo siga funcionando.
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 

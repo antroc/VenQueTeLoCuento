@@ -1,46 +1,18 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
-// La web se publica en https://antroc.github.io/VenQueTeLoCuento/, es decir,
-// dentro de una subcarpeta. Por eso el build necesita el prefijo `base`.
+// La web se publica en https://venquetelocuento.es (dominio propio, servido
+// por GitHub Pages; el dominio se configura en Settings → Pages del repo y
+// queda documentado en public/CNAME). Al vivir en la raíz del dominio no hace
+// falta ningún prefijo de subcarpeta: `base` es '/'.
 //
-// En `npm run dev` no se aplica, para que localhost:4321 y localhost:4321/admin
-// sigan funcionando igual que siempre.
-//
-// CUANDO TENGAS EL DOMINIO: pon `site: 'https://venquetelocuento.es'`,
-// `base: '/'` y crea el fichero public/CNAME. No hay que tocar nada más.
-const enProduccion = process.env.NODE_ENV === 'production';
-
-// Los artículos del blog llevan rutas absolutas ("/img/...", "/pdf/...") dentro
-// de su markdown. Las plantillas .astro pasan sus rutas por el helper url(),
-// pero el HTML que sale del markdown no, así que este plugin añade el prefijo
-// de la subcarpeta al generar cada página. En desarrollo no hace nada.
-function rehypePrefijoBase() {
-  const prefijo = enProduccion ? '/VenQueTeLoCuento' : '';
-  const procesa = nodo => {
-    if (nodo.type === 'element' && nodo.properties) {
-      for (const attr of ['src', 'href']) {
-        const valor = nodo.properties[attr];
-        if (typeof valor === 'string' && valor.startsWith('/') && !valor.startsWith('//')) {
-          nodo.properties[attr] = prefijo + valor;
-        }
-      }
-    }
-    if (nodo.type === 'raw' && typeof nodo.value === 'string') {
-      nodo.value = nodo.value
-        .replaceAll('src="/', `src="${prefijo}/`)
-        .replaceAll('href="/', `href="${prefijo}/`);
-    }
-    (nodo.children || []).forEach(procesa);
-  };
-  return tree => {
-    if (prefijo) procesa(tree);
-  };
-}
-
+// Antes se publicaba en https://antroc.github.io/VenQueTeLoCuento/ y el build
+// llevaba `base: '/VenQueTeLoCuento'`. Las rutas internas siguen pasando por el
+// helper url() de src/lib/url.ts, que con base '/' las devuelve tal cual; si
+// algún día la web volviera a una subcarpeta, bastaría con cambiar `base` aquí.
 export default defineConfig({
-  site: 'https://antroc.github.io',
-  base: enProduccion ? '/VenQueTeLoCuento' : '/',
+  site: 'https://venquetelocuento.es',
+  base: '/',
   output: 'static',
   integrations: [
     // Genera sitemap-index.xml en cada build, con todas las páginas
@@ -49,9 +21,6 @@ export default defineConfig({
       filter: (pagina) => !pagina.includes('/admin'),
     }),
   ],
-  markdown: {
-    rehypePlugins: [rehypePrefijoBase],
-  },
   // Si la variable PORT existe (la pone la herramienta de previsualización
   // cuando el 4321 está ocupado), el servidor de desarrollo la respeta.
   server: { port: process.env.PORT ? Number(process.env.PORT) : 4321 },
