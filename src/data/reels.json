@@ -1318,5 +1318,15 @@
     "lng": -1.132812,
     "miniatura": "/img/reels/135-el-primer-manicomio-de-murcia.jpg",
     "urlReel": "https://www.instagram.com/p/C7D0V_rNTDu/"
+  },
+  {
+    "id": "136",
+    "titulo": "El palomar de Villa Carmen",
+    "descripcion": "",
+    "categoria": "curiosidades",
+    "lat": 38.002772,
+    "lng": -1.146217,
+    "miniatura": "/img/reels/136-el-palomar-de-villa-carmen.jpg",
+    "urlReel": "https://www.instagram.com/p/DcF-cCisDFz/"
   }
 ]
