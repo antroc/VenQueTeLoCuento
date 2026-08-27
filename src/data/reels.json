@@ -1328,5 +1328,15 @@
     "lng": -1.146217,
     "miniatura": "/img/reels/136-el-palomar-de-villa-carmen.jpg",
     "urlReel": "https://www.instagram.com/p/DcF-cCisDFz/"
-  }
+  },
+  {
+    "id": "137",
+    "titulo": "Complejo residencial de Espinardo",
+    "descripcion": "",
+    "categoria": "abandonado",
+    "lat": 38.025763,
+    "lng": -1.170260,
+    "miniatura": "/img/reels/137-complejo-residencial-de-espinardo.jpg",
+    "urlReel": "https://www.instagram.com/p/DcYPn6KsecI/"
+  }  
 ]
