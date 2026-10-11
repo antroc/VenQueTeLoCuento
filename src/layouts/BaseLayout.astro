@@ -1,4 +1,7 @@
 ---
+// Importado desde aquí (y no con @import dentro de un <style is:global>)
+// para que Vite reescriba bien las rutas de las tipografías que trae.
+import '../styles/global.css';
 import { url, sinBase } from '../lib/url';
 
 interface Props {
@@ -119,10 +122,6 @@ const imagenOg = new URL(url(ogImage ?? '/img/og.jpg'), Astro.site).href;
   </script>
 </body>
 </html>
-
-<style is:global>
-  @import '../styles/global.css';
-</style>
 
 <style>
   .nav {

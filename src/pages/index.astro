@@ -5,6 +5,11 @@ import reels from '../data/reels.json';
 import categorias from '../data/categorias.json';
 import { url } from '../lib/url';
 import { miniaturas } from '../lib/miniaturas';
+// Estilos del mapa desde node_modules, empaquetados con la web: sin pedir
+// nada a unpkg ni a ningún otro tercero (ver la política de privacidad).
+import 'leaflet/dist/leaflet.css';
+import 'leaflet.markercluster/dist/MarkerCluster.css';
+import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
 
 // Miniaturas reducidas (480 px, webp) para los popups del mapa; si una foto
 // no existe todavía, el popup usa la ruta original como hasta ahora.
@@ -433,10 +438,6 @@ const datosWeb = {
     }
   }
 </style>
-
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
-<link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
 
 <style is:global>
   .custom-marker {

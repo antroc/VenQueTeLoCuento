@@ -2,10 +2,10 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 
 // La lista de «Servicios externos» tiene que coincidir con lo que la web
-// carga de verdad: Google Fonts (@import de src/styles/global.css), y en la
-// portada los mapas de CARTO y el CSS de Leaflet desde unpkg
-// (src/pages/index.astro). Si alguno se quita o se añade otro, hay que
-// actualizar esta página y su fecha.
+// carga de verdad: el alojamiento (GitHub Pages) y, en la portada, los mapas
+// de CARTO (src/pages/index.astro). Las tipografías y el CSS de Leaflet se
+// sirven desde la propia web a propósito, para no sumar terceros. Si alguna
+// vez se añade un servicio externo, hay que actualizar esta página y su fecha.
 ---
 
 <BaseLayout
@@ -30,8 +30,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     </p>
     <p>
       Aun así, como en cualquier web, al visitarla tu navegador se conecta a los servidores que la
-      alojan y a algunos servicios externos que se explican a continuación. Esos servicios reciben,
-      por pura necesidad técnica, tu dirección IP y datos básicos de tu navegador.
+      alojan y, en la portada, al servicio que dibuja el mapa. Ambos reciben, por pura necesidad
+      técnica, tu dirección IP y datos básicos de tu navegador. Todo lo demás (textos, fotos,
+      tipografías y estilos) se sirve desde la propia web.
     </p>
 
     <h2>Servicios externos</h2>
@@ -42,25 +43,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         <a href="https://docs.github.com/es/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">Declaración de privacidad de GitHub</a>.
       </li>
       <li>
-        <strong>Google Fonts</strong> (Google) sirve las tipografías de la web, y recibe tu
-        dirección IP al descargarlas.
-        <a href="https://policies.google.com/privacy?hl=es" target="_blank" rel="noopener">Política de privacidad de Google</a>.
-      </li>
-      <li>
         <strong>CARTO</strong> sirve las imágenes del mapa de la portada, hechas con datos de
         OpenStreetMap. Recibe tu dirección IP y la zona del mapa que estás viendo.
         <a href="https://carto.com/privacy" target="_blank" rel="noopener">Política de privacidad de CARTO</a>.
       </li>
-      <li>
-        <strong>unpkg</strong> sirve, en la portada, los estilos de Leaflet, la herramienta que
-        dibuja el mapa. Recibe tu dirección IP.
-      </li>
     </ul>
     <p>
       Se usan por el interés legítimo de mostrar la web y su mapa correctamente (artículo 6.1.f del
-      RGPD). Algunos de estos proveedores, como GitHub y Google, tienen su sede en Estados Unidos,
-      por lo que pueden tratar esos datos fuera de la Unión Europea en las condiciones que indican
-      sus políticas.
+      RGPD). GitHub tiene su sede en Estados Unidos, por lo que puede tratar esos datos fuera de la
+      Unión Europea en las condiciones que indica su política.
     </p>
 
     <h2>Tu ubicación</h2>
