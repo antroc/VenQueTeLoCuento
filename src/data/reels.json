@@ -1348,5 +1348,55 @@
     "lng": -1.131115,
     "miniatura": "/img/reels/138-tesoro-de-jabonerias.jpg",
     "urlReel": "https://www.instagram.com/p/DcobYbTsftc/"
-  }  
+  },
+  {
+    "id": "139",
+    "titulo": "Torre Guil (Parte I)",
+    "descripcion": "",
+    "categoria": "abandonado",
+    "lat": 37.926046,
+    "lng": -1.226603,
+    "miniatura": "/img/reels/139-torre-guil-parteI.jpg",
+    "urlReel": "https://www.instagram.com/p/Dc5h4q1Mk-_/"
+  },
+  {
+    "id": "140",
+    "titulo": "Torre Guil (Parte II)",
+    "descripcion": "",
+    "categoria": "abandonado",
+    "lat": 37.926046,
+    "lng": -1.226603,
+    "miniatura": "/img/reels/140-torre-guil-parteII.jpg",
+    "urlReel": "https://www.instagram.com/p/DdLk873MKrt/"
+  },
+  {
+    "id": "141",
+    "titulo": "Los dos cristos de Monteagudo",
+    "descripcion": "",
+    "categoria": "curiosidades",
+    "lat": 38.020572,
+    "lng": -1.097658,
+    "miniatura": "/img/reels/141-dos-cristos-monteagudo.jpg",
+    "urlReel": "https://www.instagram.com/p/DddkOVOMHE-/"
+	},
+    {
+    "id": "142",
+    "titulo": "Palacete Don Fabio",
+    "descripcion": "",
+    "categoria": "abandonado",
+    "lat": 38.066123,
+    "lng": -1.6738301,
+    "miniatura": "/img/reels/142-palacete-don-fabio.jpg",
+    "urlReel": "https://www.instagram.com/p/DdvlCkqs4Fu/"
+	},
+  {
+    "id": "143",
+    "titulo": "Exposición de Elisa Séiquer",
+    "descripcion": "",
+    "categoria": "artistas",
+    "lat": 37.983770,
+    "lng": -1.133258,
+    "miniatura": "/img/reels/143-exposicion-elisa-seiquer.jpg",
+    "urlReel": "https://www.instagram.com/p/DeCgMwyMvz0/"
+	}    
 ]
