@@ -1,52 +1,106 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+// La lista de «Servicios externos» tiene que coincidir con lo que la web
+// carga de verdad: Google Fonts (@import de src/styles/global.css), y en la
+// portada los mapas de CARTO y el CSS de Leaflet desde unpkg
+// (src/pages/index.astro). Si alguno se quita o se añade otro, hay que
+// actualizar esta página y su fecha.
 ---
 
-<BaseLayout title="Política de privacidad — ¡Ven, que te lo cuento!">
+<BaseLayout
+  title="Política de privacidad — ¡Ven, que te lo cuento!"
+  description="Qué datos se tratan al visitar ¡Ven, que te lo cuento! y qué servicios externos usa la web."
+>
   <section class="container legal">
     <h1>Política de privacidad</h1>
-    <p class="updated">Última actualización: marzo de 2026</p>
+    <p class="updated">Última actualización: octubre de 2026</p>
 
-    <h2>Responsable del tratamiento</h2>
+    <h2>Responsable</h2>
     <p>
-      El responsable del tratamiento de los datos personales es el titular de la web
-      <strong>¡Ven, que te lo cuento!</strong>. Puedes contactar a través de las redes sociales
-      indicadas en esta página o mediante el correo electrónico que se facilitará a quien lo solicite.
+      La responsable de esta web, <strong>¡Ven, que te lo cuento!</strong> (venquetelocuento.es),
+      es <strong>Carmen Celdrán Gómez</strong>. Puedes contactar con ella por mensaje directo en
+      Instagram, en <a href="https://www.instagram.com/carmenceldran/" target="_blank" rel="noopener">@carmenceldran</a>.
     </p>
 
-    <h2>Datos recopilados</h2>
+    <h2>Qué datos se recogen</h2>
     <p>
-      Esta web es un sitio estático alojado en GitHub Pages. <strong>No recopila datos personales
-      de los visitantes</strong>. No se utilizan formularios de contacto, cuentas de usuario,
-      cookies propias ni herramientas de analítica que identifiquen a los usuarios.
+      Esta web <strong>no guarda ningún dato de quien la visita</strong>: no tiene formularios,
+      cuentas de usuario, comentarios ni herramientas de analítica.
+    </p>
+    <p>
+      Aun así, como en cualquier web, al visitarla tu navegador se conecta a los servidores que la
+      alojan y a algunos servicios externos que se explican a continuación. Esos servicios reciben,
+      por pura necesidad técnica, tu dirección IP y datos básicos de tu navegador.
+    </p>
+
+    <h2>Servicios externos</h2>
+    <ul>
+      <li>
+        <strong>GitHub Pages</strong> (GitHub, Inc.) aloja la web. Según GitHub, registra la
+        dirección IP de cada visitante con fines de seguridad.
+        <a href="https://docs.github.com/es/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noopener">Declaración de privacidad de GitHub</a>.
+      </li>
+      <li>
+        <strong>Google Fonts</strong> (Google) sirve las tipografías de la web, y recibe tu
+        dirección IP al descargarlas.
+        <a href="https://policies.google.com/privacy?hl=es" target="_blank" rel="noopener">Política de privacidad de Google</a>.
+      </li>
+      <li>
+        <strong>CARTO</strong> sirve las imágenes del mapa de la portada, hechas con datos de
+        OpenStreetMap. Recibe tu dirección IP y la zona del mapa que estás viendo.
+        <a href="https://carto.com/privacy" target="_blank" rel="noopener">Política de privacidad de CARTO</a>.
+      </li>
+      <li>
+        <strong>unpkg</strong> sirve, en la portada, los estilos de Leaflet, la herramienta que
+        dibuja el mapa. Recibe tu dirección IP.
+      </li>
+    </ul>
+    <p>
+      Se usan por el interés legítimo de mostrar la web y su mapa correctamente (artículo 6.1.f del
+      RGPD). Algunos de estos proveedores, como GitHub y Google, tienen su sede en Estados Unidos,
+      por lo que pueden tratar esos datos fuera de la Unión Europea en las condiciones que indican
+      sus políticas.
+    </p>
+
+    <h2>Tu ubicación</h2>
+    <p>
+      El botón «Cerca de mí» del mapa pide permiso a tu navegador para conocer tu ubicación. Solo se
+      usa en tu propio dispositivo para centrar el mapa: no se envía a esta web ni se guarda. Eso sí,
+      al centrarse el mapa se piden a CARTO las imágenes de esa zona, como pasa con cualquier otra
+      parte del mapa.
     </p>
 
     <h2>Cookies</h2>
     <p>
-      Esta web no utiliza cookies propias. Sin embargo, el servicio de alojamiento (GitHub Pages)
-      y los servicios de terceros integrados (como los mapas de OpenStreetMap o contenido embebido
-      de Instagram) pueden establecer cookies técnicas necesarias para su funcionamiento.
+      Esta web <strong>no instala cookies</strong>, ni propias ni de terceros, y no guarda nada en tu
+      navegador. Por eso no verás ningún aviso de cookies.
     </p>
 
-    <h2>Enlaces a terceros</h2>
+    <h2>Enlaces a redes sociales</h2>
     <p>
-      Esta web contiene enlaces a plataformas de terceros como Instagram. Al hacer clic en estos
-      enlaces, accederás a sitios web con sus propias políticas de privacidad, sobre las que
-      <strong>¡Ven, que te lo cuento!</strong> no tiene responsabilidad.
+      La web enlaza a Instagram, X y TikTok. Al pulsar esos enlaces sales de esta web, y a partir de
+      ahí se aplican las políticas de privacidad de cada plataforma.
     </p>
 
-    <h2>Derechos del usuario</h2>
+    <h2>Tus derechos</h2>
     <p>
       De acuerdo con el Reglamento General de Protección de Datos (RGPD) y la Ley Orgánica 3/2018
-      de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD), cualquier
-      usuario tiene derecho a ejercer sus derechos de acceso, rectificación, supresión, limitación
-      del tratamiento, portabilidad y oposición contactando al responsable del sitio web.
+      de Protección de Datos Personales y garantía de los derechos digitales (LOPDGDD), puedes
+      ejercer tus derechos de acceso, rectificación, supresión, limitación del tratamiento,
+      portabilidad y oposición escribiendo a la responsable. Como esta web no guarda datos de sus
+      visitantes, para los datos que traten los servicios externos tendrás que dirigirte a cada uno
+      de ellos.
+    </p>
+    <p>
+      Si crees que no se han respetado tus derechos, puedes reclamar ante la
+      <a href="https://www.aepd.es" target="_blank" rel="noopener">Agencia Española de Protección de Datos</a>.
     </p>
 
-    <h2>Modificaciones</h2>
+    <h2>Cambios en esta política</h2>
     <p>
-      Esta política de privacidad puede actualizarse para adaptarse a cambios normativos o a nuevas
-      funcionalidades del sitio web. Se recomienda revisarla periódicamente.
+      Esta política se actualizará cuando cambie la normativa o la forma de funcionar de la web.
+      La fecha de la última actualización aparece al principio de la página.
     </p>
   </section>
 </BaseLayout>
@@ -73,9 +127,21 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     margin: 2rem 0 0.5rem;
   }
 
-  .legal p {
+  .legal p,
+  .legal li {
     line-height: 1.75;
-    margin-bottom: 1rem;
     color: var(--color-text-secondary);
+  }
+
+  .legal p {
+    margin-bottom: 1rem;
+  }
+
+  .legal ul {
+    margin: 0 0 1rem 1.25rem;
+  }
+
+  .legal li {
+    margin-bottom: 0.6rem;
   }
 </style>
